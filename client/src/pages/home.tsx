@@ -259,11 +259,11 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[65%_center] md:object-[75%_center]"
           >
             <source src="https://videos.pexels.com/video-files/6980760/6980760-uhd_2732_1440_30fps.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/55" />
         </div>
         
         {/* Content */}
