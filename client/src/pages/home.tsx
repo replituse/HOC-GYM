@@ -43,7 +43,7 @@ import { SiWhatsapp } from "react-icons/si";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import transformationImage from "@assets/generated_images/Transformation_before_after_results_1ed81a38.png";
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
-import heroVideo from "@assets/hero-video.mp4";
+import heroVideo from "@assets/hero-background.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
 import trainer2Image from "@assets/generated_images/Zumba_instructor_dancing_portrait_1640c3fe.png";
@@ -801,38 +801,6 @@ export default function Home() {
                   <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">abhijeet18012001@gmail.com</a>
                 </li>
               </ul>
-              
-              {/* Embedded Satellite Map */}
-              <div className="mt-6">
-                <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  Our Location
-                </h4>
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.133024516877!2d73.15438507497642!3d19.236163948698826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e1!3m2!1sen!2sin!4v1736286800000!5m2!1sen!2sin"
-                      className="absolute top-0 left-0 w-full h-full"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="House Of Champions Gym Location"
-                      data-testid="map-embed"
-                    />
-                  </div>
-                  <a
-                    href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute bottom-2 right-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-medium text-foreground hover:bg-white hover:shadow-md transition-all flex items-center gap-1.5 border border-border/50"
-                    data-testid="link-open-google-maps"
-                  >
-                    <MapPin className="h-3 w-3 text-primary" />
-                    Open in Maps
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
