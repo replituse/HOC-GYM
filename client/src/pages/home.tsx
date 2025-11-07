@@ -316,8 +316,8 @@ export default function Home() {
                     </div>
                     <span className="text-sm font-bold text-foreground">4.8/5.0</span>
                   </div>
-                  <div className="h-4 w-px bg-foreground/20" />
-                  <div className="text-sm font-bold text-foreground whitespace-nowrap">
+                  <div className="hidden md:block h-4 w-px bg-foreground/20" />
+                  <div className="hidden md:block text-sm font-bold text-foreground whitespace-nowrap">
                     <span className="text-primary font-bold">1000+</span> Success Stories
                   </div>
                   <div className="hidden md:flex text-xs text-foreground/70 group-hover:text-foreground transition-colors items-center gap-1">
