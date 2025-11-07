@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { 
@@ -37,7 +37,8 @@ import {
   DollarSign,
   MessageSquare,
   TrendingUp,
-  Menu
+  Menu,
+  X
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -112,7 +113,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
           <div className="flex items-center">
-            <img src={hocLogo} alt="HOC Fitness" className="h-12 md:h-14 w-auto" />
+            <img src={hocLogo} alt="HOC Fitness" className="h-16 md:h-20 w-auto" />
           </div>
           
           {/* Mobile Menu */}
@@ -123,6 +124,10 @@ export default function Home() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-black/40 backdrop-blur-md border-l border-white/20">
+              <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+                <X className="h-6 w-6 text-white" />
+                <span className="sr-only">Close</span>
+              </SheetClose>
               <nav className="flex flex-col gap-6 mt-8">
                 <button 
                   onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }}
@@ -302,7 +307,7 @@ export default function Home() {
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-white/20 hover:bg-white/30 backdrop-blur-md px-5 py-3 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/30 hover:border-white/50"
+                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-black/70 hover:bg-black/80 backdrop-blur-md px-5 py-3 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/30 hover:border-white/50"
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex group-hover:scale-110 transition-transform duration-300">
