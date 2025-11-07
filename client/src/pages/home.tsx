@@ -262,7 +262,7 @@ export default function Home() {
             playsInline
             preload="auto"
             src="/videos/hero.mp4"
-            className="absolute inset-0 w-full h-full object-cover object-[30%_20%] md:object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[70%_20%] md:object-center"
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent"></div>
