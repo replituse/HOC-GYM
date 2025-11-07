@@ -51,6 +51,7 @@ import strengthImage from "@assets/generated_images/Strength_training_with_weigh
 import mobilityImage from "@assets/generated_images/Mobility_and_flexibility_exercise_26512ec9.png";
 import yogaImage from "@assets/generated_images/Yoga_meditation_pose_691f5267.png";
 import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f492b.png";
+import gymLogo from "@assets/gym-logo.png";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
@@ -60,6 +61,7 @@ export default function Home() {
   const { toast } = useToast();
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactMenuOpen, setContactMenuOpen] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -105,12 +107,12 @@ export default function Home() {
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-              <Dumbbell className="h-6 w-6 text-primary-foreground" />
+          <div className="flex items-center gap-3">
+            <div className="h-12 w-12 rounded-lg overflow-hidden shadow-md">
+              <img src={gymLogo} alt="HOC Fitness" className="h-full w-full object-cover" />
             </div>
-            <span className="font-heading text-xl md:text-2xl font-bold text-primary">
-              Hoc Fitness
+            <span className="font-heading text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+              HOC Fitness
             </span>
           </div>
           
@@ -567,21 +569,18 @@ export default function Home() {
               { image: yogaImage, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony.", icon: Heart },
               { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged.", icon: Zap },
             ].map((item, i) => (
-              <Card key={i} className="group overflow-hidden hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 bg-gradient-to-br from-background to-accent/5 hover:border-primary/30">
+              <Card key={i} className="group overflow-hidden hover-elevate border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white hover:border-slate-300">
                 <div className="relative h-56 w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
                   <img 
                     src={item.image} 
                     alt={item.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 right-4 z-20 h-12 w-12 rounded-full bg-primary/90 backdrop-blur flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                    <item.icon className="h-6 w-6 text-white" />
-                  </div>
                 </div>
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="font-heading text-2xl font-bold group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed text-sm">{item.desc}</p>
+                  <h3 className="font-heading text-2xl font-bold text-slate-800 group-hover:text-slate-600 transition-colors">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -761,12 +760,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-                  <Dumbbell className="h-6 w-6 text-primary-foreground" />
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg overflow-hidden shadow-md">
+                  <img src={gymLogo} alt="HOC Fitness" className="h-full w-full object-cover" />
                 </div>
-                <span className="font-heading text-xl font-bold text-primary">
-                  Hoc Fitness
+                <span className="font-heading text-xl font-bold bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+                  HOC Fitness
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -816,37 +815,44 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Action Buttons - Glassmorphic Design */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 lg:hidden">
+      {/* Floating Contact Menu - Professional Drop-up */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+        {/* Drop-up Menu Items */}
+        <div className={`flex flex-col gap-3 transition-all duration-300 ${contactMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+          <button
+            onClick={() => {
+              setCallDialogOpen(true);
+              setContactMenuOpen(false);
+            }}
+            className="group flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-700 px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200"
+            aria-label="Call Us"
+          >
+            <Phone className="h-5 w-5 text-slate-600" />
+            <span className="text-sm font-medium">Call Us</span>
+          </button>
+          <button
+            onClick={() => {
+              openWhatsApp();
+              setContactMenuOpen(false);
+            }}
+            className="group flex items-center gap-3 bg-white hover:bg-green-50 text-slate-700 px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200"
+            data-testid="button-whatsapp-float"
+            aria-label="Contact on WhatsApp"
+          >
+            <SiWhatsapp className="h-5 w-5 text-[#25D366]" />
+            <span className="text-sm font-medium">WhatsApp</span>
+          </button>
+        </div>
+        
+        {/* Main Contact Button */}
         <button
-          onClick={() => setCallDialogOpen(true)}
-          className="group relative h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-white shadow-2xl shadow-primary/40 hover:shadow-primary/60 hover:scale-110 transition-all duration-300 flex items-center justify-center backdrop-blur-xl border border-white/20"
-          aria-label="Call Us"
+          onClick={() => setContactMenuOpen(!contactMenuOpen)}
+          className="group relative h-14 w-14 rounded-full bg-slate-800 hover:bg-slate-700 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+          aria-label="Contact Menu"
         >
-          <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl group-hover:bg-white/30 transition-all" />
-          <Phone className="h-6 w-6 relative z-10 animate-pulse" />
-        </button>
-        <button
-          onClick={openWhatsApp}
-          className="group relative h-16 w-16 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#1ea952] text-white shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 hover:scale-110 transition-all duration-300 flex items-center justify-center backdrop-blur-xl border border-white/20 animate-bounce"
-          data-testid="button-whatsapp-float"
-          aria-label="Contact on WhatsApp"
-        >
-          <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl group-hover:bg-white/30 transition-all" />
-          <SiWhatsapp className="h-7 w-7 relative z-10" />
+          <MessageCircle className={`h-6 w-6 transition-transform duration-300 ${contactMenuOpen ? 'rotate-45' : ''}`} />
         </button>
       </div>
-      
-      {/* Floating WhatsApp Button - Desktop Glassmorphic */}
-      <button
-        onClick={openWhatsApp}
-        className="group hidden lg:flex fixed bottom-8 right-8 z-50 h-16 w-16 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#1ea952] text-white shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 hover:scale-110 transition-all duration-300 items-center justify-center backdrop-blur-xl border border-white/20 animate-bounce"
-        data-testid="button-whatsapp-float-desktop"
-        aria-label="Contact on WhatsApp"
-      >
-        <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl group-hover:bg-white/30 transition-all" />
-        <SiWhatsapp className="h-7 w-7 relative z-10" />
-      </button>
     </div>
   );
 }
