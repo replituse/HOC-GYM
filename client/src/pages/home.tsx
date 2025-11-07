@@ -252,7 +252,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/10">
+      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
           <video 
@@ -260,24 +260,23 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/30 to-transparent" />
         </div>
         
         {/* Content */}
         <div className="container py-6 md:py-10 lg:py-16 relative z-10 px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center lg:text-left">
             <div className="space-y-4 md:space-y-5 lg:space-y-6">
-              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-foreground drop-shadow-sm" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
+              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
                 Transform Your
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mt-1 drop-shadow-none">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   Body & Mind
                 </span>
               </h1>
-              <p className="text-foreground/80 leading-relaxed mx-auto lg:mx-0 max-w-lg font-medium" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
+              <p className="text-white leading-relaxed mx-auto lg:mx-0 max-w-lg font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
@@ -304,7 +303,7 @@ export default function Home() {
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-white/80 hover:bg-white backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-border hover:border-primary/30"
+                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-white/95 hover:bg-white backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 cursor-pointer group border border-white/50 hover:border-primary/50 shadow-lg"
               >
                 <div className="flex items-center gap-1.5">
                   <div className="flex group-hover:scale-110 transition-transform duration-300">
@@ -314,7 +313,7 @@ export default function Home() {
                   </div>
                   <span className="text-sm font-bold text-foreground">4.8/5.0</span>
                 </div>
-                <div className="h-4 w-px bg-border hidden sm:block" />
+                <div className="h-4 w-px bg-foreground/20 hidden sm:block" />
                 <div className="text-sm font-bold text-foreground">
                   <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
@@ -576,7 +575,7 @@ export default function Home() {
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <CardContent className="p-3 md:p-4 space-y-1.5">
