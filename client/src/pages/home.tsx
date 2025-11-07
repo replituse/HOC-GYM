@@ -547,9 +547,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center gap-3 p-5 md:p-6 rounded-2xl bg-primary border-2 border-primary/30 max-w-3xl mx-auto shadow-lg shadow-primary/30">
-                <Zap className="h-7 w-7 md:h-8 md:w-8 text-black flex-shrink-0 animate-pulse" />
-                <span className="text-black font-bold text-base md:text-xl">You can join Any-class, Any-Time, Any-Day</span>
+              <div className="flex items-center justify-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 rounded-2xl bg-primary border-2 border-primary/30 max-w-2xl mx-auto shadow-lg shadow-primary/30">
+                <Zap className="h-5 w-5 md:h-6 md:w-6 text-black flex-shrink-0 animate-pulse" />
+                <span className="text-black font-bold text-sm md:text-base">You can join Any-class, Any-Time, Any-Day</span>
               </div>
             </div>
           </div>
