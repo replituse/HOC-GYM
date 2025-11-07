@@ -41,10 +41,12 @@ import {
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import heroImage from "@assets/generated_images/Hero_fitness_workout_woman_6806a3a8.png";
+import heroImage from "@assets/stock_images/indian_woman_fitness_ac12c042.jpg";
 import transformationImage from "@assets/generated_images/Transformation_before_after_results_1ed81a38.png";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
-import trainerImage from "@assets/generated_images/Fitness_trainer_professional_portrait_9ee854b5.png";
+import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
+import trainer2Image from "@assets/stock_images/indian_female_fitnes_83e3ff3b.jpg";
+import trainer3Image from "@assets/stock_images/indian_female_fitnes_e7ae81cb.jpg";
 import cardioImage from "@assets/generated_images/Woman_doing_cardio_workout_1ba27fe8.png";
 import functionalImage from "@assets/generated_images/Functional_training_exercise_e1989ece.png";
 import strengthImage from "@assets/generated_images/Strength_training_with_weights_f007c33a.png";
@@ -255,11 +257,6 @@ export default function Home() {
         <div className="container py-4 lg:py-12 relative px-4 md:px-6">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-12 items-center max-w-7xl mx-auto">
             <div className="space-y-2 sm:space-y-3 lg:space-y-8 text-center lg:text-left">
-              <div className="flex justify-center lg:justify-start">
-                <div className="bg-gradient-to-r from-primary/20 to-accent/40 backdrop-blur-sm border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide">
-                  ✨ India's #1 Online Fitness Program
-                </div>
-              </div>
               <h1 className="font-heading text-[28px] sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight lg:leading-[1.1] tracking-tight">
                 Transform Your
                 <span className="block text-primary mt-1">
@@ -699,19 +696,19 @@ export default function Home() {
               {
                 name: "Snata Pattnaik",
                 role: "Founder & Managing Director",
-                image: trainerImage,
+                image: trainer1Image,
                 bio: "10 years of experience inspiring, training, and transforming people across Delhi NCR, Bangalore, Mumbai, and Kolkata."
               },
               {
                 name: "Neha Kashyap",
                 role: "Zumba & Dance Trainer",
-                image: trainerImage,
+                image: trainer2Image,
                 bio: "10+ years Zumba trainer with Shiamak Davar Institute training. Certified yoga and dance fitness trainer."
               },
               {
                 name: "Manisha",
                 role: "Strength & Weight Loss Specialist",
-                image: trainerImage,
+                image: trainer3Image,
                 bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
               },
             ].map((trainer, i) => (
