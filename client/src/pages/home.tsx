@@ -173,37 +173,37 @@ export default function Home() {
           <nav className="hidden lg:flex items-center gap-6">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               HOME
             </button>
             <button 
               onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               PROGRAM
             </button>
             <button 
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               PRICING
             </button>
             <button 
               onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               TRAINERS
             </button>
             <button 
               onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               BEFORE & AFTER
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
             >
               CONTACT
             </button>
@@ -471,7 +471,7 @@ export default function Home() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-5 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5 max-w-2xl mx-auto">
             <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
@@ -547,9 +547,11 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-4 rounded-2xl bg-primary border-2 border-primary/30 max-w-2xl mx-auto shadow-lg shadow-primary/30">
-                <Zap className="h-5 w-5 md:h-6 md:w-6 text-black flex-shrink-0 animate-pulse" />
-                <span className="text-black font-bold text-sm md:text-base">You can join Any-class, Any-Time, Any-Day</span>
+              <div className="flex justify-center">
+                <div className="inline-flex items-center justify-center gap-2 px-4 md:px-5 py-2.5 md:py-3 rounded-full bg-primary border-2 border-primary/30 shadow-lg shadow-primary/30">
+                <Zap className="h-4 w-4 md:h-5 md:w-5 text-black flex-shrink-0 animate-pulse" />
+                <span className="text-black font-bold text-xs md:text-sm">You can join Any-class, Any-Time, Any-Day</span>
+                </div>
               </div>
             </div>
           </div>
