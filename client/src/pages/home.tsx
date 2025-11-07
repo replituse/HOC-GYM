@@ -106,7 +106,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20 lg:pb-0">
+    <div className="min-h-screen bg-background pb-20 lg:pb-0 overflow-x-hidden">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
@@ -252,7 +252,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
           <video 
@@ -260,68 +260,72 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="w-full h-full object-cover"
+            className="absolute inset-0 min-w-full min-h-full w-auto h-auto max-w-none object-cover block"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
         
         {/* Content */}
-        <div className="container py-6 md:py-10 lg:py-16 relative z-10 px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center lg:text-left">
-            <div className="space-y-4 md:space-y-5 lg:space-y-6">
-              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
+        <div className="container relative z-10 px-4 md:px-6 py-8 md:py-12">
+          <div className="max-w-3xl lg:max-w-2xl">
+            <div className="space-y-5 md:space-y-6">
+              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white text-center lg:text-left" style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}>
                 Transform Your
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/80 mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/90 mt-2">
                   Body & Mind
                 </span>
               </h1>
-              <p className="text-white leading-relaxed mx-auto lg:mx-0 max-w-lg font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
+              <p className="text-white/95 leading-relaxed max-w-xl font-medium text-center lg:text-left" style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 items-center lg:items-start pt-2">
                 <Button 
                   onClick={openWhatsApp} 
                   size="lg"
-                  className="rounded-full px-6 py-5 md:px-8 md:py-6 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base"
+                  className="w-full sm:w-auto rounded-full px-8 py-6 shadow-xl shadow-primary/40 hover:shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-bold text-base"
                   data-testid="button-book-consultation-hero"
                 >
-                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                  <MessageCircle className="h-5 w-5 mr-2" />
                   Start Your Journey
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="rounded-full px-6 py-5 md:px-8 md:py-6 border-2 border-white/70 bg-white/90 hover:bg-white hover:border-white transition-all hover:scale-105 font-semibold text-sm md:text-base text-foreground shadow-md"
+                  className="w-full sm:w-auto rounded-full px-8 py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all hover:scale-105 font-bold text-base text-foreground shadow-lg"
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   data-testid="button-view-packages"
                 >
                   View Packages
                 </Button>
               </div>
-              <a 
-                href={GOOGLE_REVIEWS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-white/95 hover:bg-white backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 cursor-pointer group border border-white/50 hover:border-primary/50 shadow-lg"
-              >
-                <div className="flex items-center gap-1.5">
-                  <div className="flex group-hover:scale-110 transition-transform duration-300">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
+              <div className="flex justify-center lg:justify-start">
+                <a 
+                  href={GOOGLE_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-white/95 hover:bg-white backdrop-blur-sm px-5 py-3 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 cursor-pointer group border border-white/50 hover:border-primary/50 shadow-lg"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="flex group-hover:scale-110 transition-transform duration-300">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-bold text-foreground">4.8/5.0</span>
                   </div>
-                  <span className="text-sm font-bold text-foreground">4.8/5.0</span>
-                </div>
-                <div className="h-4 w-px bg-foreground/20 hidden sm:block" />
-                <div className="text-sm font-bold text-foreground">
-                  <span className="text-primary font-bold">1000+</span> Success Stories
-                </div>
-                <div className="hidden sm:flex text-xs text-foreground/70 group-hover:text-foreground transition-colors items-center gap-1">
-                  <span>View Reviews</span>
-                  <TrendingUp className="h-3 w-3" />
-                </div>
-              </a>
+                  <div className="h-4 w-px bg-foreground/20" />
+                  <div className="text-sm font-bold text-foreground whitespace-nowrap">
+                    <span className="text-primary font-bold">1000+</span> Success Stories
+                  </div>
+                  <div className="hidden md:flex text-xs text-foreground/70 group-hover:text-foreground transition-colors items-center gap-1">
+                    <span>View Reviews</span>
+                    <TrendingUp className="h-3 w-3" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
