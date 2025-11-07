@@ -573,7 +573,7 @@ export default function Home() {
             </h2>
             <p className="text-foreground/60 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>Comprehensive programs for every fitness level and goal</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {[
               { image: cardioImage, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively.", icon: Flame },
               { image: functionalImage, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements.", icon: Target },
