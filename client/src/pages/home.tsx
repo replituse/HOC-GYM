@@ -105,44 +105,38 @@ export default function Home() {
           <nav className="hidden lg:flex items-center gap-8">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <HomeIcon className="h-4 w-4" />
               HOME
             </button>
             <button 
               onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <Activity className="h-4 w-4" />
               PROGRAM
             </button>
             <button 
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <DollarSign className="h-4 w-4" />
               PRICING
             </button>
             <button 
               onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <Users className="h-4 w-4" />
               TRAINERS
             </button>
             <button 
               onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <TrendingUp className="h-4 w-4" />
               BEFORE & AFTER
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <Mail className="h-4 w-4" />
               CONTACT
             </button>
           </nav>
@@ -155,66 +149,68 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-[#c026d3]/5">
-        <div className="container py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/30">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,70,239,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(192,38,211,0.08),transparent_50%)]" />
+        <div className="container py-20 md:py-32 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
               <div className="inline-block">
-                <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                  India's #1 Online Fitness Program
+                <div className="bg-gradient-to-r from-primary/20 to-accent/40 backdrop-blur-sm border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide">
+                  ✨ India's #1 Online Fitness Program
                 </div>
               </div>
-              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Join India's #1{" "}
-                <span className="bg-gradient-to-r from-primary to-[#c026d3] bg-clip-text text-transparent">
-                  Online Fitness
-                </span>{" "}
-                Program for Women
+              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight">
+                Transform Your
+                <span className="block bg-gradient-to-r from-primary via-[#d946ef] to-[#c026d3] bg-clip-text text-transparent mt-2">
+                  Body & Mind
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-                Flexible, expert-led fitness programs designed for busy professionals. Train anytime, anywhere with proven results.
+              <p className="text-xl md:text-2xl text-foreground/70 max-w-xl leading-relaxed">
+                Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-5 pt-4">
                 <Button 
                   onClick={openWhatsApp} 
                   size="lg" 
-                  className="rounded-full text-lg px-8 py-6"
+                  className="rounded-full text-base px-10 py-7 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
                   data-testid="button-book-consultation-hero"
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Book Your Free Consultation
+                  Start Your Journey
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="rounded-full text-lg px-8 py-6"
+                  className="rounded-full text-base px-10 py-7 border-2 hover:bg-primary/5"
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   data-testid="button-view-packages"
                 >
                   View Packages
                 </Button>
               </div>
-              <div className="flex items-center gap-6 pt-4">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-8 pt-6">
+                <div className="flex items-center gap-3">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                     ))}
                   </div>
-                  <span className="text-sm font-medium">4.8 rating</span>
+                  <span className="text-base font-semibold">4.8/5.0</span>
                 </div>
-                <div className="h-6 w-px bg-border" />
-                <div className="text-sm font-medium">
-                  <span className="text-primary font-bold">1000+</span> Transformations
+                <div className="h-8 w-px bg-border" />
+                <div className="text-base font-semibold">
+                  <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden">
+            <div className="relative lg:h-[600px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
                 <img 
                   src={heroImage} 
                   alt="Woman doing fitness workout" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -232,18 +228,18 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5" id="contact">
+      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20" id="contact">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Start Your Transformation Today
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+                Start Your Transformation
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Fill out the form below and we'll get back to you within 24 hours
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
+                Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
               </p>
             </div>
-            <Card className="p-8 md:p-12">
+            <Card className="p-10 md:p-14 shadow-xl shadow-primary/5 border-primary/10 backdrop-blur">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -399,56 +395,56 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-24">
+      <section className="py-24 md:py-32">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Why Choose Us
             </h2>
-            <p className="text-lg text-muted-foreground">The finest early education in fitness</p>
+            <p className="text-xl text-foreground/60">Your wellness journey, reimagined</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6 hover-elevate">
-              <CardContent className="p-0 space-y-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-primary" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <Card className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-0 space-y-5">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
+                  <Heart className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold">Kindness</h3>
-                <p className="text-muted-foreground">
-                  Kindness in fitness promotes supportive environment.
+                <h3 className="font-heading text-2xl font-bold">Kindness</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Supportive environment that celebrates your progress
                 </p>
               </CardContent>
             </Card>
-            <Card className="p-6 hover-elevate">
-              <CardContent className="p-0 space-y-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Smile className="h-6 w-6 text-primary" />
+            <Card className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-0 space-y-5">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
+                  <Smile className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold">Emotional</h3>
-                <p className="text-muted-foreground">
-                  Nurtures mental health, recognizing the integral role of emotions.
+                <h3 className="font-heading text-2xl font-bold">Emotional Wellness</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Mental health focus with holistic fitness approach
                 </p>
               </CardContent>
             </Card>
-            <Card className="p-6 hover-elevate">
-              <CardContent className="p-0 space-y-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Palette className="h-6 w-6 text-primary" />
+            <Card className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-0 space-y-5">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
+                  <Palette className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold">Creativity</h3>
-                <p className="text-muted-foreground">
-                  Diverse approaches, making workouts engaging, fun, and sustainable.
+                <h3 className="font-heading text-2xl font-bold">Creativity</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Diverse workouts that keep you engaged and motivated
                 </p>
               </CardContent>
             </Card>
-            <Card className="p-6 hover-elevate">
-              <CardContent className="p-0 space-y-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Lightbulb className="h-6 w-6 text-primary" />
+            <Card className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/10">
+              <CardContent className="p-0 space-y-5">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
+                  <Lightbulb className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold">Innovation</h3>
-                <p className="text-muted-foreground">
-                  Innovation new methods for optimal performance and health.
+                <h3 className="font-heading text-2xl font-bold">Innovation</h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  Latest methods for peak performance and health
                 </p>
               </CardContent>
             </Card>
@@ -457,30 +453,30 @@ export default function Home() {
       </section>
 
       {/* Training Types */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5">
+      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Our Variations to Shape You
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              Our Training Programs
             </h2>
-            <p className="text-lg text-muted-foreground">Age-specific support for every stage</p>
+            <p className="text-xl text-foreground/60">Comprehensive programs for every fitness level</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Flame, title: "Cardio Core", desc: "Any exercise elevating heart rate and engaging the cardiovascular system, improving endurance and overall fitness." },
-              { icon: Zap, title: "Functional Training", desc: "Highly beneficial for improving daily life performance, reducing the risk of injury, and increasing flexibility and balance." },
-              { icon: Dumbbell, title: "Strength Training", desc: "Any exercise that makes your muscles work harder than usual. This increases your muscles' strength, size, power and endurance." },
-              { icon: Activity, title: "Mobility Exercise", desc: "Mobility exercise will help increase your body's range of motion and bring down the overall stiffness of the body." },
-              { icon: Target, title: "Yoga Training", desc: "A holistic practice intertwining physical postures, breathwork, and meditation to foster harmony between body and mind." },
-              { icon: Users, title: "Zumba / Aerobics", desc: "A cardio dance workout. It is a wonderful way to keep your heart active, your body healthy, and your mind engaged." },
+              { icon: Flame, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively." },
+              { icon: Zap, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements." },
+              { icon: Dumbbell, title: "Strength Training", desc: "Build muscle, increase power, and develop total body strength with progressive resistance workouts." },
+              { icon: Activity, title: "Mobility Exercise", desc: "Enhance your range of motion and reduce stiffness with targeted mobility work." },
+              { icon: Target, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony." },
+              { icon: Users, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged." },
             ].map((item, i) => (
-              <Card key={i} className="p-6 hover-elevate">
-                <CardContent className="p-0 space-y-4">
-                  <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-7 w-7 text-primary" />
+              <Card key={i} className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/5">
+                <CardContent className="p-0 space-y-5">
+                  <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
+                    <item.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="font-heading text-xl font-semibold">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
+                  <h3 className="font-heading text-2xl font-bold">{item.title}</h3>
+                  <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -489,13 +485,13 @@ export default function Home() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-16 md:py-24" id="pricing">
+      <section className="py-24 md:py-32" id="pricing">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Choose Your Package
             </h2>
-            <p className="text-lg text-muted-foreground">Flexible plans to fit your goals</p>
+            <p className="text-xl text-foreground/60">Flexible plans designed for your success</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
@@ -539,31 +535,31 @@ export default function Home() {
                 ]
               },
             ].map((pkg, i) => (
-              <Card key={i} className={`p-8 hover-elevate ${pkg.featured ? 'border-primary border-2' : ''}`}>
-                <CardContent className="p-0 space-y-6">
+              <Card key={i} className={`p-10 hover-elevate transition-all ${pkg.featured ? 'border-primary border-2 shadow-2xl shadow-primary/20 scale-105' : 'border-primary/10 shadow-lg shadow-primary/5'} bg-gradient-to-br from-background to-accent/5`}>
+                <CardContent className="p-0 space-y-8">
                   {pkg.featured && (
-                    <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      Most Popular
+                    <div className="inline-block bg-gradient-to-r from-primary to-[#d946ef] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      ⭐ Most Popular
                     </div>
                   )}
                   <div>
-                    <h3 className="font-heading text-2xl font-bold mb-2">{pkg.name}</h3>
-                    <p className="text-muted-foreground">{pkg.classes}</p>
+                    <h3 className="font-heading text-3xl font-bold mb-3">{pkg.name}</h3>
+                    <p className="text-foreground/60 font-medium">{pkg.classes}</p>
                   </div>
-                  <div className="font-heading text-4xl font-bold text-primary">
+                  <div className="font-heading text-5xl font-bold bg-gradient-to-r from-primary to-[#d946ef] bg-clip-text text-transparent">
                     {pkg.price}
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {pkg.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
+                      <li key={j} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-base text-foreground/80">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
                     onClick={openWhatsApp} 
-                    className="w-full rounded-full" 
+                    className={`w-full rounded-full py-6 text-base font-semibold ${pkg.featured ? 'shadow-lg shadow-primary/25' : ''}`}
                     variant={pkg.featured ? "default" : "outline"}
                     data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
                   >

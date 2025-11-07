@@ -14,17 +14,17 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 98%;
+  --background: 270 100% 99%;
 
-  --foreground: 240 6% 10%;
+  --foreground: 270 60% 10%;
 
-  --border: 240 6% 88%;
+  --border: 270 20% 90%;
 
-  --card: 240 3% 96%;
+  --card: 0 0% 100%;
 
-  --card-foreground: 240 6% 12%;
+  --card-foreground: 270 40% 15%;
 
-  --card-border: 240 4% 90%;
+  --card-border: 270 15% 94%;
 
   --sidebar: 240 4% 94%;
 
@@ -48,9 +48,9 @@
 
   --popover-border: 240 5% 84%;
 
-  --primary: 330 85% 45%;
+  --primary: 285 85% 60%;
 
-  --primary-foreground: 330 10% 98%;
+  --primary-foreground: 0 0% 100%;
 
   --secondary: 240 6% 86%;
 
@@ -60,9 +60,9 @@
 
   --muted-foreground: 330 12% 35%;
 
-  --accent: 330 15% 88%;
+  --accent: 330 90% 95%;
 
-  --accent-foreground: 330 30% 28%;
+  --accent-foreground: 285 70% 45%;
 
   --destructive: 0 72% 48%;
 
