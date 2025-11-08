@@ -47,9 +47,9 @@ import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4"
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import transform1 from "@assets/transformation_images/transform1.jpg";
-import transform2 from "@assets/transformation_images/transform2.jpg";
+import transform2 from "@assets/transformation_images/transform2.png";
 import transform3 from "@assets/transformation_images/transform3.jpg";
-import transform4 from "@assets/stock_images/before_after_weight__f2fc7d3b.jpg";
+import transform4 from "@assets/transformation_images/transform4.jpg";
 import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
 import trainer2Image from "@assets/generated_images/Zumba_instructor_dancing_portrait_1640c3fe.png";
 import trainer3Image from "@assets/generated_images/Strength_trainer_portrait_with_dumbbells_a7c3e639.png";
@@ -368,18 +368,18 @@ export default function Home() {
                 Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
               </p>
             </div>
-            <Card className="p-4 md:p-6 lg:p-8 shadow-xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+            <Card className="p-4 md:p-6 lg:p-8 shadow-xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 max-w-5xl mx-auto">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel className="text-sm font-semibold">Name *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" {...field} data-testid="input-name" />
+                            <Input placeholder="Enter your full name" {...field} data-testid="input-name" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -390,7 +390,7 @@ export default function Home() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-sm font-semibold">Email *</FormLabel>
                           <FormControl>
                             <Input placeholder="your.email@example.com" type="email" {...field} data-testid="input-email" />
                           </FormControl>
@@ -399,59 +399,63 @@ export default function Home() {
                       )}
                     />
                   </div>
-                  <FormField
-                    control={form.control}
-                    name="contactNumber"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Contact Number</FormLabel>
-                        <FormControl>
-                          <Input placeholder="10-digit mobile number" {...field} data-testid="input-contact" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="purpose"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>What's the purpose of joining this program?</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <FormField
+                      control={form.control}
+                      name="contactNumber"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold">Contact Number *</FormLabel>
                           <FormControl>
-                            <SelectTrigger data-testid="select-purpose">
-                              <SelectValue placeholder="Select your goal" />
-                            </SelectTrigger>
+                            <Input placeholder="10-digit mobile number" {...field} data-testid="input-contact" />
                           </FormControl>
-                          <SelectContent>
-                            <SelectItem value="weight-loss">Overall Weight Loss</SelectItem>
-                            <SelectItem value="body-toning">For Body Toning</SelectItem>
-                            <SelectItem value="postpartum">Reducing Postpartum Belly Fat</SelectItem>
-                            <SelectItem value="strength-building">Build Strength/Endurance/Flexibility</SelectItem>
-                            <SelectItem value="general-fitness">General Fitness</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button 
-                    type="submit" 
-                    size="default" 
-                    className="w-full rounded-full text-sm py-4" 
-                    disabled={contactMutation.isPending}
-                    data-testid="button-submit-form"
-                  >
-                    {contactMutation.isPending ? (
-                      <>
-                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      "Submit"
-                    )}
-                  </Button>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="purpose"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold">Purpose of Joining *</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger data-testid="select-purpose">
+                                <SelectValue placeholder="Select your fitness goal" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="weight-loss">Overall Weight Loss</SelectItem>
+                              <SelectItem value="body-toning">For Body Toning</SelectItem>
+                              <SelectItem value="postpartum">Reducing Postpartum Belly Fat</SelectItem>
+                              <SelectItem value="strength-building">Build Strength/Endurance/Flexibility</SelectItem>
+                              <SelectItem value="general-fitness">General Fitness</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="pt-2">
+                    <Button 
+                      type="submit" 
+                      size="default" 
+                      className="w-full rounded-full text-sm py-4" 
+                      disabled={contactMutation.isPending}
+                      data-testid="button-submit-form"
+                    >
+                      {contactMutation.isPending ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        "Submit"
+                      )}
+                    </Button>
+                  </div>
                 </form>
               </Form>
             </Card>
