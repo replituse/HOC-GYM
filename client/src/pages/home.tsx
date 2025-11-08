@@ -588,18 +588,18 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              Watch our community's inspiring transformation journey on Instagram
+              Watch our community's inspiring transformation journey
             </p>
           </div>
           
-          <div className="max-w-2xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Video 1 */}
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.instagram.com/reel/DP6Ilq_DBlp/embed"
+                  src="https://www.instagram.com/reel/DP6Ilq_DBlp/embed/captioned"
                   className="w-full"
-                  style={{ minHeight: '600px', border: 'none' }}
+                  style={{ minHeight: '700px', border: 'none' }}
                   scrolling="no"
                   allowFullScreen
                   data-testid="instagram-video-1"
@@ -611,9 +611,9 @@ export default function Home() {
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.instagram.com/reel/DOqYABbiSV4/embed"
+                  src="https://www.instagram.com/reel/DOqYABbiSV4/embed/captioned"
                   className="w-full"
-                  style={{ minHeight: '600px', border: 'none' }}
+                  style={{ minHeight: '700px', border: 'none' }}
                   scrolling="no"
                   allowFullScreen
                   data-testid="instagram-video-2"
@@ -625,9 +625,9 @@ export default function Home() {
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.instagram.com/reel/DNmyhHlpq5f/embed"
+                  src="https://www.instagram.com/reel/DNmyhHlpq5f/embed/captioned"
                   className="w-full"
-                  style={{ minHeight: '600px', border: 'none' }}
+                  style={{ minHeight: '700px', border: 'none' }}
                   scrolling="no"
                   allowFullScreen
                   data-testid="instagram-video-3"
@@ -639,9 +639,9 @@ export default function Home() {
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.instagram.com/reel/DGaqoK7TY0b/embed"
+                  src="https://www.instagram.com/reel/DGaqoK7TY0b/embed/captioned"
                   className="w-full"
-                  style={{ minHeight: '600px', border: 'none' }}
+                  style={{ minHeight: '700px', border: 'none' }}
                   scrolling="no"
                   allowFullScreen
                   data-testid="instagram-video-4"
