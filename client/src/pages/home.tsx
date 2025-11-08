@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useInView } from "@/hooks/use-in-view";
 import { fadeInUp, fadeIn, scaleIn, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
+import { AnimatedSection } from "@/components/animated-section";
 import { 
   Heart, 
   Smile, 
@@ -378,21 +379,24 @@ export default function Home() {
       </section>
 
       {/* Notice Banner */}
-      <section className="bg-primary/5 border-y border-primary/20 py-5">
-        <div className="container px-4 md:px-6">
-          <div className="flex items-center justify-center gap-3 max-w-4xl mx-auto">
-            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Info className="h-4 w-4 text-primary" />
+      <AnimatedSection>
+        <section className="bg-primary/5 border-y border-primary/20 py-5">
+          <div className="container px-4 md:px-6">
+            <div className="flex items-center justify-center gap-3 max-w-4xl mx-auto">
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Info className="h-4 w-4 text-primary" />
+              </div>
+              <p className="text-center text-sm md:text-base text-primary font-semibold">
+                <strong>Important:</strong> We only offer online classes. No offline batches available.
+              </p>
             </div>
-            <p className="text-center text-sm md:text-base text-primary font-semibold">
-              <strong>Important:</strong> We only offer online classes. No offline batches available.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Contact Form Section */}
-      <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
+      <AnimatedSection>
+        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]" />
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto">
@@ -502,24 +506,26 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Transformation Gallery */}
-      <section className="py-6 md:py-8 pb-10 md:pb-14 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4">
-              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
-                Real Results
-              </span>
+      <AnimatedSection>
+        <section className="py-6 md:py-8 pb-10 md:pb-14 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-8">
+              <div className="inline-block mb-4">
+                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
+                  Real Results
+                </span>
+              </div>
+              <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
+                <span className="text-primary">
+                  Before & After
+                </span>
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
             </div>
-            <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
-              <span className="text-primary">
-                Before & After
-              </span>
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
-          </div>
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
@@ -575,10 +581,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Instagram Videos Section */}
-      <section className="py-8 md:py-10 bg-background" id="instagram-videos">
+      <AnimatedSection>
+        <section className="py-8 md:py-10 bg-background" id="instagram-videos">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-6">
             <div className="inline-block mb-3">
@@ -667,10 +675,12 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Program Details */}
-      <section className="pt-10 md:pt-14 py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
+      <AnimatedSection>
+        <section className="pt-10 md:pt-14 py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-5xl mx-auto">
@@ -725,10 +735,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Training Types */}
-      <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
+      <AnimatedSection>
+        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.05),transparent_50%)]" />
         <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
@@ -768,10 +780,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Pricing Packages */}
-      <section className="py-6 md:py-8 relative overflow-hidden" id="pricing">
+      <AnimatedSection>
+        <section className="py-6 md:py-8 relative overflow-hidden" id="pricing">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center mb-8">
@@ -865,10 +879,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Meet Trainers */}
-      <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 relative overflow-hidden" id="trainers">
+      <AnimatedSection>
+        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 relative overflow-hidden" id="trainers">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
         <div className="container px-4 md:px-6 relative max-w-5xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
@@ -921,8 +937,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
+        </section>
+      </AnimatedSection>
 
       {/* Footer */}
       <footer className="bg-card border-t py-8">
