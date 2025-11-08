@@ -124,16 +124,25 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-20 lg:pb-0 overflow-x-hidden">
       {/* Navigation Header */}
-      <header className="fixed top-0 z-50 w-full border-b bg-background">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center">
-            <img 
-              src={hocLogo} 
-              alt="HOC Fitness" 
-              className="h-16 md:h-20 w-auto mix-blend-multiply dark:mix-blend-screen" 
-              style={{ filter: 'brightness(1.2) contrast(1.1)' }}
-            />
-          </div>
+      <header className="fixed top-0 z-50 w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+        <div className="container flex h-20 items-center justify-between px-4 md:px-6 relative">
+          <motion.div 
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <img 
+                src={hocLogo} 
+                alt="HOC Fitness" 
+                className="h-16 md:h-20 w-auto mix-blend-multiply dark:mix-blend-screen relative transition-transform duration-300 group-hover:scale-105" 
+                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+              />
+            </div>
+          </motion.div>
           
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -189,50 +198,67 @@ export default function Home() {
           </Sheet>
           
           {/* Desktop Navigation Menu */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <motion.nav 
+            className="hidden lg:flex items-center gap-1"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              HOME
+              <span className="relative z-10">HOME</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              PROGRAM
+              <span className="relative z-10">PROGRAM</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              PRICING
+              <span className="relative z-10">PRICING</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              TRAINERS
+              <span className="relative z-10">TRAINERS</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              BEFORE & AFTER
+              <span className="relative z-10">BEFORE & AFTER</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
+              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              CONTACT
+              <span className="relative z-10">CONTACT</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-          </nav>
+          </motion.nav>
           
-          <div className="hidden lg:flex items-center gap-3">
+          <motion.div 
+            className="hidden lg:flex items-center gap-3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <Dialog open={callDialogOpen} onOpenChange={setCallDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline" size="icon" className="rounded-full h-12 w-12">
-                  <Phone className="h-5 w-5" />
+                <Button variant="outline" size="icon" className="rounded-full h-12 w-12 border-2 border-primary/20 hover:border-primary/40 relative group overflow-visible">
+                  <div className="absolute inset-0 bg-primary/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Phone className="h-5 w-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
@@ -263,11 +289,17 @@ export default function Home() {
                 </div>
               </DialogContent>
             </Dialog>
-            <Button onClick={openWhatsApp} size="lg" className="rounded-full" data-testid="button-book-call-header">
-              <MessageCircle className="h-4 w-4 mr-2" />
-              Book A Free Call
+            <Button 
+              onClick={openWhatsApp} 
+              size="lg" 
+              className="rounded-full px-6 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 relative group overflow-hidden" 
+              data-testid="button-book-call-header"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-shimmer opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+              <MessageCircle className="h-4 w-4 mr-2 relative z-10" />
+              <span className="relative z-10">Book A Free Call</span>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </header>
 
