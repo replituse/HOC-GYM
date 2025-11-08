@@ -576,7 +576,7 @@ export default function Home() {
       {/* Instagram Videos Section */}
       <section className="py-10 md:py-14 bg-background" id="instagram-videos">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 Follow Our Journey
@@ -592,66 +592,106 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Video 1 */}
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Video 1 - Placeholder for downloaded video */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-0">
-                <iframe
-                  src="https://www.instagram.com/reel/DP6Ilq_DBlp/embed/captioned"
-                  className="w-full"
-                  style={{ minHeight: '700px', border: 'none' }}
-                  scrolling="no"
-                  allowFullScreen
-                  data-testid="instagram-video-1"
-                />
+              <CardContent className="p-2">
+                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
+                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
+                    <a 
+                      href="https://www.instagram.com/reel/DP6Ilq_DBlp/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-xs"
+                      data-testid="link-video-1"
+                    >
+                      instagram.com/reel/DP6Ilq_DBlp
+                    </a>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Save as: attached_assets/instagram_videos/video1.mp4
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Video 2 */}
+            {/* Video 2 - Placeholder for downloaded video */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-0">
-                <iframe
-                  src="https://www.instagram.com/reel/DOqYABbiSV4/embed/captioned"
-                  className="w-full"
-                  style={{ minHeight: '700px', border: 'none' }}
-                  scrolling="no"
-                  allowFullScreen
-                  data-testid="instagram-video-2"
-                />
+              <CardContent className="p-2">
+                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
+                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
+                    <a 
+                      href="https://www.instagram.com/reel/DOqYABbiSV4/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-xs"
+                      data-testid="link-video-2"
+                    >
+                      instagram.com/reel/DOqYABbiSV4
+                    </a>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Save as: attached_assets/instagram_videos/video2.mp4
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Video 3 */}
+            {/* Video 3 - Placeholder for downloaded video */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-0">
-                <iframe
-                  src="https://www.instagram.com/reel/DNmyhHlpq5f/embed/captioned"
-                  className="w-full"
-                  style={{ minHeight: '700px', border: 'none' }}
-                  scrolling="no"
-                  allowFullScreen
-                  data-testid="instagram-video-3"
-                />
+              <CardContent className="p-2">
+                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
+                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
+                    <a 
+                      href="https://www.instagram.com/reel/DNmyhHlpq5f/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-xs"
+                      data-testid="link-video-3"
+                    >
+                      instagram.com/reel/DNmyhHlpq5f
+                    </a>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Save as: attached_assets/instagram_videos/video3.mp4
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Video 4 */}
+            {/* Video 4 - Placeholder for downloaded video */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-0">
-                <iframe
-                  src="https://www.instagram.com/reel/DGaqoK7TY0b/embed/captioned"
-                  className="w-full"
-                  style={{ minHeight: '700px', border: 'none' }}
-                  scrolling="no"
-                  allowFullScreen
-                  data-testid="instagram-video-4"
-                />
+              <CardContent className="p-2">
+                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
+                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
+                    <a 
+                      href="https://www.instagram.com/reel/DGaqoK7TY0b/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-xs"
+                      data-testid="link-video-4"
+                    >
+                      instagram.com/reel/DGaqoK7TY0b
+                    </a>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Save as: attached_assets/instagram_videos/video4.mp4
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Call-to-Action */}
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Button
               size="lg"
               className="rounded-full px-8"
