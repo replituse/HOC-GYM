@@ -66,6 +66,7 @@ import yogaImage from "@assets/generated_images/Yoga_meditation_pose_691f5267.pn
 import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f492b.png";
 import gymLogo from "@assets/gym-logo.png";
 import hocLogo from "@assets/hoc-logo-transparent.png";
+import instagramIcon from "@assets/instagram-icon.png";
 import instagramVideo1 from "@assets/instagram_videos/video1.mp4";
 import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
 import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
@@ -598,20 +599,20 @@ export default function Home() {
       <AnimatedSection variant="zoomRotate">
         <section className="py-12 md:py-16 bg-black relative overflow-hidden" id="instagram-videos">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,204,22,0.08),transparent_70%)]" />
-          <div className="container px-4 md:px-6 relative">
+          <div className="container px-4 md:px-6 lg:px-8 relative">
             <div className="text-center mb-10">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
-                <span className="text-primary">
-                  Workout Highlights
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 inline-block">
+                <span className="text-primary border-b-4 border-white pb-2">
+                  Workout with HOC Community
                 </span>
               </h2>
-              <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
-                Real workouts, real results from our HOC community
+              <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto font-bold">
+                Experience the energy, dedication, and transformation happening daily
               </p>
             </div>
             
             <motion.div 
-              className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 max-w-[1600px] mx-auto"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -627,7 +628,7 @@ export default function Home() {
                 <motion.div
                   key={idx}
                   variants={fadeInUp}
-                  className="group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20"
+                  className="group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <video
@@ -636,8 +637,7 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-auto object-cover"
-                    style={{ aspectRatio: '9/16', maxHeight: '500px' }}
+                    className="w-full h-full object-cover"
                     data-testid={video.testId}
                   >
                     Your browser does not support the video tag.
@@ -646,17 +646,26 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* Call-to-Action */}
-            <div className="text-center mt-10">
-              <Button
-                size="lg"
-                className="rounded-full px-8 bg-primary hover:bg-primary/90 text-black font-bold border-2 border-primary/30 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all"
-                onClick={() => window.open('https://www.instagram.com/house_of_champions_studio/', '_blank')}
-                data-testid="button-follow-instagram"
+            {/* Instagram Link */}
+            <div className="flex items-center justify-center gap-4 mt-10">
+              <a 
+                href="https://www.instagram.com/house_of_champions_studio/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group hover-elevate transition-all duration-300"
+                data-testid="link-instagram-profile"
               >
-                <Instagram className="h-5 w-5 mr-2" />
-                Follow Us on Instagram
-              </Button>
+                <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src={instagramIcon} 
+                    alt="Instagram" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-white text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                  house_of_champions_studio
+                </span>
+              </a>
             </div>
           </div>
         </section>
