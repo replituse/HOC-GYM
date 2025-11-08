@@ -67,6 +67,7 @@ import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f4
 import gymLogo from "@assets/gym-logo.png";
 import hocLogo from "@assets/hoc-logo-transparent.png";
 import instagramIcon from "@assets/instagram-icon.png";
+import facebookIcon from "@assets/facebook-icon.png";
 import instagramVideo1 from "@assets/instagram_videos/video1.mp4";
 import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
 import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
@@ -599,10 +600,10 @@ export default function Home() {
       <AnimatedSection variant="zoomRotate">
         <section className="py-12 md:py-16 bg-black relative overflow-hidden" id="instagram-videos">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,204,22,0.08),transparent_70%)]" />
-          <div className="container px-4 md:px-6 lg:px-8 relative">
+          <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 inline-block">
-                <span className="text-primary border-b-4 border-white pb-2">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                <span className="text-primary">
                   Workout with HOC Community
                 </span>
               </h2>
@@ -612,7 +613,7 @@ export default function Home() {
             </div>
             
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 max-w-[1600px] mx-auto"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -646,23 +647,42 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* Instagram Link */}
-            <div className="flex items-center justify-center gap-4 mt-10">
+            {/* Social Links */}
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-10">
               <a 
                 href="https://www.instagram.com/house_of_champions_studio/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 group hover-elevate transition-all duration-300"
+                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-white rounded-full px-5 py-2.5"
                 data-testid="link-instagram-profile"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   <img 
                     src={instagramIcon} 
                     alt="Instagram" 
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-white text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                <span className="text-white text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                  house_of_champions_studio
+                </span>
+              </a>
+
+              <a 
+                href="https://www.facebook.com/house_of_champions_studio/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-white rounded-full px-5 py-2.5"
+                data-testid="link-facebook-profile"
+              >
+                <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src={facebookIcon} 
+                    alt="Facebook" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-white text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                   house_of_champions_studio
                 </span>
               </a>
