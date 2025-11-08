@@ -699,17 +699,17 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Exclusively For Women - Redesigned */}
+      {/* Exclusively For Women - Professional Compact Design */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 bg-white relative overflow-hidden" id="program">
-          <div className="w-full px-3 md:px-5 lg:px-6 relative">
-            <div className="text-center mb-10">
-              <div className="inline-block mb-4">
+        <section className="py-8 md:py-10 bg-white relative overflow-hidden" id="program">
+          <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
+            <div className="text-center mb-6">
+              <div className="inline-block mb-3">
                 <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold tracking-wide">
                   Exclusively For Women
                 </span>
               </div>
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
                 <span className="text-primary">
                   Only Designed For Ladies
                 </span>
@@ -721,7 +721,7 @@ export default function Home() {
 
             {/* Class Banners Grid */}
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-5 mb-10 max-w-6xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 max-w-5xl mx-auto"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -748,80 +748,46 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* What We Offer */}
-            <div className="max-w-5xl mx-auto mb-10">
-              <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8">
-                <span className="text-primary">Your Fitness, Your Way</span>
-              </h3>
-              
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <motion.div 
-                  className="text-center p-6 rounded-lg bg-black/5 hover:bg-black/10 transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  data-testid="feature-live-classes"
-                >
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Video className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="font-bold text-lg mb-2 text-black">Daily LIVE Classes</h4>
-                  <p className="text-black/70 text-sm">Interactive online sessions with expert trainers guiding you every step</p>
-                </motion.div>
-
-                <motion.div 
-                  className="text-center p-6 rounded-lg bg-black/5 hover:bg-black/10 transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  data-testid="feature-flexible-timing"
-                >
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="font-bold text-lg mb-2 text-black">Flexible Timing</h4>
-                  <p className="text-black/70 text-sm">Morning & evening slots designed around your busy schedule</p>
-                </motion.div>
-
-                <motion.div 
-                  className="text-center p-6 rounded-lg bg-black/5 hover:bg-black/10 transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  data-testid="feature-women-only"
-                >
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-black" />
-                  </div>
-                  <h4 className="font-bold text-lg mb-2 text-black">Women-Only Space</h4>
-                  <p className="text-black/70 text-sm">Safe, supportive community where you can be yourself and thrive</p>
-                </motion.div>
+            {/* Compact Info Section */}
+            <div className="max-w-5xl mx-auto">
+              {/* Features - Single Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-live-classes">
+                  <h4 className="font-bold text-base mb-1 text-black">Daily LIVE Classes</h4>
+                  <p className="text-black/70 text-sm">Expert trainers, interactive sessions</p>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-flexible-timing">
+                  <h4 className="font-bold text-base mb-1 text-black">Flexible Timing</h4>
+                  <p className="text-black/70 text-sm">Morning & evening slots available</p>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-women-only">
+                  <h4 className="font-bold text-base mb-1 text-black">Women-Only Space</h4>
+                  <p className="text-black/70 text-sm">Safe, supportive community</p>
+                </div>
               </div>
 
-              {/* Time Slots */}
-              <div className="bg-black/5 rounded-xl p-6 md:p-8 mb-8">
-                <div className="text-center mb-6">
-                  <Activity className="h-10 w-10 text-primary mx-auto mb-3" />
-                  <h4 className="font-heading text-xl md:text-2xl font-bold mb-2 text-black">Choose Your Perfect Time</h4>
-                  <p className="text-sm md:text-base text-black/70">Flexible slots to fit your lifestyle</p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                  <div className="flex items-start gap-3 p-5 rounded-xl bg-white border-2 border-primary/20 hover:border-primary/40 transition-colors">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-black block mb-1">Morning Sessions</span>
-                      <span className="text-black/70 text-sm md:text-base">5:45AM • 7AM • 8AM • 11AM</span>
-                    </div>
+              {/* Time Slots - Compact */}
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-primary/20">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-bold text-black text-sm">Morning Sessions:</span>
+                    <span className="text-black/70 text-sm ml-2">5:45AM • 7AM • 8AM • 11AM</span>
                   </div>
-                  <div className="flex items-start gap-3 p-5 rounded-xl bg-white border-2 border-primary/20 hover:border-primary/40 transition-colors">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-black block mb-1">Evening Sessions</span>
-                      <span className="text-black/70 text-sm md:text-base">6PM • 7:30PM</span>
-                    </div>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-primary/20">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-bold text-black text-sm">Evening Sessions:</span>
+                    <span className="text-black/70 text-sm ml-2">6PM • 7:30PM</span>
                   </div>
                 </div>
               </div>
 
-              {/* Call to Action */}
+              {/* Call to Action - Black Border */}
               <div className="flex justify-center">
-                <div className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-primary border-2 border-primary/30 hover:scale-105 transition-transform duration-300">
-                  <Zap className="h-5 w-5 md:h-6 md:w-6 text-black flex-shrink-0 animate-pulse" />
+                <div className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 rounded-full bg-primary border-2 border-black hover:scale-105 transition-transform duration-300">
+                  <Zap className="h-5 w-5 text-black flex-shrink-0" />
                   <span className="text-black font-bold text-sm md:text-base" data-testid="text-join-anytime">Join Any Class, Any Time, Any Day</span>
                 </div>
               </div>
