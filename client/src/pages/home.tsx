@@ -844,7 +844,13 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a href="tel:+918600126395" className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" data-testid="link-phone">+91 8600126395</a>
+                  <button 
+                    onClick={() => setCallDialogOpen(true)} 
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left" 
+                    data-testid="button-phone"
+                  >
+                    +91 8600126395
+                  </button>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="h-5 w-5 text-primary flex-shrink-0" />
