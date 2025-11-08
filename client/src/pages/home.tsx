@@ -70,6 +70,7 @@ import instagramVideo1 from "@assets/instagram_videos/video1.mp4";
 import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
 import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
 import instagramVideo4 from "@assets/instagram_videos/video4.mp4";
+import instagramVideo5 from "@assets/instagram_videos/video5.mp4";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
@@ -595,67 +596,69 @@ export default function Home() {
 
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
-        <section className="py-8 md:py-10 bg-background" id="instagram-videos">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-6">
-            <div className="inline-block mb-3">
-              <span className="bg-primary text-black px-4 py-2 rounded-full text-xs font-bold border border-primary/20">
-                Follow Our Journey
-              </span>
+        <section className="py-12 md:py-16 bg-black relative overflow-hidden" id="instagram-videos">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,204,22,0.08),transparent_70%)]" />
+          <div className="container px-4 md:px-6 relative">
+            <div className="text-center mb-10">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+                <span className="text-primary">
+                  Workout Highlights
+                </span>
+              </h2>
+              <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
+                Real workouts, real results from our HOC community
+              </p>
             </div>
-            <h2 className="font-heading text-lg md:text-xl lg:text-2xl font-bold mb-2">
-              <span className="text-primary">
-                Workout Highlights
-              </span>
-            </h2>
-            <p className="text-xs md:text-sm text-muted-foreground max-w-xl mx-auto">
-              Watch our community's inspiring transformation journey
-            </p>
-          </div>
-          
-          <motion.div 
-            className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-          >
-            {[
-              { src: instagramVideo1, testId: "instagram-video-1" },
-              { src: instagramVideo2, testId: "instagram-video-2" },
-              { src: instagramVideo3, testId: "instagram-video-3" },
-              { src: instagramVideo4, testId: "instagram-video-4" }
-            ].map((video, idx) => (
-              <motion.video
-                key={idx}
-                variants={fadeInUp}
-                src={video.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto rounded-md shadow-lg hover:shadow-xl transition-shadow duration-300"
-                style={{ aspectRatio: '9/16', maxHeight: '400px' }}
-                data-testid={video.testId}
-              >
-                Your browser does not support the video tag.
-              </motion.video>
-            ))}
-          </motion.div>
-
-          {/* Call-to-Action */}
-          <div className="text-center mt-6">
-            <Button
-              size="default"
-              className="rounded-full px-6"
-              onClick={() => window.open('https://www.instagram.com/house_of_champions_studio/', '_blank')}
-              data-testid="button-follow-instagram"
+            
+            <motion.div 
+              className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={staggerContainer}
             >
-              <Instagram className="h-4 w-4 mr-2" />
-              Follow Us on Instagram
-            </Button>
+              {[
+                { src: instagramVideo1, testId: "instagram-video-1" },
+                { src: instagramVideo2, testId: "instagram-video-2" },
+                { src: instagramVideo3, testId: "instagram-video-3" },
+                { src: instagramVideo4, testId: "instagram-video-4" },
+                { src: instagramVideo5, testId: "instagram-video-5" }
+              ].map((video, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={fadeInUp}
+                  className="group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                  <video
+                    src={video.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto object-cover"
+                    style={{ aspectRatio: '9/16', maxHeight: '500px' }}
+                    data-testid={video.testId}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Call-to-Action */}
+            <div className="text-center mt-10">
+              <Button
+                size="lg"
+                className="rounded-full px-8 bg-primary hover:bg-primary/90 text-black font-bold border-2 border-primary/30 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all"
+                onClick={() => window.open('https://www.instagram.com/house_of_champions_studio/', '_blank')}
+                data-testid="button-follow-instagram"
+              >
+                <Instagram className="h-5 w-5 mr-2" />
+                Follow Us on Instagram
+              </Button>
+            </div>
           </div>
-        </div>
         </section>
       </AnimatedSection>
 
