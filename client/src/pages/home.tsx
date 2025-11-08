@@ -65,7 +65,7 @@ import mobilityImage from "@assets/generated_images/Mobility_and_flexibility_exe
 import yogaImage from "@assets/generated_images/Yoga_meditation_pose_691f5267.png";
 import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f492b.png";
 import gymLogo from "@assets/gym-logo.png";
-import hocLogo from "@assets/hoc-logo.png";
+import hocLogo from "@assets/hoc-logo-transparent.png";
 import instagramVideo1 from "@assets/instagram_videos/video1.mp4";
 import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
 import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
