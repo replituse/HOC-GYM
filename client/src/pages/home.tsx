@@ -42,7 +42,7 @@ import {
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import transformationImage from "@assets/generated_images/Transformation_before_after_results_1ed81a38.png";
+import transformationImage from "@assets/stock_images/before_and_after_wei_c6f6006f.jpg";
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
@@ -464,12 +464,12 @@ export default function Home() {
                 Real Results
               </span>
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+            <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
               <span className="text-primary">
                 Shape Your Body
               </span>
             </h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
           <div className="max-w-6xl mx-auto space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -544,10 +544,10 @@ export default function Home() {
                   Exclusively For Women
                 </span>
               </div>
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+              <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-2">
                 Only Designed For Ladies
               </h2>
-              <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-semibold text-primary mb-4">
+              <h3 className="font-heading text-base md:text-lg lg:text-xl font-semibold text-primary mb-3">
                 Start your weight loss journey with HOC FITNESS
               </h3>
             </div>
@@ -601,10 +601,10 @@ export default function Home() {
                 Diverse Workouts
               </span>
             </div>
-            <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+            <h2 className="font-heading font-bold mb-2 md:mb-3 tracking-tight text-xl md:text-2xl lg:text-3xl">
               Our Training Programs
             </h2>
-            <p className="text-foreground/60 max-w-2xl mx-auto text-sm md:text-base">Comprehensive programs for every fitness level and goal</p>
+            <p className="text-foreground/60 max-w-2xl mx-auto text-sm">Comprehensive programs for every fitness level and goal</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {[
@@ -644,10 +644,10 @@ export default function Home() {
                 💰 Flexible Pricing
               </span>
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
+            <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3 tracking-tight">
               Choose Your Package
             </h2>
-            <p className="text-base text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
+            <p className="text-sm md:text-base text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
             {[
@@ -741,10 +741,10 @@ export default function Home() {
                 Expert Team
               </span>
             </div>
-            <h2 className="font-heading font-bold mb-3 md:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+            <h2 className="font-heading font-bold mb-2 md:mb-3 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-xl md:text-2xl lg:text-3xl">
               Meet Your Trainers
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">Certified professionals dedicated to transforming your fitness journey</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm">Certified professionals dedicated to transforming your fitness journey</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {[
@@ -767,19 +767,19 @@ export default function Home() {
                 bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
               },
             ].map((trainer, i) => (
-              <Card key={i} className="group p-5 md:p-6 hover-elevate bg-card/50 backdrop-blur border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/15">
-                <CardContent className="p-0 space-y-4 text-center">
-                  <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto">
+              <Card key={i} className="group p-4 md:p-5 hover-elevate bg-card/50 backdrop-blur border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/15">
+                <CardContent className="p-0 space-y-3 text-center">
+                  <div className="relative w-24 h-24 md:w-28 md:h-28 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-lg group-hover:blur-xl transition-all duration-500" />
                     <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-lg">
                       <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg md:text-xl font-bold mb-1.5 group-hover:text-primary transition-colors">{trainer.name}</h3>
-                    <p className="text-xs md:text-sm text-primary font-bold bg-primary/10 px-3 py-1.5 rounded-full inline-block">{trainer.role}</p>
+                    <h3 className="font-heading text-base md:text-lg font-bold mb-1 group-hover:text-primary transition-colors">{trainer.name}</h3>
+                    <p className="text-xs text-primary font-bold bg-primary/10 px-2.5 py-1 rounded-full inline-block">{trainer.role}</p>
                   </div>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{trainer.bio}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{trainer.bio}</p>
                 </CardContent>
               </Card>
             ))}
