@@ -464,60 +464,69 @@ export default function Home() {
                 Real Results
               </span>
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               <span className="text-primary">
                 Shape Your Body
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
-            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={transformationImage} 
-                alt="Before and after transformation" 
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white font-semibold text-sm md:text-lg">Amazing Transformation</p>
-                <p className="text-white/80 text-xs md:text-sm">Dedication brings results</p>
+          <div className="max-w-6xl mx-auto space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img 
+                  src={transformationImage} 
+                  alt="Before and after transformation" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  style={{ aspectRatio: '16/10' }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white font-semibold text-sm md:text-lg">Amazing Transformation</p>
+                  <p className="text-white/80 text-xs md:text-sm">Dedication brings results</p>
+                </div>
+              </div>
+              <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img 
+                  src={onlineClassImage} 
+                  alt="Online fitness class" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  style={{ aspectRatio: '16/10' }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white font-semibold text-sm md:text-lg">Live Interactive Classes</p>
+                  <p className="text-white/80 text-xs md:text-sm">Join from anywhere</p>
+                </div>
               </div>
             </div>
-            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={onlineClassImage} 
-                alt="Online fitness class" 
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white font-semibold text-sm md:text-lg">Live Interactive Classes</p>
-                <p className="text-white/80 text-xs md:text-sm">Join from anywhere</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img 
+                  src={yogaImage} 
+                  alt="Yoga and mindfulness" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  style={{ aspectRatio: '16/10' }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white font-semibold text-sm md:text-lg">Yoga & Wellness</p>
+                  <p className="text-white/80 text-xs md:text-sm">Mind-body harmony</p>
+                </div>
               </div>
-            </div>
-            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={yogaImage} 
-                alt="Yoga and mindfulness" 
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white font-semibold text-sm md:text-lg">Yoga & Wellness</p>
-                <p className="text-white/80 text-xs md:text-sm">Mind-body harmony</p>
-              </div>
-            </div>
-            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={zumbaImage} 
-                alt="Zumba dance fitness" 
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-white font-semibold text-sm md:text-lg">Dance & Energy</p>
-                <p className="text-white/80 text-xs md:text-sm">Fun cardio workouts</p>
+              <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img 
+                  src={zumbaImage} 
+                  alt="Zumba dance fitness" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  style={{ aspectRatio: '16/10' }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white font-semibold text-sm md:text-lg">Dance & Energy</p>
+                  <p className="text-white/80 text-xs md:text-sm">Fun cardio workouts</p>
+                </div>
               </div>
             </div>
           </div>
@@ -535,10 +544,10 @@ export default function Home() {
                   Exclusively For Women
                 </span>
               </div>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
                 Only Designed For Ladies
               </h2>
-              <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6">
+              <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-semibold text-primary mb-4">
                 Start your weight loss journey with HOC FITNESS
               </h3>
             </div>
@@ -549,8 +558,8 @@ export default function Home() {
               </p>
               
               <div className="mb-6 text-center">
-                <Activity className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h4 className="font-heading text-2xl md:text-3xl font-bold mb-2">Flexible Time Slots</h4>
+                <Activity className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h4 className="font-heading text-xl md:text-2xl font-bold mb-2">Flexible Time Slots</h4>
                 <p className="text-sm md:text-base text-muted-foreground">Choose what works best for your schedule</p>
               </div>
               
@@ -592,10 +601,10 @@ export default function Home() {
                 Diverse Workouts
               </span>
             </div>
-            <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
+            <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
               Our Training Programs
             </h2>
-            <p className="text-foreground/60 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>Comprehensive programs for every fitness level and goal</p>
+            <p className="text-foreground/60 max-w-2xl mx-auto text-sm md:text-base">Comprehensive programs for every fitness level and goal</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {[
@@ -635,10 +644,10 @@ export default function Home() {
                 💰 Flexible Pricing
               </span>
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
               Choose Your Package
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
+            <p className="text-base text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
             {[
@@ -732,10 +741,10 @@ export default function Home() {
                 Expert Team
               </span>
             </div>
-            <h2 className="font-heading font-bold mb-3 md:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
+            <h2 className="font-heading font-bold mb-3 md:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
               Meet Your Trainers
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>Certified professionals dedicated to transforming your fitness journey</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">Certified professionals dedicated to transforming your fitness journey</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {[
