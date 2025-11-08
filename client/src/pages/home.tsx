@@ -73,6 +73,7 @@ import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
 import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
 import instagramVideo4 from "@assets/instagram_videos/video4.mp4";
 import instagramVideo5 from "@assets/instagram_videos/video5.mp4";
+import instagramVideo6 from "@assets/instagram_videos/video6.mp4";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
@@ -620,16 +621,17 @@ export default function Home() {
               variants={staggerContainer}
             >
               {[
-                { src: instagramVideo1, testId: "instagram-video-1" },
-                { src: instagramVideo2, testId: "instagram-video-2" },
-                { src: instagramVideo3, testId: "instagram-video-3" },
-                { src: instagramVideo4, testId: "instagram-video-4" },
-                { src: instagramVideo5, testId: "instagram-video-5" }
+                { src: instagramVideo1, testId: "instagram-video-1", hideOnDesktop: false },
+                { src: instagramVideo2, testId: "instagram-video-2", hideOnDesktop: false },
+                { src: instagramVideo3, testId: "instagram-video-3", hideOnDesktop: false },
+                { src: instagramVideo4, testId: "instagram-video-4", hideOnDesktop: false },
+                { src: instagramVideo5, testId: "instagram-video-5", hideOnDesktop: false },
+                { src: instagramVideo6, testId: "instagram-video-6", hideOnDesktop: true }
               ].map((video, idx) => (
                 <motion.div
                   key={idx}
                   variants={fadeInUp}
-                  className="group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16]"
+                  className={`group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16] ${video.hideOnDesktop ? 'lg:hidden' : ''}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <video
