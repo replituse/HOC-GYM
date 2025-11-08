@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -75,6 +75,7 @@ export default function Home() {
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactMenuOpen, setContactMenuOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -285,42 +286,69 @@ export default function Home() {
         {/* Content */}
         <div className="container relative z-10 px-4 md:px-6 py-8 md:py-12 mt-32 md:mt-0">
           <div className="max-w-3xl lg:max-w-2xl">
-            <div className="space-y-5 md:space-y-6">
-              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white text-center lg:text-left" style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}>
+            <motion.div 
+              className="space-y-5 md:space-y-6"
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+            >
+              <motion.h1 
+                className="font-heading font-bold leading-[1.15] tracking-tight text-white text-center lg:text-left" 
+                style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}
+                variants={fadeInUp}
+              >
                 Transform Your
-                <span className="block text-primary mt-2">
+                <motion.span 
+                  className="block text-primary mt-2"
+                  variants={fadeInUp}
+                >
                   Body & Mind
-                </span>
-              </h1>
-              <p className="text-white/95 leading-relaxed max-w-xl font-medium text-center lg:text-left" style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>
+                </motion.span>
+              </motion.h1>
+              <motion.p 
+                className="text-white/95 leading-relaxed max-w-xl font-medium text-center lg:text-left" 
+                style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}
+                variants={fadeInUp}
+              >
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 items-center lg:items-start pt-2">
-                <Button 
-                  onClick={openWhatsApp} 
-                  size="default"
-                  className="rounded-full px-6 py-3 md:px-8 md:py-6 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-black"
-                  data-testid="button-book-consultation-hero"
-                >
-                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-black" />
-                  Start Your Journey
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="default"
-                  className="rounded-full px-6 py-3 md:px-8 md:py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all hover:scale-105 font-semibold text-sm md:text-base text-foreground"
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  data-testid="button-view-packages"
-                >
-                  View Packages
-                </Button>
-              </div>
-              <div className="flex justify-center lg:justify-start">
-                <a 
+              </motion.p>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-2 items-center lg:items-start pt-2"
+                variants={fadeInUp}
+              >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                  <Button 
+                    onClick={openWhatsApp} 
+                    size="default"
+                    className="rounded-full px-6 py-3 md:px-8 md:py-6 transition-all bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-black shadow-lg shadow-primary/30"
+                    data-testid="button-book-consultation-hero"
+                  >
+                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-black" />
+                    Start Your Journey
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                  <Button 
+                    variant="outline" 
+                    size="default"
+                    className="rounded-full px-6 py-3 md:px-8 md:py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all font-semibold text-sm md:text-base text-foreground shadow-lg"
+                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                    data-testid="button-view-packages"
+                  >
+                    View Packages
+                  </Button>
+                </motion.div>
+              </motion.div>
+              <motion.div 
+                className="flex justify-center lg:justify-start"
+                variants={fadeInUp}
+              >
+                <motion.a 
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-black/70 hover:bg-black/80 backdrop-blur-md px-5 py-3 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/30 hover:border-white/50"
+                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-black/70 hover:bg-black/80 backdrop-blur-md px-5 py-3 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/30 hover:border-white/50 shadow-xl"
+                  whileHover={{ scale: 1.02, y: -2 }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex group-hover:scale-110 transition-transform duration-300">
@@ -338,9 +366,9 @@ export default function Home() {
                     <span>View Reviews</span>
                     <TrendingUp className="h-3 w-3" />
                   </div>
-                </a>
-              </div>
-            </div>
+                </motion.a>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -874,11 +902,11 @@ export default function Home() {
       </footer>
 
       {/* Floating Contact Icon - All Screens */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className="fixed bottom-8 right-6 md:right-8 z-50">
         <div className="relative">
           {/* Contact Options - Appear Above Icon */}
           {contactMenuOpen && (
-            <div className="absolute bottom-20 right-0 w-56 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200">
+            <div className="absolute bottom-20 right-0 w-56 bg-white dark:bg-card rounded-2xl shadow-2xl border border-border overflow-hidden mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200">
               <button
                 onClick={() => {
                   openWhatsApp();
@@ -908,11 +936,11 @@ export default function Home() {
           {/* Floating Button */}
           <button
             onClick={() => setContactMenuOpen(!contactMenuOpen)}
-            className="h-16 w-16 rounded-full bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+            className="h-16 w-16 rounded-full bg-black hover:bg-black/90 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
             aria-label="Contact Us"
             data-testid="button-floating-contact"
           >
-            <MessageCircle className="h-7 w-7" />
+            <MessageCircle className="h-7 w-7 text-white" />
           </button>
         </div>
       </div>
