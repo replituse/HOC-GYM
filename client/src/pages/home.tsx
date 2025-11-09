@@ -291,11 +291,11 @@ export default function Home() {
     { line1: "Be Your Own", line2: "Champion" }
   ];
 
-  // Auto-slide quotes every 3 seconds
+  // Auto-slide quotes every 5 seconds (giving more time to read each quote)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuoteIndex((prev) => (prev + 1) % heroQuotes.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
