@@ -225,13 +225,11 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative group">
-              <img 
-                src={hocLogo} 
-                alt="HOC Fitness" 
-                className="h-16 w-auto relative transition-transform duration-300 group-hover:scale-105" 
-              />
-            </div>
+            <img 
+              src={hocLogo} 
+              alt="HOC Fitness" 
+              className="h-20 w-auto transition-transform duration-300 hover:scale-105" 
+            />
           </motion.div>
           
           {/* Mobile Menu */}
