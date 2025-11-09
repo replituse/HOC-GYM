@@ -218,9 +218,9 @@ export default function Home() {
       {/* Navigation Header */}
       <header className="fixed top-0 z-50 w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 pointer-events-none" />
-        <div className="container flex h-24 items-center justify-between px-4 md:px-6 relative">
+        <div className="container flex h-24 items-center justify-between gap-8 px-4 md:px-6 relative">
           <motion.div 
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -229,7 +229,7 @@ export default function Home() {
               <img 
                 src={hocLogo} 
                 alt="HOC Fitness" 
-                className="h-20 md:h-22 w-auto relative transition-transform duration-300 group-hover:scale-105" 
+                className="h-16 w-auto relative transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
           </motion.div>
