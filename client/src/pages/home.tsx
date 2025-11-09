@@ -855,40 +855,20 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="h-screen bg-black flex items-center relative overflow-hidden" id="pricing">
-        <div className="w-full px-3 md:px-4 lg:px-6">
-          <div className="text-center mb-6 md:mb-8">
-            <motion.div 
-              className="inline-block mb-3"
+        <section className="h-screen bg-black flex items-center justify-center relative overflow-hidden py-6" id="pricing">
+        <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
+          <div className="text-center mb-8 md:mb-10">
+            <motion.p 
+              className="text-base md:text-lg lg:text-xl text-primary max-w-3xl mx-auto font-bold"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="bg-purple-600 text-white px-5 py-2 rounded-full text-xs md:text-sm font-bold">
-                Investment Plans
-              </span>
-            </motion.div>
-            <motion.h2 
-              className="font-heading text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight text-white"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Transform Your Life Today
-            </motion.h2>
-            <motion.p 
-              className="text-sm md:text-base text-white/80 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
               Choose the perfect plan that fits your lifestyle and commit to your wellness journey
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 lg:gap-5 max-w-7xl mx-auto">
+          <div className="flex items-center justify-center gap-4 md:gap-6 perspective-1000">
             {[
               {
                 name: "Starter",
@@ -940,31 +920,142 @@ export default function Home() {
             ].map((pkg, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: pkg.featured ? 1.1 : 0.95 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className={`${pkg.featured ? 'z-20 w-full md:w-[350px] lg:w-[380px]' : 'z-10 w-full md:w-[320px] lg:w-[340px] opacity-90'} hidden md:block`}
+                style={{ 
+                  transform: pkg.featured ? 'translateZ(50px)' : i === 0 ? 'translateZ(-20px) rotateY(5deg)' : 'translateZ(-20px) rotateY(-5deg)'
+                }}
               >
-                <Card className="group h-full p-4 md:p-5 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 hover:shadow-2xl relative overflow-hidden">
+                <Card className={`group h-full p-5 md:p-6 lg:p-7 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 shadow-2xl relative overflow-hidden ${pkg.featured ? 'shadow-primary/20' : ''}`}>
                   {pkg.featured && (
-                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl" />
+                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
                   )}
                   <CardContent className="p-0 space-y-3 md:space-y-4 relative">
                     {pkg.badge && (
-                      <div className="inline-flex items-center gap-1.5 bg-purple-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
                         <Star className="h-3 w-3 fill-white" />
                         {pkg.badge}
                       </div>
                     )}
                     <div>
-                      <h3 className="font-heading text-xl md:text-2xl font-extrabold mb-1 text-black">
+                      <h3 className="font-heading text-2xl md:text-3xl font-extrabold mb-1 text-black">
                         {pkg.name}
                       </h3>
-                      <p className="text-black/70 font-semibold text-xs md:text-sm mb-0.5">{pkg.duration}</p>
+                      <p className="text-black/70 font-semibold text-sm md:text-base mb-0.5">{pkg.duration}</p>
+                      <p className="text-black/60 text-xs md:text-sm italic">{pkg.description}</p>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="font-heading text-4xl md:text-5xl font-black text-black">
+                        {pkg.price}
+                      </div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs md:text-sm text-black/60 font-medium">{pkg.classes}</span>
+                        <span className="text-xs text-black/40">•</span>
+                        <span className="text-xs md:text-sm font-bold text-black/80">{pkg.pricePerClass}</span>
+                      </div>
+                    </div>
+                    <div className="h-px bg-black/10" />
+                    <ul className="grid grid-cols-1 gap-2.5">
+                      {pkg.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-2.5 group/item">
+                          <div className="h-5 w-5 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckCircle2 className="h-3 w-3 text-white" />
+                          </div>
+                          <span className="text-sm md:text-base text-black/80 leading-tight font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      onClick={openWhatsApp} 
+                      className="w-full rounded-full py-5 md:py-6 text-sm md:text-base font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
+                      data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
+                    >
+                      Start {pkg.name} Plan
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Mobile View - Stacked Cards */}
+          <div className="md:hidden space-y-4">
+            {[
+              {
+                name: "Starter",
+                duration: "1 Month Plan",
+                classes: "26 Live Classes",
+                price: "₹2,999",
+                pricePerClass: "₹115/class",
+                description: "Perfect for beginners starting their fitness journey",
+                features: [
+                  "Personalized Nutrition Guide",
+                  "Access to All Class Types",
+                  "Cardio, HIIT & Yoga Sessions",
+                  "Strength & Aerobic Training",
+                  "Mindfulness & Meditation"
+                ]
+              },
+              {
+                name: "Champion",
+                duration: "3 Months Plan",
+                classes: "85 Live Classes",
+                price: "₹6,999",
+                pricePerClass: "₹82/class",
+                description: "Most popular choice for serious transformation",
+                features: [
+                  "Complete Diet & Meal Planning",
+                  "Unlimited Class Variety",
+                  "Advanced HIIT & Cardio",
+                  "Body Sculpting & Pilates",
+                  "Priority Trainer Support"
+                ],
+                featured: true,
+                badge: "Best Value"
+              },
+              {
+                name: "Elite",
+                duration: "6 Months Plan",
+                classes: "UNLIMITED Classes",
+                price: "₹9,999",
+                pricePerClass: "Unlimited",
+                description: "Ultimate commitment for lasting transformation",
+                features: [
+                  "Premium Nutrition Consultation",
+                  "Unlimited Class Access 24/7",
+                  "All Premium Programs",
+                  "VIP Trainer Support",
+                  "Flexible Schedule Options"
+                ]
+              },
+            ].map((pkg, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className="group p-5 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 shadow-xl relative overflow-hidden">
+                  <CardContent className="p-0 space-y-3 relative">
+                    {pkg.badge && (
+                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                        <Star className="h-3 w-3 fill-white" />
+                        {pkg.badge}
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="font-heading text-2xl font-extrabold mb-1 text-black">
+                        {pkg.name}
+                      </h3>
+                      <p className="text-black/70 font-semibold text-sm mb-0.5">{pkg.duration}</p>
                       <p className="text-black/60 text-xs italic">{pkg.description}</p>
                     </div>
                     <div className="space-y-1">
-                      <div className="font-heading text-3xl md:text-4xl font-black text-black">
+                      <div className="font-heading text-3xl font-black text-black">
                         {pkg.price}
                       </div>
                       <div className="flex items-center gap-2 flex-wrap">
@@ -977,19 +1068,18 @@ export default function Home() {
                     <ul className="grid grid-cols-1 gap-2">
                       {pkg.features.map((feature, j) => (
                         <li key={j} className="flex items-start gap-2 group/item">
-                          <div className="h-4 w-4 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="h-4 w-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
                             <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-xs md:text-sm text-black/80 leading-tight font-medium">{feature}</span>
+                          <span className="text-sm text-black/80 leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button 
                       onClick={openWhatsApp} 
-                      className="w-full rounded-full py-4 md:py-5 text-xs md:text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
+                      className="w-full rounded-full py-5 text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
                       data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
                     >
-                      <MessageCircle className="h-4 w-4 mr-2" />
                       Start {pkg.name} Plan
                     </Button>
                   </CardContent>
