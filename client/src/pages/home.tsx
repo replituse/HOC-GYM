@@ -868,7 +868,7 @@ export default function Home() {
               Transform Your Life Today
             </motion.h2>
             <motion.p 
-              className="text-sm md:text-base lg:text-lg text-white mx-auto font-bold whitespace-nowrap"
+              className="text-sm md:text-base lg:text-lg text-white mx-auto font-bold px-4 md:whitespace-nowrap"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
