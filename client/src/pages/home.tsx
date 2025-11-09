@@ -53,6 +53,8 @@ import transformationImage from "@assets/stock_images/before_and_after_wei_c6f60
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
+import { TestimonialCard } from "@/components/testimonial-card";
+import { testimonials } from "@/data/testimonials";
 import transform1 from "@assets/transformation_images/transform1.jpg";
 import transform2 from "@assets/transformation_images/transform2.jpg";
 
@@ -1066,17 +1068,18 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Customer Testimonials Section */}
+      {/* Customer Testimonials Section - Three Row Continuous Scrolling */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden">
-          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-            <div className="text-center mb-12 md:mb-16">
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-testimonials">
+          <div className="max-w-full">
+            <div className="text-center mb-12 md:mb-16 px-4">
               <motion.h2 
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                data-testid="heading-testimonials"
               >
                 What Our Members Say
               </motion.h2>
@@ -1086,228 +1089,49 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-testimonials-subtitle"
               >
                 Over 1000+ lives transformed through our personalized online fitness programs
               </motion.p>
             </div>
 
-            <div className="space-y-8 md:space-y-12 mb-12">
-              {/* Testimonial 1 - From Left */}
-              <motion.div
-                className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center md:pr-20"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 flex-1 hover-elevate">
-                  <CardContent className="p-0">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                        <span className="text-black font-bold text-lg">PS</span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white text-base">Priya Sharma</h4>
-                        <p className="text-primary text-sm">Working Professional</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-white/90 text-sm leading-relaxed italic">
-                      "Lost 12 kg in 4 months with HOC's online program! The personalized workout plans and constant support from trainers kept me motivated. Best decision I made for my health!"
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              {/* Testimonial 2 - From Right */}
-              <motion.div
-                className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center md:pl-20"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 flex-1 hover-elevate">
-                  <CardContent className="p-0">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                        <span className="text-black font-bold text-lg">RV</span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white text-base">Rahul Verma</h4>
-                        <p className="text-primary text-sm">Businessman</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-white/90 text-sm leading-relaxed italic">
-                      "Gained muscle mass and improved overall fitness with HOC's strength training program. The trainers are knowledgeable and the online format saves me commute time!"
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+            {/* Row 1: Left to Right */}
+            <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-1">
+              <div className="flex gap-6 animate-scroll-left">
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                  <TestimonialCard
+                    key={`row1-${index}`}
+                    {...testimonial}
+                    index={`row1-${index}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            {/* Continuous Automatic Carousel */}
-            <div className="relative overflow-hidden">
-              <motion.div
-                className="flex gap-6"
-                animate={{
-                  x: [0, -1920],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 30,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {/* Duplicate the testimonials twice for seamless loop */}
-                {[...Array(2)].map((_, setIndex) => (
-                  <div key={setIndex} className="flex gap-6">
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">RK</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Riya Kapoor</h4>
-                            <p className="text-primary text-sm">Software Engineer</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "The flexibility of online classes fits perfectly with my work schedule. Strength training improved my posture!"
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">AM</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Anjali Mehta</h4>
-                            <p className="text-primary text-sm">New Mom</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "The postpartum program helped me regain strength. Training from home was perfect with my baby!"
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">VK</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Vikram Kumar</h4>
-                            <p className="text-primary text-sm">Marketing Manager</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "Amazing transformation in just 3 months! The trainers are supportive and the workout variety keeps me engaged."
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">NK</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Neha Kulkarni</h4>
-                            <p className="text-primary text-sm">Teacher</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "Yoga and meditation sessions have reduced my stress significantly. Highly recommend HOC Fitness!"
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">AS</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Arjun Singh</h4>
-                            <p className="text-primary text-sm">IT Professional</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "Lost weight and gained confidence. The online format is convenient and the results speak for themselves!"
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/10 backdrop-blur-sm border-primary/20 p-6 min-w-[320px] flex-shrink-0">
-                      <CardContent className="p-0">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center flex-shrink-0">
-                            <span className="text-black font-bold text-lg">SD</span>
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-white text-base">Sneha Desai</h4>
-                            <p className="text-primary text-sm">Entrepreneur</p>
-                          </div>
-                        </div>
-                        <div className="flex gap-1 mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-white/90 text-sm leading-relaxed italic">
-                          "Snata's expertise is exceptional. I've gained strength, flexibility, and mental clarity. Life-changing!"
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
+            {/* Row 2: Right to Left */}
+            <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-2">
+              <div className="flex gap-6 animate-scroll-right">
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                  <TestimonialCard
+                    key={`row2-${index}`}
+                    {...testimonial}
+                    index={`row2-${index}`}
+                  />
                 ))}
-              </motion.div>
+              </div>
+            </div>
+
+            {/* Row 3: Left to Right */}
+            <div className="relative overflow-hidden testimonial-row" data-testid="testimonial-row-3">
+              <div className="flex gap-6 animate-scroll-left">
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                  <TestimonialCard
+                    key={`row3-${index}`}
+                    {...testimonial}
+                    index={`row3-${index}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
