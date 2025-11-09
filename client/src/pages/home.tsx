@@ -55,11 +55,10 @@ import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { testimonials } from "@/data/testimonials";
-import transform1 from "@assets/transformation_images/transform1.jpg";
-import transform2 from "@assets/transformation_images/transform2.jpg";
-
-const transform3 = "https://i.ytimg.com/vi/4U6GE6Y0pXw/maxresdefault.jpg";
-const transform4 = "https://i.ytimg.com/vi/lDg8GVpBA6c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBy8EPf-HfmdeHQZsc13S-3b7ck2A";
+import transform1 from "@assets/image_1762684087328.png";
+import transform2 from "@assets/image_1762684101410.png";
+import transform3 from "@assets/image_1762684114427.png";
+import transform4 from "@assets/image_1762684168147.png";
 import trainer1Image from "@/assets/trainers/trainer1.png";
 import trainer2Image from "@/assets/trainers/trainer2.png";
 import trainer3Image from "@/assets/trainers/trainer3.png";
@@ -439,51 +438,57 @@ export default function Home() {
 
       {/* Transformation Gallery */}
       <AnimatedSection variant="slideInRight">
-        <section className="py-6 md:py-8 pb-10 md:pb-14 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
-          <div className="container px-4 md:px-6">
-            <div className="text-center mb-8">
-              <div className="inline-block mb-4">
-                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold border border-primary/20">
-                  Real Results
-                </span>
-              </div>
-              <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
-                <span className="text-primary">
-                  Before & After
-                </span>
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
+          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-transformations"
+              >
+                Witness the Transformation
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-transformations-subtitle"
+              >
+                From doubt to dedication, see how our members achieved their dream bodies
+              </motion.p>
             </div>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.div 
-              className="grid grid-cols-2 gap-4 md:gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
               {[
-                { img: transform1, alt: "Before and after transformation 1", text: "Amazing Results", testId: "img-transformation-1", aspectRatio: '4/3' },
-                { img: transform2, alt: "Before and after transformation 2", text: "Inspiring Change", testId: "img-transformation-2", aspectRatio: '4/3' },
-                { img: transform3, alt: "Before and after transformation 3", text: "Real Progress", testId: "img-transformation-3" },
-                { img: transform4, alt: "Before and after transformation 4", text: "Life Changing", testId: "img-transformation-4" }
+                { img: transform1, alt: "Female fitness transformation 1", testId: "img-transformation-1" },
+                { img: transform2, alt: "Female fitness transformation 2", testId: "img-transformation-2" },
+                { img: transform3, alt: "Male fitness transformation 1", testId: "img-transformation-3" },
+                { img: transform4, alt: "Male fitness transformation 2", testId: "img-transformation-4" }
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
                   variants={scaleIn}
-                  className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                  className="group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-primary"
+                  data-testid={`card-transformation-${idx + 1}`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <img 
                     src={item.img} 
                     alt={item.alt} 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    style={{ aspectRatio: item.aspectRatio || 'auto', maxHeight: item.aspectRatio ? '300px' : 'none' }}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     data-testid={item.testId}
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <p className="text-white font-semibold text-xs md:text-sm">{item.text}</p>
-                  </div>
                 </motion.div>
               ))}
             </motion.div>
