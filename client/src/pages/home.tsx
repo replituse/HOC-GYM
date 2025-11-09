@@ -52,6 +52,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import transformationImage from "@assets/stock_images/before_and_after_wei_c6f6006f.jpg";
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
+import heroNewVideo from "@assets/hero-new.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { testimonials } from "@/data/testimonials";
@@ -167,6 +168,38 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
   );
 }
 
+// Typing animation hook
+function useTypingEffect(texts: string[], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000) {
+  const [displayText, setDisplayText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = texts[currentIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && displayText === currentText) {
+      timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
+    } else if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
+    } else {
+      const speed = isDeleting ? deletingSpeed : typingSpeed;
+      timeout = setTimeout(() => {
+        setDisplayText(
+          isDeleting
+            ? currentText.substring(0, displayText.length - 1)
+            : currentText.substring(0, displayText.length + 1)
+        );
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentIndex, texts, typingSpeed, deletingSpeed, pauseDuration]);
+
+  return displayText;
+}
+
 export default function Home() {
   const { toast } = useToast();
   const [callDialogOpen, setCallDialogOpen] = useState(false);
@@ -213,12 +246,20 @@ export default function Home() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hi!%20I%20want%20to%20book%20a%20free%20consultation%20for%20your%20fitness%20program.`, "_blank");
   };
 
+  const typingTexts = [
+    "Discipline over excuses, every single day.",
+    "Push your limits, transform your life.",
+    "Every rep counts, every goal matters.",
+    "Strength is built one day at a time.",
+  ];
+  const typedText = useTypingEffect(typingTexts, 80, 40, 2000);
+
   return (
     <div className="min-h-screen bg-background pb-20 lg:pb-0 overflow-x-hidden">
       {/* Navigation Header */}
       <header className="fixed top-0 z-50 w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 pointer-events-none" />
-        <div className="container flex h-24 items-center justify-between gap-8 px-4 md:px-6 relative">
+        <div className="container flex h-20 items-center justify-between gap-4 px-4 md:px-6 relative">
           <motion.div 
             className="flex items-center flex-shrink-0"
             initial={{ opacity: 0, x: -20 }}
@@ -234,7 +275,7 @@ export default function Home() {
               <img 
                 src={hocLogo} 
                 alt="HOC Fitness" 
-                className="h-20 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer" 
+                className="h-16 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer" 
               />
             </button>
           </motion.div>
@@ -390,8 +431,8 @@ export default function Home() {
           >
             <Button 
               onClick={openWhatsApp} 
-              size="lg" 
-              className="rounded-full px-8 transition-all duration-300" 
+              size="default" 
+              className="rounded-full px-6 transition-all duration-300" 
               data-testid="button-book-call-header"
             >
               <span>Consult Now</span>
@@ -401,71 +442,79 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-[70vh] md:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden mt-24">
+      <section className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden mt-20">
         {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full bg-neutral-800">
+        <div className="absolute inset-0 w-full h-full bg-neutral-900">
           <video 
             autoPlay 
             loop 
             muted 
             playsInline
             preload="auto"
-            src="/videos/hero.mp4"
-            className="absolute inset-0 w-full h-full object-cover object-[75%_5%] md:object-center"
+            src={heroNewVideo}
+            className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
         </div>
         
         {/* Content */}
-        <div className="container relative z-10 px-4 md:px-6 py-8 md:py-12 mt-32 md:mt-0">
-          <div className="max-w-3xl lg:max-w-2xl">
+        <div className="container relative z-10 px-4 md:px-6 py-12 md:py-16">
+          <div className="max-w-4xl mx-auto">
             <motion.div 
-              className="space-y-5 md:space-y-6"
+              className="space-y-6 md:space-y-8 text-center"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
             >
               <motion.h1 
-                className="font-heading font-bold leading-[1.15] tracking-tight text-white text-center lg:text-left" 
-                style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}
+                className="font-heading font-extrabold leading-[1.1] tracking-tight text-white" 
+                style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
                 variants={fadeInUp}
               >
-                Transform Your
+                Your Body Is Your
                 <motion.span 
                   className="block text-primary mt-2"
                   variants={fadeInUp}
                 >
-                  Body & Mind
+                  Greatest Project
                 </motion.span>
               </motion.h1>
-              <motion.p 
-                className="text-white/95 leading-relaxed max-w-xl font-medium text-center lg:text-left" 
-                style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}
+              
+              {/* Typing Effect Subtext */}
+              <motion.div 
+                className="min-h-[3rem] md:min-h-[4rem] flex items-center justify-center"
                 variants={fadeInUp}
               >
-                Expert-led online fitness programs designed for everyone. Train anytime, anywhere.
-              </motion.p>
+                <p 
+                  className="text-white/95 leading-relaxed font-semibold text-center" 
+                  style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}
+                >
+                  {typedText}
+                  <span className="inline-block w-1 h-5 md:h-6 ml-1 bg-primary animate-pulse"></span>
+                </p>
+              </motion.div>
+
               <motion.div 
-                className="flex flex-col sm:flex-row gap-2 items-center lg:items-start pt-2"
+                className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4"
                 variants={fadeInUp}
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Button 
                     onClick={openWhatsApp} 
-                    size="default"
-                    className="rounded-full px-6 py-3 md:px-8 md:py-6 transition-all bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-black"
+                    size="lg"
+                    className="rounded-full px-8 py-6 md:px-10 md:py-7 transition-all bg-primary hover:bg-primary/90 font-bold text-base md:text-lg text-black shadow-2xl shadow-primary/30"
                     data-testid="button-book-consultation-hero"
                   >
-                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-black" />
+                    <MessageCircle className="h-5 w-5 md:h-6 md:w-6 mr-2 text-black" />
                     Start Your Journey
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Button 
                     variant="outline" 
-                    size="default"
-                    className="rounded-full px-6 py-3 md:px-8 md:py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all font-semibold text-sm md:text-base text-foreground shadow-lg"
+                    size="lg"
+                    className="rounded-full px-8 py-6 md:px-10 md:py-7 border-2 border-white/80 bg-white/10 hover:bg-white/20 backdrop-blur-md hover:border-white transition-all font-bold text-base md:text-lg text-white shadow-2xl"
                     onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                     data-testid="button-view-packages"
                   >
@@ -473,32 +522,33 @@ export default function Home() {
                   </Button>
                 </motion.div>
               </motion.div>
+              
               <motion.div 
-                className="flex justify-center lg:justify-start"
+                className="flex justify-center pt-4"
                 variants={fadeInUp}
               >
                 <motion.a 
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-wrap items-center gap-3 lg:gap-5 bg-black/70 hover:bg-black/80 backdrop-blur-md px-5 py-3 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/30 hover:border-white/50 shadow-xl"
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="inline-flex flex-wrap items-center gap-4 md:gap-6 bg-black/60 hover:bg-black/70 backdrop-blur-lg px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/20 hover:border-primary/50 shadow-2xl"
+                  whileHover={{ scale: 1.03, y: -2 }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex group-hover:scale-110 transition-transform duration-300">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                        <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                       ))}
                     </div>
-                    <span className="text-sm font-bold text-white">4.8/5.0</span>
+                    <span className="text-base font-bold text-white">4.8/5.0</span>
                   </div>
-                  <div className="hidden md:block h-4 w-px bg-white/30" />
-                  <div className="hidden md:block text-sm font-bold text-white whitespace-nowrap">
+                  <div className="hidden md:block h-5 w-px bg-white/30" />
+                  <div className="text-base font-bold text-white whitespace-nowrap">
                     <span className="text-primary font-bold">1000+</span> Success Stories
                   </div>
-                  <div className="hidden md:flex text-xs text-white/80 group-hover:text-white transition-colors items-center gap-1">
+                  <div className="hidden md:flex text-sm text-white/80 group-hover:text-white transition-colors items-center gap-1">
                     <span>View Reviews</span>
-                    <TrendingUp className="h-3 w-3" />
+                    <TrendingUp className="h-4 w-4" />
                   </div>
                 </motion.a>
               </motion.div>
