@@ -857,7 +857,7 @@ export default function Home() {
       <AnimatedSection variant="slideInLeft">
         <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden pt-6 pb-12 md:pb-16 lg:pb-20" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-8 md:mb-10 lg:mb-12">
             <motion.h2 
               className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
               initial={{ opacity: 0, y: 20 }}
