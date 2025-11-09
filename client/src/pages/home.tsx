@@ -59,6 +59,10 @@ import transform1 from "@assets/image_1762684087328.png";
 import transform2 from "@assets/image_1762684101410.png";
 import transform3 from "@assets/image_1762684114427.png";
 import transform4 from "@assets/image_1762684168147.png";
+import transform5 from "@assets/image_1762684436027.png";
+import transform6 from "@assets/image_1762684459075.png";
+import transform7 from "@assets/image_1762684473690.png";
+import transform8 from "@assets/image_1762684488005.png";
 import trainer1Image from "@/assets/trainers/trainer1.png";
 import trainer2Image from "@/assets/trainers/trainer2.png";
 import trainer3Image from "@/assets/trainers/trainer3.png";
@@ -439,7 +443,7 @@ export default function Home() {
       {/* Transformation Gallery */}
       <AnimatedSection variant="slideInRight">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
-          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+          <div className="w-full px-4 md:px-6 lg:px-8 relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
@@ -462,31 +466,34 @@ export default function Home() {
                 From doubt to dedication, see how our members achieved their dream bodies
               </motion.p>
             </div>
-          <div className="max-w-6xl mx-auto">
+          <div className="w-full">
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
               {[
-                { img: transform1, alt: "Female fitness transformation 1", testId: "img-transformation-1" },
-                { img: transform2, alt: "Female fitness transformation 2", testId: "img-transformation-2" },
-                { img: transform3, alt: "Male fitness transformation 1", testId: "img-transformation-3" },
-                { img: transform4, alt: "Male fitness transformation 2", testId: "img-transformation-4" }
+                { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
+                { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
+                { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
+                { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
+                { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
+                { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
+                { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
+                { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
                   variants={scaleIn}
-                  className="group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-primary"
+                  className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary"
                   data-testid={`card-transformation-${idx + 1}`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <img 
                     src={item.img} 
                     alt={item.alt} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                     data-testid={item.testId}
                   />
                 </motion.div>
