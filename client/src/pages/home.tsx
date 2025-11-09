@@ -157,12 +157,12 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="text-center p-4"
+      className="text-center p-2 md:p-4"
     >
-      <div className="text-3xl md:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm md:text-base text-white/80 font-medium">{label}</div>
+      <div className="text-xs md:text-sm text-white/80 font-medium leading-tight">{label}</div>
     </motion.div>
   );
 }
@@ -602,9 +602,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="rounded-xl bg-white/5 border border-primary/20 p-6"
+                  className="rounded-xl bg-white/5 border border-primary/20 p-4 md:p-6"
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
                     {STATS_DATA.map((stat, index) => (
                       <StatCard key={stat.label} {...stat} index={index} />
                     ))}
@@ -1812,11 +1812,11 @@ export default function Home() {
           {/* Floating Button */}
           <button
             onClick={() => setContactMenuOpen(!contactMenuOpen)}
-            className="h-16 w-16 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center overflow-hidden"
+            className="hover:scale-110 transition-all duration-300"
             aria-label="Contact Us"
             data-testid="button-floating-contact"
           >
-            <img src={whatsappIcon} alt="WhatsApp" className="h-full w-full object-cover" />
+            <img src={whatsappIcon} alt="WhatsApp" className="h-16 w-16" />
           </button>
         </div>
       </div>
