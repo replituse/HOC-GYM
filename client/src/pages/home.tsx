@@ -1084,7 +1084,7 @@ export default function Home() {
                 What Our Members Say
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white mx-auto font-semibold whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-white mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1095,10 +1095,10 @@ export default function Home() {
               </motion.p>
             </div>
 
-            {/* Row 1: Left to Right */}
+            {/* Row 1: Left to Right - Displays first 6 testimonials (indices 0-5) */}
             <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-1">
               <div className="flex gap-6 animate-scroll-left">
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                {[...testimonials.slice(0, 6), ...testimonials.slice(0, 6)].map((testimonial, index) => (
                   <TestimonialCard
                     key={`row1-${index}`}
                     {...testimonial}
@@ -1108,10 +1108,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Row 2: Right to Left */}
+            {/* Row 2: Right to Left - Displays next 7 testimonials (indices 6-12) */}
             <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-2">
               <div className="flex gap-6 animate-scroll-right">
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                {[...testimonials.slice(6, 13), ...testimonials.slice(6, 13)].map((testimonial, index) => (
                   <TestimonialCard
                     key={`row2-${index}`}
                     {...testimonial}
@@ -1121,10 +1121,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Row 3: Left to Right */}
+            {/* Row 3: Left to Right - Displays last 7 testimonials (indices 13-19) */}
             <div className="relative overflow-hidden testimonial-row" data-testid="testimonial-row-3">
               <div className="flex gap-6 animate-scroll-left">
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                {[...testimonials.slice(13, 20), ...testimonials.slice(13, 20)].map((testimonial, index) => (
                   <TestimonialCard
                     key={`row3-${index}`}
                     {...testimonial}
