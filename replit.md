@@ -37,6 +37,16 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
 - Updated color scheme to vibrant green, black, and white matching gym branding
 - Replaced hero image with professional Indian fitness photo
 - Updated trainer section with Indian trainer photos (Snata Pattnaik, Neha Kashyap, Manisha)
+- **Continuous Scrolling Testimonials Section** (November 2025):
+  - Implemented three-row auto-scrolling testimonials carousel
+  - Row 1: Scrolls left to right (40s duration)
+  - Row 2: Scrolls right to left (45s duration)
+  - Row 3: Scrolls left to right (40s duration)
+  - Created reusable TestimonialCard component with proper test IDs
+  - Added 15 dummy customer reviews with diverse profiles
+  - CSS keyframe animations for smooth, continuous scrolling
+  - Pause animation on hover for better UX
+  - Respects prefers-reduced-motion accessibility setting
 - **Netlify Deployment Ready** (November 2025):
   - Created serverless function for contact form API
   - Added netlify.toml configuration
