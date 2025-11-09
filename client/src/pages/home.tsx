@@ -1719,74 +1719,165 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Footer */}
-      <footer className="bg-card border-t py-8">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4">
+      <footer className="bg-card border-t py-12">
+        <div className="container px-6 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Company Info */}
+            <div className="space-y-4 lg:col-span-1">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg overflow-hidden shadow-md">
-                  <img src={gymLogo} alt="HOC Fitness" className="h-full w-full object-cover" />
-                </div>
-                <span className="font-heading text-xl font-bold bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-                  HOC Fitness
-                </span>
+                <img src={hocLogo} alt="HOC Fitness" className="h-12 w-auto" />
               </div>
-              <p className="text-sm text-muted-foreground">
-                Includes all classes – Cardio core, HIIT, Yoga, Zumba, strength training, aerobics, Meditation and Pranayam, pilates, Body toning up & more.
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Transform your body and mind with expert-led fitness programs designed for everyone.
               </p>
-              <div className="flex gap-4">
-                <a href="https://www.facebook.com/profile.php?id=100063565829026" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-facebook">
-                  <Facebook className="h-5 w-5 text-primary" />
+              <div className="flex gap-3 pt-2">
+                <a href="https://www.facebook.com/profile.php?id=100063565829026" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#1877F2] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-facebook">
+                  <SiFacebook className="h-5 w-5 text-white" />
                 </a>
-                <a href="https://www.instagram.com/house_of_champions_studio/" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-instagram">
-                  <Instagram className="h-5 w-5 text-primary" />
+                <a href="https://www.instagram.com/house_of_champions_studio/" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-instagram">
+                  <SiInstagram className="h-5 w-5 text-white" />
                 </a>
-                <a href="https://www.youtube.com/@houseofchampions8926" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-youtube">
-                  <Youtube className="h-5 w-5 text-primary" />
+                <a href="https://www.youtube.com/@houseofchampions8926" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#FF0000] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-youtube">
+                  <SiYoutube className="h-5 w-5 text-white" />
+                </a>
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#25D366] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-whatsapp">
+                  <SiWhatsapp className="h-5 w-5 text-white" />
                 </a>
               </div>
             </div>
+
+            {/* Quick Links */}
             <div>
-              <h3 className="font-heading text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Home</a></li>
-                <li><a href="#contact" className="text-muted-foreground hover:text-primary">Contact</a></li>
-                <li><a href="#pricing" className="text-muted-foreground hover:text-primary">Pricing</a></li>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Quick Links</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Home
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Community
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Transformations
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Trainers
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Testimonials
+                  </button>
+                </li>
               </ul>
             </div>
+
+            {/* Services */}
             <div>
-              <h3 className="font-heading text-lg font-semibold mb-4">Get In Touch</h3>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Our Services</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li className="text-muted-foreground">HIIT Training</li>
+                <li className="text-muted-foreground">Yoga & Meditation</li>
+                <li className="text-muted-foreground">Strength Training</li>
+                <li className="text-muted-foreground">Cardio Core</li>
+                <li className="text-muted-foreground">Zumba</li>
+                <li className="text-muted-foreground">Aerobics</li>
+                <li className="text-muted-foreground">Body Toning</li>
+              </ul>
+            </div>
+
+            {/* Packages */}
+            <div>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Packages</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Monthly Plans
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Quarterly Plans
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Annual Plans
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Women's Program
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Personal Training
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                    Group Classes
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Get In Touch */}
+            <div>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Get In Touch</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
-                  <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
+                  <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <a 
                     href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
+                    Basement, Gangagodavari Apt, Katemanivali, Naka, Kalyan, Maharashtra 421306
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <button 
-                    onClick={() => setCallDialogOpen(true)} 
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left" 
+                  <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <a 
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="text-muted-foreground hover:text-primary transition-colors" 
                     data-testid="button-phone"
                   >
                     +91 8600126395
-                  </button>
+                  </a>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" data-testid="link-email">abhijeet18012001@gmail.com</a>
+                  <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+                    abhijeet18012001@gmail.com
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>Copyright © 2025 Hoc Fitness. All Rights Reserved</p>
+
+          {/* Bottom Bar */}
+          <div className="mt-12 pt-8 border-t">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+              <p>Copyright © 2025 House of Champions Fitness. All Rights Reserved</p>
+              <div className="flex gap-6">
+                <button className="hover:text-primary transition-colors">Privacy Policy</button>
+                <button className="hover:text-primary transition-colors">Terms of Service</button>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
