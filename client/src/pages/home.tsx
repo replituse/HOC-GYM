@@ -254,16 +254,40 @@ export default function Home() {
                   HOME
                 </button>
                 <button 
+                  onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                >
+                  ABOUT US
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                >
+                  COMMUNITY
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                >
+                  TRANSFORMATIONS
+                </button>
+                <button 
                   onClick={() => { document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
                 >
-                  PROGRAM
+                  PROGRAMS
+                </button>
+                <button 
+                  onClick={() => { document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium hover:text-primary transition-colors text-left"
+                >
+                  <span className="text-pink-500">WOMENS PROGRAM</span>
                 </button>
                 <button 
                   onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
                 >
-                  PRICING
+                  PACKAGES
                 </button>
                 <button 
                   onClick={() => { document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
@@ -272,10 +296,10 @@ export default function Home() {
                   TRAINERS
                 </button>
                 <button 
-                  onClick={() => { document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  onClick={() => { document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
                 >
-                  BEFORE & AFTER
+                  TESTIMONIALS
                 </button>
                 <button 
                   onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
@@ -296,42 +320,70 @@ export default function Home() {
           >
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
               <span className="relative z-10">HOME</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
-              onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              <span className="relative z-10">PROGRAM</span>
+              <span className="relative z-10">ABOUT US</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
-              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              onClick={() => document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              <span className="relative z-10">PRICING</span>
+              <span className="relative z-10">COMMUNITY</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+            <button 
+              onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+            >
+              <span className="relative z-10">TRANSFORMATIONS</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+            <button 
+              onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+            >
+              <span className="relative z-10">PROGRAMS</span>
+              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+            <button 
+              onClick={() => document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold hover:text-pink-400 transition-all duration-300 group rounded-lg hover-elevate"
+            >
+              <span className="relative z-10 text-pink-500">WOMENS PROGRAM</span>
+              <div className="absolute inset-0 bg-pink-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+            <button 
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+            >
+              <span className="relative z-10">PACKAGES</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
               <span className="relative z-10">TRAINERS</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
-              onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              onClick={() => document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' })}
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
-              <span className="relative z-10">BEFORE & AFTER</span>
+              <span className="relative z-10">TESTIMONIALS</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
+              className="relative px-3 py-2 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate"
             >
               <span className="relative z-10">CONTACT</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
