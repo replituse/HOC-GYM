@@ -855,7 +855,7 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="h-screen bg-black flex items-center justify-center relative overflow-hidden py-6" id="pricing">
+        <section className="h-screen bg-black flex items-center justify-center relative overflow-hidden pt-6 pb-12 md:pb-16 lg:pb-20" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <motion.h2 
