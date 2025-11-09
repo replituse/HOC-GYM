@@ -1084,7 +1084,7 @@ export default function Home() {
                 What Our Members Say
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white/80 mx-auto font-medium max-w-2xl"
+                className="text-sm md:text-base lg:text-lg text-white mx-auto font-semibold max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

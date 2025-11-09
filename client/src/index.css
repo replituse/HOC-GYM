@@ -501,11 +501,11 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left-to-right 40s linear infinite;
+    animation: scroll-left-to-right 30s linear infinite;
   }
 
   .animate-scroll-right {
-    animation: scroll-right-to-left 45s linear infinite;
+    animation: scroll-right-to-left 35s linear infinite;
   }
 
   /* Pause animations on hover */
