@@ -887,47 +887,47 @@ export default function Home() {
             <div className="max-w-5xl mx-auto">
               {/* Features - Single Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-live-classes">
+                <div className="text-center p-5 rounded-lg bg-white border-2 border-black hover:shadow-lg transition-all" data-testid="feature-live-classes">
                   <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Video className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-base mb-2 text-white">Daily LIVE Classes</h4>
-                  <p className="text-white/80 text-sm">Expert trainers, interactive sessions</p>
+                  <h4 className="font-bold text-base mb-2 text-black">Daily LIVE Classes</h4>
+                  <p className="text-black text-sm">Expert trainers, interactive sessions</p>
                 </div>
-                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-flexible-timing">
+                <div className="text-center p-5 rounded-lg bg-white border-2 border-black hover:shadow-lg transition-all" data-testid="feature-flexible-timing">
                   <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-base mb-2 text-white">Flexible Timing</h4>
-                  <p className="text-white/80 text-sm">Morning & evening slots available</p>
+                  <h4 className="font-bold text-base mb-2 text-black">Flexible Timing</h4>
+                  <p className="text-black text-sm">Morning & evening slots available</p>
                 </div>
-                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-women-only">
+                <div className="text-center p-5 rounded-lg bg-white border-2 border-black hover:shadow-lg transition-all" data-testid="feature-women-only">
                   <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-base mb-2 text-white">Women-Only Space</h4>
-                  <p className="text-white/80 text-sm">Safe, supportive community</p>
+                  <h4 className="font-bold text-base mb-2 text-black">Women-Only Space</h4>
+                  <p className="text-black text-sm">Safe, supportive community</p>
                 </div>
               </div>
 
               {/* Time Slots - Compact */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-black border border-black/10">
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
                   <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <span className="font-bold text-white text-sm block">Morning Sessions</span>
-                    <span className="text-white/70 text-sm">5:45AM • 7AM • 8AM • 11AM</span>
+                    <span className="font-bold text-black text-sm block">Morning Sessions</span>
+                    <span className="text-black text-sm">5:45AM • 7AM • 8AM • 11AM</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-black border border-black/10">
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
                   <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <span className="font-bold text-white text-sm block">Evening Sessions</span>
-                    <span className="text-white/70 text-sm">6PM • 7:30PM</span>
+                    <span className="font-bold text-black text-sm block">Evening Sessions</span>
+                    <span className="text-black text-sm">6PM • 7:30PM</span>
                   </div>
                 </div>
               </div>
