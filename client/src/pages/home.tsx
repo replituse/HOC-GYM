@@ -243,62 +243,12 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
   );
 }
 
-// Typing animation hook
-function useTypingEffect(texts: string[], typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000) {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentText = texts[currentIndex];
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting && displayText === currentText) {
-      timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
-    } else if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setCurrentIndex((prev) => (prev + 1) % texts.length);
-    } else {
-      const speed = isDeleting ? deletingSpeed : typingSpeed;
-      timeout = setTimeout(() => {
-        setDisplayText(
-          isDeleting
-            ? currentText.substring(0, displayText.length - 1)
-            : currentText.substring(0, displayText.length + 1)
-        );
-      }, speed);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentIndex, texts, typingSpeed, deletingSpeed, pauseDuration]);
-
-  return displayText;
-}
-
 export default function Home() {
   const { toast } = useToast();
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactMenuOpen, setContactMenuOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
-  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-
-  // Hero quotes that will auto-slide
-  const heroQuotes = [
-    { line1: "Your Body Is Your", line2: "Greatest Project" },
-    { line1: "Transform Your Life", line2: "One Rep At A Time" },
-    { line1: "Strength Starts", line2: "In Your Mind" },
-    { line1: "Be Your Own", line2: "Champion" }
-  ];
-
-  // Auto-slide quotes every 5 seconds (giving more time to read each quote)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentQuoteIndex((prev) => (prev + 1) % heroQuotes.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -338,14 +288,6 @@ export default function Home() {
   const openWhatsApp = () => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hi!%20I%20want%20to%20book%20a%20free%20consultation%20for%20your%20fitness%20program.`, "_blank");
   };
-
-  const typingTexts = [
-    "Discipline over excuses, every single day.",
-    "Push your limits, transform your life.",
-    "Every rep counts, every goal matters.",
-    "Strength is built one day at a time.",
-  ];
-  const typedText = useTypingEffect(typingTexts, 80, 40, 2000);
 
   return (
     <div className="min-h-screen bg-background pb-20 lg:pb-0 overflow-x-hidden">
@@ -560,54 +502,40 @@ export default function Home() {
               animate="visible"
               variants={staggerContainer}
             >
-              {/* Auto-sliding Hero Quotes */}
-              <div className="relative min-h-[200px] md:min-h-[250px] flex items-center justify-center">
-                {heroQuotes.map((quote, index) => (
-                  <motion.h1
-                    key={index}
-                    className="absolute font-heading font-extrabold leading-[1.1] tracking-tight text-white text-center w-full"
-                    style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: currentQuoteIndex === index ? 1 : 0,
-                      y: currentQuoteIndex === index ? 0 : 20,
-                      display: currentQuoteIndex === index ? "block" : "none"
-                    }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                    data-testid={`hero-quote-${index}`}
-                  >
-                    {quote.line1}
-                    <span className="block text-primary mt-2">
-                      {quote.line2}
-                    </span>
-                  </motion.h1>
-                ))}
-              </div>
-              
-              {/* Typing Effect Subtext */}
-              <motion.div 
-                className="min-h-[3rem] md:min-h-[4rem] flex items-center justify-center"
+              {/* Main Headline */}
+              <motion.h1
+                className="font-heading font-extrabold leading-[1.1] tracking-tight text-white text-center"
+                style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
                 variants={fadeInUp}
+                data-testid="hero-headline"
               >
-                <p 
-                  className="text-white/95 leading-relaxed font-semibold text-center" 
-                  style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}
-                >
-                  {typedText}
-                  <span className="inline-block w-1 h-5 md:h-6 ml-1 bg-primary animate-pulse"></span>
-                </p>
-              </motion.div>
+                Transform Your Life With
+                <span className="block text-primary mt-2">
+                  Expert Online Coaching
+                </span>
+              </motion.h1>
+              
+              {/* Subline */}
+              <motion.p 
+                className="text-white/95 leading-relaxed font-semibold text-center max-w-2xl mx-auto" 
+                style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}
+                variants={fadeInUp}
+                data-testid="hero-subline"
+              >
+                Personalized workouts, guidance & accountability built for your lifestyle.
+              </motion.p>
 
+              {/* CTAs */}
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4"
                 variants={fadeInUp}
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Button 
-                    onClick={openWhatsApp} 
+                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} 
                     size="default"
                     className="rounded-full px-8 transition-all bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-white shadow-2xl shadow-primary/30"
-                    data-testid="button-book-consultation-hero"
+                    data-testid="button-start-journey"
                   >
                     Start Your Journey
                   </Button>
@@ -617,13 +545,22 @@ export default function Home() {
                     variant="outline" 
                     size="default"
                     className="rounded-full px-8 border-2 border-white/80 bg-white/10 hover:bg-white/20 backdrop-blur-md hover:border-white transition-all font-semibold text-sm md:text-base text-white shadow-2xl"
-                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                    data-testid="button-view-packages"
+                    onClick={openWhatsApp}
+                    data-testid="button-book-consultation"
                   >
-                    View Packages
+                    Book Free Consultation
                   </Button>
                 </motion.div>
               </motion.div>
+
+              {/* Trusted Badge */}
+              <motion.p 
+                className="text-white/80 text-sm md:text-base font-medium text-center pt-2"
+                variants={fadeInUp}
+                data-testid="hero-trusted-badge"
+              >
+                Trusted by 2000+ clients | Powered by HOC Gym
+              </motion.p>
             </motion.div>
           </div>
         </div>
