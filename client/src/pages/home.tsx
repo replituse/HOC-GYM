@@ -1178,7 +1178,7 @@ export default function Home() {
               Choose the perfect plan that fits your lifestyle and commit to your wellness journey
             </motion.p>
           </div>
-          <div className="flex items-center justify-center gap-6 md:gap-8 lg:gap-10 perspective-1000">
+          <div className="hidden md:grid md:grid-cols-4 gap-4 lg:gap-6 items-start max-w-[1400px] mx-auto">
             {[
               {
                 name: "Fit Basics",
@@ -1244,60 +1244,58 @@ export default function Home() {
             ].map((pkg, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: pkg.featured ? 1.1 : 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`${pkg.featured ? 'z-20 w-full md:w-[350px] lg:w-[380px]' : 'z-10 w-full md:w-[320px] lg:w-[340px] opacity-90'} hidden md:block`}
-                style={{ 
-                  transform: pkg.featured ? 'translateZ(50px)' : i === 0 ? 'translateZ(-20px) rotateY(5deg)' : 'translateZ(-20px) rotateY(-5deg)'
-                }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex"
               >
-                <Card className={`group h-full p-5 md:p-6 lg:p-7 hover-elevate transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-2xl relative overflow-hidden ${pkg.featured ? 'shadow-primary/20' : ''}`}>
+                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8 min-h-[580px]' : 'p-5 md:p-6 min-h-[540px]'} hover-elevate transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary relative overflow-hidden`}>
                   {pkg.featured && (
-                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
+                    <>
+                      <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
+                      <div className="absolute -left-8 -bottom-8 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
+                    </>
                   )}
-                  <CardContent className="p-0 space-y-3 md:space-y-4 relative">
+                  <CardContent className="p-0 space-y-3 md:space-y-4 relative flex flex-col h-full">
                     {pkg.badge && (
-                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold w-fit">
                         <Star className="h-3 w-3 fill-white" />
                         {pkg.badge}
                       </div>
                     )}
                     <div>
-                      <h3 className="font-heading text-2xl md:text-3xl font-extrabold mb-1 text-black">
+                      <h3 className={`font-heading ${pkg.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'} font-extrabold mb-1 text-black`}>
                         {pkg.name}
                       </h3>
-                      <p className="text-black/70 font-semibold text-sm md:text-base mb-0.5">{pkg.duration}</p>
-                      <p className="text-black/60 text-xs md:text-sm italic">{pkg.description}</p>
+                      <p className="text-black/70 font-semibold text-sm mb-0.5">{pkg.duration}</p>
+                      <p className="text-black/60 text-xs italic">{pkg.description}</p>
                     </div>
                     <div className="space-y-1">
-                      <div className="font-heading text-4xl md:text-5xl font-black text-black">
+                      <div className={`font-heading ${pkg.featured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-black text-black`}>
                         {pkg.price}
                       </div>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-xs md:text-sm text-black/60 font-medium">{pkg.classes}</span>
-                        <span className="text-xs text-black/40">•</span>
-                        <span className="text-xs md:text-sm font-bold text-black/80">{pkg.pricePerClass}</span>
-                      </div>
+                      {pkg.classes && (
+                        <span className="text-xs text-black/60 font-medium block">{pkg.classes}</span>
+                      )}
                     </div>
                     <div className="h-px bg-black/10" />
-                    <ul className="grid grid-cols-1 gap-2.5">
+                    <ul className="grid grid-cols-1 gap-2 flex-1">
                       {pkg.features.map((feature, j) => (
-                        <li key={j} className="flex items-start gap-2.5 group/item">
-                          <div className="h-5 w-5 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <CheckCircle2 className="h-3 w-3 text-white" />
+                        <li key={j} className="flex items-start gap-2 group/item">
+                          <div className="h-4 w-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-sm md:text-base text-black/80 leading-tight font-medium">{feature}</span>
+                          <span className="text-xs md:text-sm text-black/80 leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button 
                       onClick={openWhatsApp} 
-                      className="w-full rounded-full py-5 md:py-6 text-sm md:text-base font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
-                      data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
+                      className={`w-full rounded-full ${pkg.featured ? 'py-5 md:py-6' : 'py-4 md:py-5'} text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white mt-auto`}
+                      data-testid={`button-select-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
-                      Start {pkg.name} Plan
+                      Start {pkg.name.split(' ')[0]} Plan
                     </Button>
                   </CardContent>
                 </Card>
