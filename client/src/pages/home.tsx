@@ -410,12 +410,12 @@ export default function Home() {
                 >
                   PROGRAMS
                 </button>
-                <button 
+                {/* <button 
                   onClick={() => { document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium hover:text-primary transition-colors text-left"
                 >
                   <span className="text-pink-500">WOMENS PROGRAM</span>
-                </button>
+                </button> */}
                 <button 
                   onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
@@ -479,13 +479,13 @@ export default function Home() {
               <span className="relative z-10">PROGRAMS</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-            <button 
+            {/* <button 
               onClick={() => document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' })}
               className="relative px-3 py-3 text-xs font-bold hover:text-pink-400 transition-all duration-300 group rounded-lg hover-elevate whitespace-nowrap"
             >
               <span className="relative z-10 text-pink-500">WOMENS PROGRAM</span>
               <div className="absolute inset-0 bg-pink-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
+            </button> */}
             <button 
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               className="relative px-3 py-3 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate whitespace-nowrap"
@@ -1051,7 +1051,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Exclusively For Women - Elegant Black Design */}
-      <AnimatedSection variant="fadeIn">
+      {/* <AnimatedSection variant="fadeIn">
         <section className="py-8 md:py-10 bg-white relative overflow-hidden">
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
@@ -1070,7 +1070,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Class Banners Grid */}
             <motion.div 
               className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 max-w-5xl mx-auto"
               initial="hidden"
@@ -1099,9 +1098,7 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* Compact Info Section */}
             <div className="max-w-5xl mx-auto">
-              {/* Features - Single Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-5 rounded-lg bg-white border-2 border-black hover:shadow-lg transition-all" data-testid="feature-live-classes">
                   <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -1126,7 +1123,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Time Slots - Compact */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center justify-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
                   <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -1148,7 +1144,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Call to Action */}
               <div className="flex justify-center">
                 <button className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-black text-white font-bold text-sm md:text-base hover:bg-black/90 transition-all hover:scale-105 border-2 border-pink-500" data-testid="button-join-anytime">
                   Join Any Class, Any Time, Any Day
@@ -1157,7 +1152,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
@@ -1186,50 +1181,64 @@ export default function Home() {
           <div className="flex items-center justify-center gap-6 md:gap-8 lg:gap-10 perspective-1000">
             {[
               {
-                name: "Starter",
-                duration: "1 Month Plan",
-                classes: "26 Live Classes",
-                price: "₹2,999",
-                pricePerClass: "₹115/class",
-                description: "Perfect for beginners starting their fitness journey",
+                name: "Fit Basics",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹2,500",
+                pricePerClass: "",
+                description: "For those who prefer to train on their own.",
                 features: [
-                  "Personalized Nutrition Guide",
-                  "Access to All Class Types",
-                  "Cardio, HIIT & Yoga Sessions",
-                  "Strength & Aerobic Training",
-                  "Mindfulness & Meditation"
+                  "Personalized Diet Plan",
+                  "Weekly Diet Adjustments",
+                  "Home/Gym Workout Plan (4-week progression)",
+                  "Access to Recorded Group Sessions",
+                  "Weekly Progress Tracking Form",
+                  "WhatsApp Support (within working hours)"
                 ]
               },
               {
-                name: "Champion",
-                duration: "3 Months Plan",
-                classes: "85 Live Classes",
-                price: "₹6,999",
-                pricePerClass: "₹82/class",
-                description: "Most popular choice for serious transformation",
+                name: "Fit Plus",
+                duration: "4 Weeks",
+                classes: "Main Group Program",
+                price: "₹5,000",
+                pricePerClass: "",
+                description: "Live coaching for structure, accountability & discipline.",
                 features: [
-                  "Complete Diet & Meal Planning",
-                  "Unlimited Class Variety",
-                  "Advanced HIIT & Cardio",
-                  "Body Sculpting & Pilates",
-                  "Priority Trainer Support"
+                  "Live Group Training Sessions",
+                  "Personalized Diet Plan",
+                  "Weekly Progress Review",
+                  "Form & Technique Guidance",
+                  "Group Community Support"
                 ],
                 featured: true,
                 badge: "Best Value"
               },
               {
-                name: "Elite",
-                duration: "6 Months Plan",
-                classes: "UNLIMITED Classes",
-                price: "₹9,999",
-                pricePerClass: "Unlimited",
-                description: "Ultimate commitment for lasting transformation",
+                name: "Pro Transformation Program",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹7,500",
+                pricePerClass: "",
+                description: "For faster and controlled transformation.",
                 features: [
-                  "Premium Nutrition Consultation",
-                  "Unlimited Class Access 24/7",
-                  "All Premium Programs",
-                  "VIP Trainer Support",
-                  "Flexible Schedule Options"
+                  "Everything in Fit Plus",
+                  "Weekly 1:1 Progress Call (10–15 mins)",
+                  "Habit & Routine Planning",
+                  "Behavioral Accountability"
+                ]
+              },
+              {
+                name: "Elite Athlete / Fast Result Program",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹10,000",
+                pricePerClass: "",
+                description: "Designed for athletes & highly committed individuals.",
+                features: [
+                  "Everything in Pro",
+                  "Performance Tracking (Strength / Endurance / Agility)",
+                  "Technique Video Feedback",
+                  "Priority WhatsApp Support"
                 ]
               },
             ].map((pkg, i) => (
@@ -1300,50 +1309,64 @@ export default function Home() {
           <div className="md:hidden space-y-4">
             {[
               {
-                name: "Starter",
-                duration: "1 Month Plan",
-                classes: "26 Live Classes",
-                price: "₹2,999",
-                pricePerClass: "₹115/class",
-                description: "Perfect for beginners starting their fitness journey",
+                name: "Fit Basics",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹2,500",
+                pricePerClass: "",
+                description: "For those who prefer to train on their own.",
                 features: [
-                  "Personalized Nutrition Guide",
-                  "Access to All Class Types",
-                  "Cardio, HIIT & Yoga Sessions",
-                  "Strength & Aerobic Training",
-                  "Mindfulness & Meditation"
+                  "Personalized Diet Plan",
+                  "Weekly Diet Adjustments",
+                  "Home/Gym Workout Plan (4-week progression)",
+                  "Access to Recorded Group Sessions",
+                  "Weekly Progress Tracking Form",
+                  "WhatsApp Support (within working hours)"
                 ]
               },
               {
-                name: "Champion",
-                duration: "3 Months Plan",
-                classes: "85 Live Classes",
-                price: "₹6,999",
-                pricePerClass: "₹82/class",
-                description: "Most popular choice for serious transformation",
+                name: "Fit Plus",
+                duration: "4 Weeks",
+                classes: "Main Group Program",
+                price: "₹5,000",
+                pricePerClass: "",
+                description: "Live coaching for structure, accountability & discipline.",
                 features: [
-                  "Complete Diet & Meal Planning",
-                  "Unlimited Class Variety",
-                  "Advanced HIIT & Cardio",
-                  "Body Sculpting & Pilates",
-                  "Priority Trainer Support"
+                  "Live Group Training Sessions",
+                  "Personalized Diet Plan",
+                  "Weekly Progress Review",
+                  "Form & Technique Guidance",
+                  "Group Community Support"
                 ],
                 featured: true,
                 badge: "Best Value"
               },
               {
-                name: "Elite",
-                duration: "6 Months Plan",
-                classes: "UNLIMITED Classes",
-                price: "₹9,999",
-                pricePerClass: "Unlimited",
-                description: "Ultimate commitment for lasting transformation",
+                name: "Pro Transformation Program",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹7,500",
+                pricePerClass: "",
+                description: "For faster and controlled transformation.",
                 features: [
-                  "Premium Nutrition Consultation",
-                  "Unlimited Class Access 24/7",
-                  "All Premium Programs",
-                  "VIP Trainer Support",
-                  "Flexible Schedule Options"
+                  "Everything in Fit Plus",
+                  "Weekly 1:1 Progress Call (10–15 mins)",
+                  "Habit & Routine Planning",
+                  "Behavioral Accountability"
+                ]
+              },
+              {
+                name: "Elite Athlete / Fast Result Program",
+                duration: "4 Weeks",
+                classes: "",
+                price: "₹10,000",
+                pricePerClass: "",
+                description: "Designed for athletes & highly committed individuals.",
+                features: [
+                  "Everything in Pro",
+                  "Performance Tracking (Strength / Endurance / Agility)",
+                  "Technique Video Feedback",
+                  "Priority WhatsApp Support"
                 ]
               },
             ].map((pkg, i) => (
@@ -1926,11 +1949,11 @@ export default function Home() {
                     Annual Plans
                   </button>
                 </li>
-                <li>
+                {/* <li>
                   <button onClick={() => document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
                     Women's Program
                   </button>
-                </li>
+                </li> */}
                 <li>
                   <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
                     Personal Training

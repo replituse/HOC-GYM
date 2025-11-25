@@ -1,0 +1,81 @@
+Make the following updates in my existing project.
+Do NOT change the design, layout, alignment, spacing, fonts, colors, or animations.
+Only update the requested sections exactly as described.
+
+1) Hide Women's Program Section
+
+Comment out or hide the Women’s Program section from the home page.
+
+Also comment out / hide Women’s Program from the header navigation menu.
+
+No layout or spacing changes should occur after hiding it.
+
+2) Update Packages Section
+
+Replace the current packages content with the following text exactly as written.
+Keep my original design, UI, and layout — only replace the inner text.
+
+Fit Basics
+
+₹2,500 / 4 Weeks
+For those who prefer to train on their own.
+Includes:
+• Personalized Diet Plan
+• Weekly Diet Adjustments
+• Home/Gym Workout Plan (4-week progression)
+• Access to Recorded Group Sessions
+• Weekly Progress Tracking Form
+• WhatsApp Support (within working hours)
+
+⸻
+
+Fit Plus (Main Group Program)
+
+₹5,000 / 4 Weeks
+Live coaching for structure, accountability & discipline.
+Includes:
+• Live Group Training Sessions
+• Personalized Diet Plan
+• Weekly Progress Review
+• Form & Technique Guidance
+• Group Community Support
+
+⸻
+
+Pro Transformation Program
+
+₹7,500 / 4 Weeks
+For faster and controlled transformation.
+Includes everything in Fit Plus +
+• Weekly 1:1 Progress Call (10–15 mins)
+• Habit & Routine Planning
+• Behavioral Accountability
+
+⸻
+
+Elite Athlete / Fast Result Program
+
+₹10,000 / 4 Weeks
+Designed for athletes & highly committed individuals.
+Includes everything in Pro +
+• Performance Tracking (Strength / Endurance / Agility)
+• Technique Video Feedback
+• Priority WhatsApp Support
+
+3) PDF Reference — Maintain Structure
+
+Use the uploaded PDF (TRAIN WITH WINSTON.pdf) as reference for:
+
+Content consistency
+
+Program descriptions
+
+Clean and premium text style
+But DO NOT change any layout, design, or section structure.
+
+PDF path:
+/mnt/data/TRAIN WITH WINSTON.pdf
+
+Final Note:
+Only update the text content and hide the selected section.
+Do NOT modify design, spacing, responsiveness, components, animations, or any UI structure.
