@@ -70,9 +70,6 @@ import trainer3Image from "@/assets/trainers/trainer3.png";
 import cardioTrainingImage from "@assets/image_1762682663589.png";
 import strengthTrainingImage from "@assets/image_1762682353257.png";
 import flexibilityTrainingImage from "@assets/image_1762682466178.png";
-import coreTrainingImage from "@assets/image_1762682546167.png";
-import functionalTrainingImage from "@assets/image_1762682572602.png";
-import balanceTrainingImage from "@assets/image_1762682608079.png";
 import gymLogo from "@assets/gym-logo.png";
 import hocLogo from "@assets/hoc-logo-transparent.png";
 import ownerPhoto from "@assets/image_1762685263069.png";
@@ -247,6 +244,7 @@ export default function Home() {
   const [callDialogOpen, setCallDialogOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactMenuOpen, setContactMenuOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
   const form = useForm<ContactFormData>({
@@ -866,7 +864,7 @@ export default function Home() {
               
               .scroll-container {
                 display: flex;
-                animation: scroll-horizontal 30s linear infinite;
+                animation: scroll-horizontal 20s linear infinite;
               }
               
               .scroll-container:hover {
@@ -892,11 +890,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[320px] md:h-[360px] lg:h-[400px]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                         data-testid={item.testId}
                       />
                     </div>
@@ -917,11 +915,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[320px] md:h-[360px] lg:h-[400px]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                   </div>
@@ -978,24 +976,6 @@ export default function Home() {
                   title: "Proven Transformation", 
                   desc: "6+ years of coaching experience. 1000+ lives impacted.",
                   testId: "card-proven-transformation"
-                },
-                { 
-                  image: coreTrainingImage, 
-                  title: "Core Training", 
-                  desc: "Strengthens abs, obliques, and lower back (e.g., planks, crunches).",
-                  testId: "card-core-training"
-                },
-                { 
-                  image: functionalTrainingImage, 
-                  title: "Functional Training", 
-                  desc: "Focuses on movements for daily life activities (e.g., kettlebells, TRX, bodyweight drills).",
-                  testId: "card-functional-training"
-                },
-                { 
-                  image: balanceTrainingImage, 
-                  title: "Balance & Stability Training", 
-                  desc: "Improves coordination and posture (e.g., balance boards, Bosu ball exercises).",
-                  testId: "card-balance-training"
                 },
               ].map((item, i) => (
                 <motion.div
@@ -1193,7 +1173,7 @@ export default function Home() {
                   "Group Community Support"
                 ],
                 featured: true,
-                badge: "Best Value"
+                badge: "Popular"
               },
               {
                 name: "Pro Transformation Program",
@@ -1232,7 +1212,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex"
               >
-                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8 min-h-[580px]' : 'p-5 md:p-6 min-h-[540px]'} hover-elevate transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary relative overflow-hidden`}>
+                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] hover-elevate transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary relative overflow-hidden`}>
                   {pkg.featured && (
                     <>
                       <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
@@ -1319,7 +1299,7 @@ export default function Home() {
                   "Group Community Support"
                 ],
                 featured: true,
-                badge: "Best Value"
+                badge: "Popular"
               },
               {
                 name: "Pro Transformation Program",
@@ -1515,6 +1495,51 @@ export default function Home() {
               </motion.p>
             </div>
 
+            <style>{`
+              .flip-card {
+                perspective: 1000px;
+                height: 100%;
+              }
+              
+              .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+              }
+              
+              .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+              }
+              
+              .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+              }
+              
+              .flip-card-back {
+                transform: rotateY(180deg);
+              }
+              
+              @keyframes float-icon {
+                0%, 100% {
+                  transform: translateY(0) rotate(0deg);
+                }
+                50% {
+                  transform: translateY(-10px) rotate(5deg);
+                }
+              }
+              
+              .floating-icon {
+                animation: float-icon 3s ease-in-out infinite;
+              }
+            `}</style>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
                 {
@@ -1554,20 +1579,40 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="h-full"
                 >
-                  <Card className="bg-white/5 backdrop-blur-sm border-primary/20 hover-elevate transition-all duration-300 h-full" data-testid={item.testId}>
-                    <CardContent className="p-6 md:p-8 space-y-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                        <item.icon className="h-6 w-6 text-primary" />
+                  <div className="flip-card" data-testid={item.testId}>
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front">
+                        <Card className="bg-white/5 backdrop-blur-sm border-primary/20 transition-all duration-300 h-full">
+                          <CardContent className="p-6 md:p-8 space-y-4">
+                            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                              <item.icon className="h-6 w-6 text-primary" />
+                            </div>
+                            <h3 className="font-heading text-xl md:text-2xl font-bold text-white" data-testid={`heading-${item.testId}`}>
+                              {item.title}
+                            </h3>
+                            <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`text-${item.testId}`}>
+                              {item.desc}
+                            </p>
+                          </CardContent>
+                        </Card>
                       </div>
-                      <h3 className="font-heading text-xl md:text-2xl font-bold text-white" data-testid={`heading-${item.testId}`}>
-                        {item.title}
-                      </h3>
-                      <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`text-${item.testId}`}>
-                        {item.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
+                      <div className="flip-card-back">
+                        <Card className="bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border-primary/40 h-full">
+                          <CardContent className="p-6 md:p-8 flex flex-col items-center justify-center h-full space-y-4">
+                            <div className="w-20 h-20 rounded-full bg-primary/30 flex items-center justify-center floating-icon">
+                              <item.icon className="h-10 w-10 text-primary" />
+                            </div>
+                            <p className="text-white text-base md:text-lg font-semibold text-center">
+                              Your transformation starts here
+                            </p>
+                            <Dumbbell className="h-8 w-8 text-primary/70" />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -1578,7 +1623,7 @@ export default function Home() {
       {/* FAQ Section */}
       <AnimatedSection variant="slideUp">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="faq">
-          <div className="container px-4 md:px-6 relative max-w-4xl mx-auto">
+          <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
@@ -1592,7 +1637,7 @@ export default function Home() {
               </motion.h2>
             </div>
 
-            <div className="space-y-4 md:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {[
                 {
                   question: "Do I need equipment?",
@@ -1614,26 +1659,64 @@ export default function Home() {
                   answer: "Yes.",
                   testId: "faq-beginners"
                 },
-              ].map((faq, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Card className="bg-white/5 backdrop-blur-sm border-primary/20" data-testid={faq.testId}>
-                    <CardContent className="p-6 md:p-8">
-                      <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-3" data-testid={`question-${faq.testId}`}>
-                        {faq.question}
-                      </h3>
-                      <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
-                        {faq.answer}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+              ].map((faq, i) => {
+                const isOpen = openFaqIndex === i;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <Card 
+                      className="bg-white/5 backdrop-blur-sm border-primary/20 hover-elevate transition-all duration-300 cursor-pointer" 
+                      data-testid={faq.testId}
+                      onClick={() => setOpenFaqIndex(isOpen ? null : i)}
+                    >
+                      <CardContent className="p-5 md:p-6">
+                        <div className="flex items-center justify-between gap-3">
+                          <h3 className="font-heading text-base md:text-lg font-bold text-white" data-testid={`question-${faq.testId}`}>
+                            {faq.question}
+                          </h3>
+                          <motion.div
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <svg
+                              className="w-5 h-5 text-primary flex-shrink-0"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </motion.div>
+                        </div>
+                        <motion.div
+                          initial={false}
+                          animate={{
+                            height: isOpen ? "auto" : 0,
+                            opacity: isOpen ? 1 : 0,
+                            marginTop: isOpen ? 12 : 0
+                          }}
+                          transition={{ duration: 0.3 }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
