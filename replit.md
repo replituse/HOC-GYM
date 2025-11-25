@@ -85,6 +85,11 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
     5. Community Support - Join a supportive fitness family
   - Added FAQ section with 4 common questions
   - Added final CTA section before footer with "Join Now" button and WhatsApp link
+- **UI/UX Improvements** (November 25, 2025):
+  - Fixed "Why Choose Train With Winston" flip cards display issue by adding min-height: 280px to prevent card collapse
+  - Updated Transformation gallery: reduced image sizes while maintaining card heights (cards: 450/500/550px, images: max 380/420/460px with padding)
+  - Enhanced package cards hover effects with normal shadow lift and translate animations (removed hover-elevate utility)
+  - All changes maintain responsive design across breakpoints
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
