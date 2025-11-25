@@ -175,8 +175,7 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
 
 // Stats configuration
 const STATS_DATA = [
-  { value: 1250, label: "Clients Transformed", suffix: "+" },
-  { value: 40, label: "Smart Machines", suffix: "+" },
+  { value: 2000, label: "Clients Transformed", suffix: "+" },
   { value: 18, label: "Certified Coaches", suffix: "" },
   { value: 32000, label: "Training Hours", suffix: "+" },
 ];
@@ -350,7 +349,7 @@ export default function Home() {
                   onClick={() => { document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
                 >
-                  PROGRAMS
+                  SERVICES
                 </button>
                 {/* <button 
                   onClick={() => { document.querySelector('section.bg-white')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
@@ -418,7 +417,7 @@ export default function Home() {
               onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
               className="relative px-3 py-3 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate whitespace-nowrap"
             >
-              <span className="relative z-10">PROGRAMS</span>
+              <span className="relative z-10">SERVICES</span>
               <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             {/* <button 
@@ -553,14 +552,19 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Trusted Badge */}
-              <motion.p 
-                className="text-white/80 text-sm md:text-base font-medium text-center pt-2"
+              {/* Founder's Message */}
+              <motion.div 
+                className="text-white/90 text-base md:text-lg font-medium text-center pt-6 max-w-3xl mx-auto space-y-4"
                 variants={fadeInUp}
-                data-testid="hero-trusted-badge"
+                data-testid="hero-founder-message"
               >
-                Trusted by 2000+ clients | Powered by HOC Gym
-              </motion.p>
+                <p className="leading-relaxed">
+                  With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
+                </p>
+                <p className="text-primary font-semibold italic leading-relaxed">
+                  "Your transformation is our mission. Every rep, every session, every victory — we celebrate it all with you."
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -823,11 +827,11 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Transformation Gallery */}
+      {/* Transformation Gallery - Auto-scrolling Slider */}
       <AnimatedSection variant="slideInRight">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
-          <div className="w-full px-4 md:px-6 lg:px-8 relative">
-            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+          <div className="w-full relative">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
                 initial={{ opacity: 0, y: 20 }}
@@ -849,45 +853,86 @@ export default function Home() {
                 From doubt to dedication, see how our members achieved their dream bodies
               </motion.p>
             </div>
-          <div className="w-full">
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-            >
-              {[
-                { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
-                { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
-                { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
-                { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
-                { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
-                { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
-                { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
-                { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  variants={scaleIn}
-                  className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary"
-                  data-testid={`card-transformation-${idx + 1}`}
-                >
-                  <img 
-                    src={item.img} 
-                    alt={item.alt} 
-                    className="w-full h-full object-cover"
-                    data-testid={item.testId}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
+            
+            <style>{`
+              @keyframes scroll-horizontal {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              
+              .scroll-container {
+                display: flex;
+                animation: scroll-horizontal 30s linear infinite;
+              }
+              
+              .scroll-container:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
+            
+            <div className="w-full overflow-hidden">
+              <div className="scroll-container">
+                {/* First set of images */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
+                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
+                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
+                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
+                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
+                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
+                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
+                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
+                ].map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                    data-testid={`card-transformation-${idx + 1}`}
+                  >
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[320px] md:h-[360px] lg:h-[400px]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                        data-testid={item.testId}
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for infinite scroll effect */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
+                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
+                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
+                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
+                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
+                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
+                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
+                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
+                ].map((item, idx) => (
+                  <div 
+                    key={`duplicate-${idx}`}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                  >
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[320px] md:h-[360px] lg:h-[400px]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
         </section>
       </AnimatedSection>
 
-      {/* Training Programs - Redesigned */}
+      {/* Our Services - Redesigned */}
       <AnimatedSection variant="slideUp">
         <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
@@ -900,7 +945,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 data-testid="heading-training-programs"
               >
-                Our Training Programs
+                Our Services
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
@@ -918,21 +963,21 @@ export default function Home() {
               {[
                 { 
                   image: cardioTrainingImage, 
-                  title: "Cardio Training", 
-                  desc: "Improves heart health and endurance (e.g., treadmill, cycling, HIIT).",
-                  testId: "card-cardio-training"
+                  title: "Personalised Training", 
+                  desc: "Science based plans + nutrition based on your goals and lifestyle.",
+                  testId: "card-personalised-training"
                 },
                 { 
                   image: strengthTrainingImage, 
-                  title: "Strength Training", 
-                  desc: "Builds muscle and overall strength (e.g., free weights, machines).",
-                  testId: "card-strength-training"
+                  title: "Personal Guidance", 
+                  desc: "Weekly check-ins, accountability and form corrections.",
+                  testId: "card-personal-guidance"
                 },
                 { 
                   image: flexibilityTrainingImage, 
-                  title: "Flexibility & Mobility Training", 
-                  desc: "Enhances joint movement and reduces injury (e.g., stretching, yoga).",
-                  testId: "card-flexibility-training"
+                  title: "Proven Transformation", 
+                  desc: "6+ years of coaching experience. 1000+ lives impacted.",
+                  testId: "card-proven-transformation"
                 },
                 { 
                   image: coreTrainingImage, 
@@ -1443,6 +1488,157 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
+      {/* Why Choose Train With Winston Section */}
+      <AnimatedSection variant="fadeIn">
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="why-choose">
+          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-why-choose"
+              >
+                Why Choose Train With Winston
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-why-choose-subtitle"
+              >
+                Transformation Philosophy
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {[
+                {
+                  title: "Structure, Not Guesswork",
+                  desc: "Science based personalized workout & diet according to your goals and lifestyle.",
+                  icon: Target,
+                  testId: "card-structure"
+                },
+                {
+                  title: "High Accountability",
+                  desc: "Weekly check-ins, form correction, progress tracking. You don't fall off track.",
+                  icon: CheckCircle2,
+                  testId: "card-accountability"
+                },
+                {
+                  title: "Clear Guidance",
+                  desc: "No confusion. No overthinking. You'll know exactly what to do daily.",
+                  icon: Lightbulb,
+                  testId: "card-guidance"
+                },
+                {
+                  title: "Mindset & Discipline Coaching",
+                  desc: "You don't just get in shape. You become consistent.",
+                  icon: Zap,
+                  testId: "card-mindset"
+                },
+                {
+                  title: "Premium Community",
+                  desc: "A batch where everyone is moving.",
+                  icon: Users,
+                  testId: "card-community"
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Card className="bg-white/5 backdrop-blur-sm border-primary/20 hover-elevate transition-all duration-300 h-full" data-testid={item.testId}>
+                    <CardContent className="p-6 md:p-8 space-y-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                        <item.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold text-white" data-testid={`heading-${item.testId}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`text-${item.testId}`}>
+                        {item.desc}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* FAQ Section */}
+      <AnimatedSection variant="slideUp">
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="faq">
+          <div className="container px-4 md:px-6 relative max-w-4xl mx-auto">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-faq"
+              >
+                FAQ
+              </motion.h2>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              {[
+                {
+                  question: "Do I need equipment?",
+                  answer: "No, programs can be done with or without equipment.",
+                  testId: "faq-equipment"
+                },
+                {
+                  question: "Will the diet be strict?",
+                  answer: "No, it will be flexible and based on your daily routine.",
+                  testId: "faq-diet"
+                },
+                {
+                  question: "Batch time?",
+                  answer: "Multiple batches available.",
+                  testId: "faq-batch-time"
+                },
+                {
+                  question: "Do you train beginners?",
+                  answer: "Yes.",
+                  testId: "faq-beginners"
+                },
+              ].map((faq, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Card className="bg-white/5 backdrop-blur-sm border-primary/20" data-testid={faq.testId}>
+                    <CardContent className="p-6 md:p-8">
+                      <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-3" data-testid={`question-${faq.testId}`}>
+                        {faq.question}
+                      </h3>
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
+                        {faq.answer}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* Customer Testimonials Section */}
       <AnimatedSection variant="fadeIn">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-testimonials">
@@ -1784,6 +1980,46 @@ export default function Home() {
               </div>
             </div>
           </section>
+      </AnimatedSection>
+
+      {/* Final CTA Section */}
+      <AnimatedSection variant="fadeIn">
+        <section className="py-16 md:py-20 lg:py-24 bg-black relative overflow-hidden" id="final-cta">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
+          <div className="container px-4 md:px-6 relative max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
+                Start your transformation today.
+              </h2>
+              
+              <div className="flex flex-col items-center gap-6">
+                <Button 
+                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                  size="default"
+                  className="rounded-full px-12 py-6 text-lg font-bold bg-primary hover:bg-primary/90 transition-all shadow-2xl shadow-primary/30 hover:scale-105"
+                  data-testid="button-join-now-final"
+                >
+                  Join Now
+                </Button>
+                
+                <button
+                  onClick={openWhatsApp}
+                  className="text-white/90 hover:text-primary transition-colors text-base md:text-lg font-medium flex items-center gap-2"
+                  data-testid="link-whatsapp-final-cta"
+                >
+                  <SiWhatsapp className="h-6 w-6" />
+                  DM me on WhatsApp
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </AnimatedSection>
 
       {/* Footer */}

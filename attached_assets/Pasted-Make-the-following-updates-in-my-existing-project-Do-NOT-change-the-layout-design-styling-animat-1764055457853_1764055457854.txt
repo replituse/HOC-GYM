@@ -1,0 +1,106 @@
+Make the following updates in my existing project.
+Do NOT change the layout, design, styling, animations, colors, spacing, or alignment.
+Only update the specific sections as described below.
+
+1) Home Page — Replace Trusted Text Section
+
+Remove the line: “Trusted by 2000+ clients | powered by HOC gym”
+
+Add the following paragraph (use clean styling, slightly increased font size, visually premium but consistent with current design):
+
+With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
+
+"Your transformation is our mission. Every rep, every session, every victory — we celebrate it all with you."
+
+2) Transformation Section (Scrolling Row)
+
+Update the Transformation / Before-After section:
+
+Convert it into a continuous horizontal auto-scrolling slider
+
+Show all transformation cards in a single row
+
+Scrolling speed: medium (not too fast, not too slow)
+
+On hover → scrolling should pause
+
+Keep the existing design and card styles exactly the same
+
+3) About Section Updates
+
+In the About block:
+
+Change 1,250+ Clients Transformed → 2000+ Clients Transformed
+
+Remove “40+ Smart Machines” completely
+(No empty space should remain.)
+
+4) Program Section → Rename + Add Services
+
+In the header, change the menu text Programs → Services
+
+In the Programs section, rename heading to Our Services
+
+Add the following 3 service items exactly as written (keep current design structure):
+
+Service Items:
+
+Personalised Training
+Science based plans + nutrition based on your goals and lifestyle.
+
+Personal Guidance
+Weekly check-ins, accountability and form corrections.
+
+Proven Transformation
+6+ years of coaching experience. 1000+ lives impacted.
+
+5) Add New Section — Why Choose Train With Winston
+
+Add a new section below Services with the following content and clean formatting:
+
+Why Choose Train With Winston (Transformation Philosophy)
+
+Structure, Not Guesswork:
+Science based personalized workout & diet according to your goals and lifestyle.
+
+High Accountability:
+Weekly check-ins, form correction, progress tracking. You don’t fall off track.
+
+Clear Guidance:
+No confusion. No overthinking. You’ll know exactly what to do daily.
+
+Mindset & Discipline Coaching:
+You don’t just get in shape. You become consistent.
+
+Premium Community:
+A batch where everyone is moving.
+
+6) Add New Section — FAQ
+
+Add a clean FAQ section with the following:
+
+FAQ
+
+Do I need equipment?
+No, programs can be done with or without equipment.
+
+Will the diet be strict?
+No, it will be flexible and based on your daily routine.
+
+Batch time?
+Multiple batches available.
+
+Do you train beginners?
+Yes.
+
+7) Add Final CTA Section (Last Section Before Footer)
+
+Add a new full-width CTA section with a clean and premium look:
+
+“Start your transformation today.”
+
+Add a large Join Now button
+
+Below the button add: DM me on WhatsApp
+
+Do NOT change any other page structure
