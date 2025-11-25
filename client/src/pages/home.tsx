@@ -890,11 +890,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black flex items-center justify-center p-4 md:p-6">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover object-center"
+                        className="max-h-[380px] md:max-h-[420px] lg:max-h-[460px] w-auto max-w-full object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -915,11 +915,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black flex items-center justify-center p-4 md:p-6">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover object-center"
+                        className="max-h-[380px] md:max-h-[420px] lg:max-h-[460px] w-auto max-w-full object-contain"
                       />
                     </div>
                   </div>
@@ -1212,7 +1212,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex"
               >
-                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] hover-elevate transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary relative overflow-hidden`}>
+                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden`}>
                   {pkg.featured && (
                     <>
                       <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
@@ -1337,7 +1337,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="group p-5 hover-elevate transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-xl relative overflow-hidden">
+                <Card className="group p-5 transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden">
                   <CardContent className="p-0 space-y-3 relative">
                     {pkg.badge && (
                       <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
@@ -1499,12 +1499,14 @@ export default function Home() {
               .flip-card {
                 perspective: 1000px;
                 height: 100%;
+                min-height: 280px;
               }
               
               .flip-card-inner {
                 position: relative;
                 width: 100%;
                 height: 100%;
+                min-height: 280px;
                 text-align: center;
                 transition: transform 0.6s;
                 transform-style: preserve-3d;
