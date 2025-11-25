@@ -66,6 +66,25 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Added motion animations for card entry
   - Faster testimonial animations (20s/25s instead of 30s/35s)
   - Split testimonials into 3 different review groups per row
+- **Latest Content Updates** (November 25, 2025):
+  - Updated hero section with founder's mission statement: "With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world."
+  - Added motivational quote: "Your transformation is our mission. Every rep, every session, every victory — we celebrate it all with you."
+  - Updated statistics: Changed client count from 1250+ to 2000+, removed "Smart Machines" metric
+  - Converted transformation gallery to auto-scrolling horizontal slider with pause-on-hover functionality (30s animation duration)
+  - Renamed "Programs" to "Services" throughout navigation menu (desktop and mobile)
+  - Updated section heading from "Our Training Programs" to "Our Services"
+  - Replaced first 3 program items with new service offerings:
+    1. Personalised Training - Custom workout plans and weekly progress check-ins
+    2. Personal Guidance - Expert nutrition advice and habit coaching
+    3. Proven Transformation - Science-backed methods with visible results
+  - Added "Why Choose Train With Winston" section with 5 key features:
+    1. Expert Coaching - Professional trainers with experience
+    2. Flexible Training - Workout on your schedule
+    3. Nutrition Support - Personalized meal guidance
+    4. Progress Tracking - Monitor your improvements
+    5. Community Support - Join a supportive fitness family
+  - Added FAQ section with 4 common questions
+  - Added final CTA section before footer with "Join Now" button and WhatsApp link
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
