@@ -90,6 +90,11 @@ import yogaBanner from "@assets/class_banners/yoga.png";
 import aerobicsBanner from "@assets/class_banners/aerobics.png";
 import cardioBanner from "@assets/class_banners/cardio.png";
 import whatsappIcon from "@assets/whatsapp.svg";
+import gymBackImage1 from "@assets/stock_images/dumbbells_fitness_gy_fc4bacfa.jpg";
+import gymBackImage2 from "@assets/stock_images/dumbbells_fitness_gy_c2a617d6.jpg";
+import gymBackImage3 from "@assets/stock_images/dumbbells_fitness_gy_1561c2c3.jpg";
+import gymBackImage4 from "@assets/stock_images/dumbbells_fitness_gy_35149c86.jpg";
+import gymBackImage5 from "@assets/stock_images/dumbbells_fitness_gy_0d51d04b.jpg";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
@@ -890,11 +895,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black flex items-center justify-center p-4 md:p-6">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4] bg-black flex items-center justify-center">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="max-h-[380px] md:max-h-[420px] lg:max-h-[460px] w-auto max-w-full object-contain"
+                        className="w-full h-full object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -915,11 +920,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary h-[450px] md:h-[500px] lg:h-[550px] bg-black flex items-center justify-center p-4 md:p-6">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4] bg-black flex items-center justify-center">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="max-h-[380px] md:max-h-[420px] lg:max-h-[460px] w-auto max-w-full object-contain"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
@@ -1548,31 +1553,36 @@ export default function Home() {
                   title: "Structure, Not Guesswork",
                   desc: "Science based personalized workout & diet according to your goals and lifestyle.",
                   icon: Target,
-                  testId: "card-structure"
+                  testId: "card-structure",
+                  backImage: gymBackImage1
                 },
                 {
                   title: "High Accountability",
                   desc: "Weekly check-ins, form correction, progress tracking. You don't fall off track.",
                   icon: CheckCircle2,
-                  testId: "card-accountability"
+                  testId: "card-accountability",
+                  backImage: gymBackImage2
                 },
                 {
                   title: "Clear Guidance",
                   desc: "No confusion. No overthinking. You'll know exactly what to do daily.",
                   icon: Lightbulb,
-                  testId: "card-guidance"
+                  testId: "card-guidance",
+                  backImage: gymBackImage3
                 },
                 {
                   title: "Mindset & Discipline Coaching",
                   desc: "You don't just get in shape. You become consistent.",
                   icon: Zap,
-                  testId: "card-mindset"
+                  testId: "card-mindset",
+                  backImage: gymBackImage4
                 },
                 {
                   title: "Premium Community",
                   desc: "A batch where everyone is moving.",
                   icon: Users,
-                  testId: "card-community"
+                  testId: "card-community",
+                  backImage: gymBackImage5
                 },
               ].map((item, i) => (
                 <motion.div
@@ -1601,16 +1611,26 @@ export default function Home() {
                         </Card>
                       </div>
                       <div className="flip-card-back">
-                        <Card className="bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border-primary/40 h-full">
-                          <CardContent className="p-6 md:p-8 flex flex-col items-center justify-center h-full space-y-4">
-                            <div className="w-20 h-20 rounded-full bg-primary/30 flex items-center justify-center floating-icon">
-                              <item.icon className="h-10 w-10 text-primary" />
+                        <Card className="border-primary/40 h-full overflow-hidden">
+                          <div className="relative w-full h-full">
+                            <img 
+                              src={item.backImage} 
+                              alt="Gym fitness background" 
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 space-y-4">
+                              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/30 flex items-center justify-center floating-icon">
+                                <item.icon className="h-8 w-8 md:h-10 md:w-10 text-primary" />
+                              </div>
+                              <p className="text-white text-base md:text-lg font-semibold text-center">
+                                {item.title}
+                              </p>
+                              <p className="text-white/80 text-sm text-center">
+                                Your transformation starts here
+                              </p>
                             </div>
-                            <p className="text-white text-base md:text-lg font-semibold text-center">
-                              Your transformation starts here
-                            </p>
-                            <Dumbbell className="h-8 w-8 text-primary/70" />
-                          </CardContent>
+                          </div>
                         </Card>
                       </div>
                     </div>
