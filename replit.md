@@ -91,12 +91,20 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Enhanced package cards hover effects with normal shadow lift and translate animations (removed hover-elevate utility)
   - All changes maintain responsive design across breakpoints
 - **Transformation & Flip Card Enhancements** (November 26, 2025):
-  - Fixed Transformation section image alignment: using aspect-[3/4] ratio with object-contain to show full images without cropping
+  - Fixed Transformation section image alignment: using aspect-[3/4] ratio with object-cover to fill cards completely
   - All transformation cards now have same width, height, and perfect alignment with consistent borders
   - Enhanced "Why Choose Train With Winston" flip cards with gym image backgrounds on back faces
   - Flip card backs feature: gym equipment stock images, gradient overlay for legibility, floating icon animation, title and subtitle text
   - Added 5 different gym stock images for variety across the 5 flip cards
   - Maintained smooth 3D flip animation on hover with responsive design
+- **Contact Form & Transformation Updates** (November 26, 2025):
+  - Phone validation: Exactly 10 digits, numbers only (no letters or special characters)
+  - Green checkmark icon appears in phone input when valid 10-digit number is entered
+  - Phone input filters out non-numeric characters as user types
+  - Email recipient changed to: replituse32@gmail.com
+  - Email format updated to: "Name:-, Email:-, Phone:-, Service:-"
+  - Transformation carousel speed increased (10s animation, faster scrolling)
+  - Transformation images now use object-cover to fill cards completely (no empty space)
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
