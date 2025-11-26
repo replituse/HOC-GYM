@@ -580,14 +580,14 @@ export default function Home() {
           <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-about"
               >
-                About House of Champions
+                About House of <span className="text-primary">Champions</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
@@ -837,14 +837,14 @@ export default function Home() {
           <div className="w-full relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-transformations"
               >
-                Witness the Transformation
+                Witness the <span className="text-primary">Transformation</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
@@ -942,14 +942,14 @@ export default function Home() {
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-training-programs"
               >
-                Our Services
+                Our <span className="text-primary">Services</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
@@ -1128,13 +1128,13 @@ export default function Home() {
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10 lg:mb-12">
             <motion.h2 
-              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Transform Your Life Today
+              Transform Your Life <span className="text-primary">Today</span>
             </motion.h2>
             <motion.p 
               className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
@@ -1401,13 +1401,13 @@ export default function Home() {
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                Meet Your Trainers
+                Meet Your <span className="text-primary">Trainers</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
@@ -1659,14 +1659,14 @@ export default function Home() {
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-faq"
               >
-                FAQ
+                Frequently Asked <span className="text-primary">Questions</span>
               </motion.h2>
             </div>
 
@@ -1761,14 +1761,14 @@ export default function Home() {
           <div className="max-w-full">
             <div className="text-center mb-12 md:mb-16 px-4">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-testimonials"
               >
-                What Our Members Say
+                What Our Members <span className="text-primary">Say</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
