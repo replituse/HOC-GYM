@@ -326,33 +326,33 @@ export default function Home() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-white/95 backdrop-blur-md border-l border-primary/20">
+            <SheetContent side="right" className="w-[300px] bg-background/95 backdrop-blur-md border-l border-primary/20">
               <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-                <X className="h-6 w-6 text-gray-900" />
+                <X className="h-6 w-6 text-foreground" />
                 <span className="sr-only">Close</span>
               </SheetClose>
               <nav className="flex flex-col gap-6 mt-8">
                 <button 
                   onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   ABOUT US
                 </button>
                 <button 
                   onClick={() => { document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   COMMUNITY
                 </button>
                 <button 
                   onClick={() => { document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   TRANSFORMATIONS
                 </button>
                 <button 
                   onClick={() => { document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   SERVICES
                 </button>
@@ -364,25 +364,25 @@ export default function Home() {
                 </button> */}
                 <button 
                   onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   PACKAGES
                 </button>
                 <button 
                   onClick={() => { document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   TRAINERS
                 </button>
                 <button 
                   onClick={() => { document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   TESTIMONIALS
                 </button>
                 <button 
                   onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors text-left"
                 >
                   CONTACT
                 </button>
@@ -578,11 +578,11 @@ export default function Home() {
 
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="about">
+        <section className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" id="about">
           <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -592,7 +592,7 @@ export default function Home() {
                 About House of <span className="text-primary">Champions</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -615,10 +615,10 @@ export default function Home() {
                   className="space-y-4"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-story">Our Story</h3>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid="text-our-story">
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-story">
                     House of Champions was founded with a singular vision: to make professional fitness training accessible to everyone. We believe that every individual deserves access to expert guidance, personalized programs, and a supportive community that celebrates their fitness journey.
                   </p>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                     What started as a passion project has grown into a thriving online fitness community, helping thousands transform their lives through dedicated training, proper nutrition, and unwavering support.
                   </p>
                 </motion.div>
@@ -632,7 +632,7 @@ export default function Home() {
                   className="space-y-4"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Our Vision</h3>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
                     We envision a world where fitness is not just a goal, but a lifestyle embraced by people of all ages and backgrounds. Our mission is to break down barriers to fitness training by offering flexible, online programs that fit into your busy schedule.
                   </p>
                   <div className="space-y-3 pt-2">
@@ -640,19 +640,19 @@ export default function Home() {
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-gray-700 text-sm md:text-base">Expert-led training programs for everyone</p>
+                      <p className="text-muted-foreground text-sm md:text-base">Expert-led training programs for everyone</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-gray-700 text-sm md:text-base">Flexible online classes that work with your schedule</p>
+                      <p className="text-muted-foreground text-sm md:text-base">Flexible online classes that work with your schedule</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-gray-700 text-sm md:text-base">Supportive community of like-minded champions</p>
+                      <p className="text-muted-foreground text-sm md:text-base">Supportive community of like-minded champions</p>
                     </div>
                   </div>
                 </motion.div>
@@ -696,7 +696,7 @@ export default function Home() {
                 {/* Meet Our Founder */}
                 <div className="w-full text-left space-y-3">
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">Meet Our Founder</h3>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                     With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
                   </p>
                   <p className="text-white font-semibold text-sm md:text-base italic">
@@ -714,7 +714,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="mt-12"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900" data-testid="heading-gallery">OUR HOC <span className="text-primary">GALLERY</span></h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground" data-testid="heading-gallery">OUR HOC <span className="text-primary">GALLERY</span></h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[gymPhoto1, gymPhoto2, gymPhoto3, gymPhoto4].map((img, idx) => (
                   <motion.div 
@@ -739,14 +739,14 @@ export default function Home() {
 
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
-        <section className="py-12 md:py-16 bg-white relative overflow-hidden border-t border-primary/10" id="instagram-videos">
+        <section className="py-12 md:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="instagram-videos">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,83,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground">
                 Workout with HOC <span className="text-primary">Community</span>
               </h2>
-              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-bold">
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto font-bold">
                 Experience the energy, dedication, and transformation happening daily
               </p>
             </div>
@@ -803,7 +803,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-gray-800 text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                <span className="text-foreground text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                   house_of_champions_studio
                 </span>
               </a>
@@ -822,7 +822,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-gray-800 text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                <span className="text-foreground text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                   house_of_champions_studio
                 </span>
               </a>
@@ -833,11 +833,11 @@ export default function Home() {
 
       {/* Transformation Gallery - Auto-scrolling Slider */}
       <AnimatedSection variant="slideInRight">
-        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="transformations">
+        <section className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
           <div className="w-full relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -847,7 +847,7 @@ export default function Home() {
                 Witness the <span className="text-primary">Transformation</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -938,11 +938,11 @@ export default function Home() {
 
       {/* Our Services - Redesigned */}
       <AnimatedSection variant="slideUp">
-        <section id="program" className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
+        <section id="program" className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -952,7 +952,7 @@ export default function Home() {
                 Our <span className="text-primary">Services</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -992,7 +992,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex"
                 >
-                  <Card className="group overflow-hidden hover-elevate bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
+                  <Card className="group overflow-hidden hover-elevate bg-card shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
                     <div className="relative h-56 md:h-64 w-full overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                       <img 
@@ -1020,7 +1020,7 @@ export default function Home() {
 
       {/* Exclusively For Women - Elegant Black Design */}
       {/* <AnimatedSection variant="fadeIn">
-        <section className="py-8 md:py-10 bg-white relative overflow-hidden">
+        <section className="py-8 md:py-10 bg-card relative overflow-hidden">
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
               <div className="inline-block mb-3">
@@ -1128,7 +1128,7 @@ export default function Home() {
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10 lg:mb-12">
             <motion.h2 
-              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1137,7 +1137,7 @@ export default function Home() {
               Transform Your Life <span className="text-primary">Today</span>
             </motion.h2>
             <motion.p 
-              className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
+              className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-bold px-4 md:whitespace-nowrap"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1218,7 +1218,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex"
               >
-                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] transition-all duration-300 bg-white border-2 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/40'} hover:border-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden`}>
+                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] transition-all duration-300 bg-card border-2 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/40'} hover:border-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden`}>
                   {pkg.featured && (
                     <>
                       <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
@@ -1254,7 +1254,7 @@ export default function Home() {
                           <div className="h-4 w-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                             <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-xs md:text-sm text-gray-700 leading-tight font-medium">{feature}</span>
+                          <span className="text-xs md:text-sm text-muted-foreground leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -1343,7 +1343,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="group p-5 transition-all duration-500 bg-white border-2 border-primary/40 hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden">
+                <Card className="group p-5 transition-all duration-500 bg-card border-2 border-primary/40 hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden">
                   <CardContent className="p-0 space-y-3 relative">
                     {pkg.badge && (
                       <div className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-full text-xs font-bold">
@@ -1375,7 +1375,7 @@ export default function Home() {
                           <div className="h-4 w-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                             <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-sm text-gray-700 leading-tight font-medium">{feature}</span>
+                          <span className="text-sm text-muted-foreground leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -1397,11 +1397,11 @@ export default function Home() {
 
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="bg-white flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12 border-t border-primary/10" id="trainers">
+        <section className="bg-card flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12 border-t border-primary/10" id="trainers">
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1410,7 +1410,7 @@ export default function Home() {
                 Meet Your <span className="text-primary">Trainers</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-bold px-4 md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1457,13 +1457,13 @@ export default function Home() {
                     />
                   </div>
                   <div className="text-center space-y-2">
-                    <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
                       {trainer.name}
                     </h3>
                     <p className="text-primary text-sm md:text-base font-bold">
                       {trainer.role}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
                       {trainer.bio}
                     </p>
                   </div>
@@ -1485,7 +1485,7 @@ export default function Home() {
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1495,7 +1495,7 @@ export default function Home() {
                 Why Choose <span className="text-primary">Train With Winston</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1607,15 +1607,15 @@ export default function Home() {
                   <div className="flip-card" data-testid={item.testId}>
                     <div className="flip-card-inner">
                       <div className="flip-card-front">
-                        <Card className="bg-white shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
+                        <Card className="bg-card shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
                           <CardContent className="p-6 md:p-8 space-y-4">
                             <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.accent} flex items-center justify-center shadow-lg`}>
                               <item.icon className="h-7 w-7 text-white" />
                             </div>
-                            <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900 text-left" data-testid={`heading-${item.testId}`}>
+                            <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground text-left" data-testid={`heading-${item.testId}`}>
                               {item.title}
                             </h3>
-                            <p className="text-gray-600 text-sm md:text-base leading-relaxed text-left" data-testid={`text-${item.testId}`}>
+                            <p className="text-muted-foreground text-sm md:text-base leading-relaxed text-left" data-testid={`text-${item.testId}`}>
                               {item.desc}
                             </p>
                           </CardContent>
@@ -1661,7 +1661,7 @@ export default function Home() {
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1715,7 +1715,7 @@ export default function Home() {
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-md">
                               <MessageSquare className="h-4 w-4 text-white" />
                             </div>
-                            <h3 className="font-heading text-base md:text-lg font-bold text-gray-900" data-testid={`question-${faq.testId}`}>
+                            <h3 className="font-heading text-base md:text-lg font-bold text-foreground" data-testid={`question-${faq.testId}`}>
                               {faq.question}
                             </h3>
                           </div>
@@ -1750,7 +1750,7 @@ export default function Home() {
                           style={{ overflow: "hidden" }}
                         >
                           <div className="pl-11 border-l-2 border-primary/30 ml-4">
-                            <p className="text-gray-700 text-sm md:text-base leading-relaxed pl-4" data-testid={`answer-${faq.testId}`}>
+                            <p className="text-muted-foreground text-sm md:text-base leading-relaxed pl-4" data-testid={`answer-${faq.testId}`}>
                               {faq.answer}
                             </p>
                           </div>
@@ -1771,7 +1771,7 @@ export default function Home() {
           <div className="max-w-full">
             <div className="text-center mb-12 md:mb-16 px-4">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1781,7 +1781,7 @@ export default function Home() {
                 What Our Members <span className="text-primary">Say</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1851,10 +1851,10 @@ export default function Home() {
           
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative">
             <div className="text-center mb-8 md:mb-10">
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground">
                 Get In <span className="text-primary">Touch</span>
               </h2>
-              <p className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-medium">
+              <p className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-medium">
                 We'd love to hear from you. Reach out to us today!
               </p>
             </div>
@@ -1863,13 +1863,13 @@ export default function Home() {
               {/* Left Column - Contact Form & Business Hours */}
               <div className="space-y-6">
                 {/* Contact Form */}
-                <Card className="bg-white shadow-xl border-2 border-primary/20 p-5 md:p-6">
+                <Card className="bg-card shadow-xl border-2 border-primary/20 p-5 md:p-6">
                   <CardContent className="p-0">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg">
                         <Mail className="h-5 w-5 text-white" />
                       </div>
-                      <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
+                      <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
                         Send Us a Message
                       </h3>
                     </div>
@@ -1882,9 +1882,9 @@ export default function Home() {
                             name="name"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-gray-700">Name</FormLabel>
+                                <FormLabel className="text-sm font-medium text-muted-foreground">Name</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors" />
+                                  <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-background border-2 border-input focus:border-primary transition-colors" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -1895,9 +1895,9 @@ export default function Home() {
                             name="email"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-gray-700">Email</FormLabel>
+                                <FormLabel className="text-sm font-medium text-muted-foreground">Email</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors" />
+                                  <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-background border-2 border-input focus:border-primary transition-colors" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -1910,14 +1910,14 @@ export default function Home() {
                           name="contactNumber"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
+                              <FormLabel className="text-sm font-medium text-muted-foreground">Phone Number</FormLabel>
                               <FormControl>
                                 <div className="relative">
                                   <Input 
                                     {...field}
                                     placeholder="Enter 10 digit number" 
                                     data-testid="input-contact" 
-                                    className="bg-white border-2 border-gray-200 focus:border-primary transition-colors pr-10"
+                                    className="bg-background border-2 border-input focus:border-primary transition-colors pr-10"
                                     maxLength={10}
                                     inputMode="numeric"
                                     onChange={(e) => {
@@ -1944,10 +1944,10 @@ export default function Home() {
                           name="purpose"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-gray-700">Service Needed</FormLabel>
+                              <FormLabel className="text-sm font-medium text-muted-foreground">Service Needed</FormLabel>
                               <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
-                                  <SelectTrigger data-testid="select-purpose" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors">
+                                  <SelectTrigger data-testid="select-purpose" className="bg-background border-2 border-input focus:border-primary transition-colors">
                                     <SelectValue placeholder="Select a service" />
                                   </SelectTrigger>
                                 </FormControl>
@@ -2027,13 +2027,13 @@ export default function Home() {
               </div>
 
               {/* Right Column - Contact Details */}
-              <Card className="bg-white shadow-xl border-2 border-primary/20 p-5 md:p-6 flex flex-col h-full">
+              <Card className="bg-card shadow-xl border-2 border-primary/20 p-5 md:p-6 flex flex-col h-full">
                 <CardContent className="p-0 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg">
                       <Phone className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
                       Contact Details
                     </h3>
                   </div>
@@ -2045,10 +2045,10 @@ export default function Home() {
                         <Phone className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Phone</p>
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">Phone</p>
                         <a 
                           href={`tel:${PHONE_NUMBER}`}
-                          className="text-gray-600 hover:text-primary transition-colors text-sm"
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
                           {PHONE_NUMBER}
                         </a>
@@ -2061,10 +2061,10 @@ export default function Home() {
                         <Mail className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Email</p>
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">Email</p>
                         <a 
                           href="mailto:houseofchampions2020@gmail.com"
-                          className="text-gray-600 hover:text-primary transition-colors text-sm"
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
                           houseofchampions2020@gmail.com
                         </a>
@@ -2077,12 +2077,12 @@ export default function Home() {
                         <MapPin className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Address</p>
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">Address</p>
                         <a 
                           href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-primary transition-colors text-sm"
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
                           Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
                         </a>
@@ -2095,7 +2095,7 @@ export default function Home() {
                         <Users className="h-4 w-4 text-white" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900 mb-2 text-sm">Follow Us</p>
+                        <p className="font-semibold text-foreground mb-2 text-sm">Follow Us</p>
                         <div className="flex flex-wrap gap-2">
                           <a 
                             href="https://www.instagram.com/house_of_champions_studio/" 
