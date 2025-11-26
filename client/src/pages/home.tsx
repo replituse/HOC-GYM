@@ -1885,14 +1885,14 @@ export default function Home() {
                               <FormControl>
                                 <div className="relative">
                                   <Input 
+                                    {...field}
                                     placeholder="Enter 10 digit number" 
-                                    {...field} 
                                     data-testid="input-contact" 
                                     className="bg-white pr-10"
                                     maxLength={10}
                                     inputMode="numeric"
                                     onChange={(e) => {
-                                      const value = e.target.value.replace(/\D/g, '');
+                                      const value = e.target.value.replace(/\D/g, '').slice(0, 10);
                                       field.onChange(value);
                                     }}
                                   />
