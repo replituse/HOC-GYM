@@ -1476,18 +1476,23 @@ export default function Home() {
 
       {/* Why Choose Train With Winston Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-primary/5 relative overflow-hidden border-t border-primary/10" id="why-choose">
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
+          {/* Decorative background elements */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-green-300/20 rounded-full blur-2xl" />
+          
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 data-testid="heading-why-choose"
               >
-                Why Choose Train With Winston
+                Why Choose <span className="text-primary">Train With Winston</span>
               </motion.h2>
               <motion.p 
                 className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
@@ -1555,35 +1560,40 @@ export default function Home() {
                   desc: "Science based personalized workout & diet according to your goals and lifestyle.",
                   icon: Target,
                   testId: "card-structure",
-                  backImage: gymBackImage1
+                  backImage: gymBackImage1,
+                  accent: "from-emerald-500 to-green-600"
                 },
                 {
                   title: "High Accountability",
                   desc: "Weekly check-ins, form correction, progress tracking. You don't fall off track.",
                   icon: CheckCircle2,
                   testId: "card-accountability",
-                  backImage: gymBackImage2
+                  backImage: gymBackImage2,
+                  accent: "from-green-500 to-emerald-600"
                 },
                 {
                   title: "Clear Guidance",
                   desc: "No confusion. No overthinking. You'll know exactly what to do daily.",
                   icon: Lightbulb,
                   testId: "card-guidance",
-                  backImage: gymBackImage3
+                  backImage: gymBackImage3,
+                  accent: "from-teal-500 to-green-600"
                 },
                 {
                   title: "Mindset & Discipline Coaching",
                   desc: "You don't just get in shape. You become consistent.",
                   icon: Zap,
                   testId: "card-mindset",
-                  backImage: gymBackImage4
+                  backImage: gymBackImage4,
+                  accent: "from-emerald-600 to-teal-500"
                 },
                 {
                   title: "Premium Community",
                   desc: "A batch where everyone is moving.",
                   icon: Users,
                   testId: "card-community",
-                  backImage: gymBackImage5
+                  backImage: gymBackImage5,
+                  accent: "from-green-600 to-emerald-500"
                 },
               ].map((item, i) => (
                 <motion.div
@@ -1597,37 +1607,37 @@ export default function Home() {
                   <div className="flip-card" data-testid={item.testId}>
                     <div className="flip-card-inner">
                       <div className="flip-card-front">
-                        <Card className="bg-white/5 backdrop-blur-sm border-primary/20 transition-all duration-300 h-full">
+                        <Card className="bg-white shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
                           <CardContent className="p-6 md:p-8 space-y-4">
-                            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                              <item.icon className="h-6 w-6 text-primary" />
+                            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.accent} flex items-center justify-center shadow-lg`}>
+                              <item.icon className="h-7 w-7 text-white" />
                             </div>
-                            <h3 className="font-heading text-xl md:text-2xl font-bold text-white" data-testid={`heading-${item.testId}`}>
+                            <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900 text-left" data-testid={`heading-${item.testId}`}>
                               {item.title}
                             </h3>
-                            <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`text-${item.testId}`}>
+                            <p className="text-gray-600 text-sm md:text-base leading-relaxed text-left" data-testid={`text-${item.testId}`}>
                               {item.desc}
                             </p>
                           </CardContent>
                         </Card>
                       </div>
                       <div className="flip-card-back">
-                        <Card className="border-primary/40 h-full overflow-hidden">
+                        <Card className="border-primary/40 h-full overflow-hidden shadow-xl">
                           <div className="relative w-full h-full">
                             <img 
                               src={item.backImage} 
                               alt="Gym fitness background" 
                               className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 space-y-4">
-                              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/30 flex items-center justify-center floating-icon">
-                                <item.icon className="h-8 w-8 md:h-10 md:w-10 text-primary" />
+                              <div className={`w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br ${item.accent} flex items-center justify-center floating-icon shadow-xl`}>
+                                <item.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
                               </div>
-                              <p className="text-gray-800 text-base md:text-lg font-semibold text-center">
+                              <p className="text-white text-base md:text-lg font-bold text-center">
                                 {item.title}
                               </p>
-                              <p className="text-gray-600 text-sm text-center">
+                              <p className="text-white/80 text-sm text-center">
                                 Your transformation starts here
                               </p>
                             </div>
@@ -1822,13 +1832,17 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Contact Section - Black Background with White Cards */}
+      {/* Contact Section - Light Green Background with Styled Cards */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-white border-t border-primary/10" id="contact">
-          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 border-t border-primary/10 relative overflow-hidden" id="contact">
+          {/* Decorative background elements */}
+          <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+          
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto relative">
             <div className="text-center mb-8 md:mb-10">
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary">
-                Get In Touch
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-gray-900">
+                Get In <span className="text-primary">Touch</span>
               </h2>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-medium">
                 We'd love to hear from you. Reach out to us today!
@@ -1839,11 +1853,16 @@ export default function Home() {
               {/* Left Column - Contact Form & Business Hours */}
               <div className="space-y-6">
                 {/* Contact Form */}
-                <Card className="bg-white p-5 md:p-6">
+                <Card className="bg-white shadow-xl border-2 border-primary/20 p-5 md:p-6">
                   <CardContent className="p-0">
-                    <h3 className="font-heading text-xl md:text-2xl font-bold mb-4 text-black">
-                      Send Us a Message
-                    </h3>
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg">
+                        <Mail className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
+                        Send Us a Message
+                      </h3>
+                    </div>
                     
                     <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
@@ -1853,9 +1872,9 @@ export default function Home() {
                             name="name"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-black">Name</FormLabel>
+                                <FormLabel className="text-sm font-medium text-gray-700">Name</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-white" />
+                                  <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -1866,9 +1885,9 @@ export default function Home() {
                             name="email"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-black">Email</FormLabel>
+                                <FormLabel className="text-sm font-medium text-gray-700">Email</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-white" />
+                                  <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -1881,14 +1900,14 @@ export default function Home() {
                           name="contactNumber"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-black">Phone Number</FormLabel>
+                              <FormLabel className="text-sm font-medium text-gray-700">Phone Number</FormLabel>
                               <FormControl>
                                 <div className="relative">
                                   <Input 
                                     {...field}
                                     placeholder="Enter 10 digit number" 
                                     data-testid="input-contact" 
-                                    className="bg-white pr-10"
+                                    className="bg-white border-2 border-gray-200 focus:border-primary transition-colors pr-10"
                                     maxLength={10}
                                     inputMode="numeric"
                                     onChange={(e) => {
@@ -1898,8 +1917,8 @@ export default function Home() {
                                   />
                                   {field.value && field.value.length === 10 && /^[0-9]+$/.test(field.value) && (
                                     <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                      <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
-                                        <Check className="w-3 h-3 text-black" />
+                                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow">
+                                        <Check className="w-3 h-3 text-white" />
                                       </div>
                                     </div>
                                   )}
@@ -1915,10 +1934,10 @@ export default function Home() {
                           name="purpose"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-black">Service Needed</FormLabel>
+                              <FormLabel className="text-sm font-medium text-gray-700">Service Needed</FormLabel>
                               <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
-                                  <SelectTrigger data-testid="select-purpose" className="bg-white">
+                                  <SelectTrigger data-testid="select-purpose" className="bg-white border-2 border-gray-200 focus:border-primary transition-colors">
                                     <SelectValue placeholder="Select a service" />
                                   </SelectTrigger>
                                 </FormControl>
@@ -1938,7 +1957,7 @@ export default function Home() {
                         <Button 
                           type="submit" 
                           size="lg" 
-                          className="w-full bg-primary hover:bg-primary/90 text-black font-bold" 
+                          className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold shadow-lg" 
                           disabled={contactMutation.isPending}
                           data-testid="button-submit-form"
                         >
@@ -1957,38 +1976,39 @@ export default function Home() {
                 </Card>
 
                 {/* Business Hours Card */}
-                <Card className="bg-white p-5 md:p-6">
+                <Card className="bg-gradient-to-br from-emerald-500 to-green-600 shadow-xl p-5 md:p-6">
                   <CardContent className="p-0">
-                    <h3 className="font-heading text-xl md:text-2xl font-bold mb-4 text-black">
-                      Business Hours
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                        <Clock className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold text-white">
+                        Business Hours
+                      </h3>
+                    </div>
                     
                     <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
+                        <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-black text-sm mb-0.5">Monday - Friday</p>
-                          <p className="text-muted-foreground text-sm">8:00 AM - 6:00 PM</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">Monday - Friday</p>
+                          <p className="text-white/80 text-sm">8:00 AM - 6:00 PM</p>
                         </div>
                       </div>
                       
-                      <div className="h-px bg-gray-200" />
-                      
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
+                        <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-black text-sm mb-0.5">Saturday</p>
-                          <p className="text-muted-foreground text-sm">9:00 AM - 4:00 PM</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">Saturday</p>
+                          <p className="text-white/80 text-sm">9:00 AM - 4:00 PM</p>
                         </div>
                       </div>
                       
-                      <div className="h-px bg-gray-200" />
-                      
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
+                        <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-black text-sm mb-0.5">Sunday</p>
-                          <p className="text-muted-foreground text-sm">Emergency Services Only</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">Sunday</p>
+                          <p className="text-white/80 text-sm">Emergency Services Only</p>
                         </div>
                       </div>
                     </div>
@@ -1997,21 +2017,28 @@ export default function Home() {
               </div>
 
               {/* Right Column - Contact Details */}
-              <Card className="bg-white p-5 md:p-6 flex flex-col h-full">
+              <Card className="bg-white shadow-xl border-2 border-primary/20 p-5 md:p-6 flex flex-col h-full">
                 <CardContent className="p-0 flex flex-col flex-1">
-                  <h3 className="font-heading text-xl md:text-2xl font-bold mb-4 text-black">
-                    Contact Details
-                  </h3>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg">
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
+                      Contact Details
+                    </h3>
+                  </div>
                   
                   <div className="space-y-3 flex flex-col flex-1">
                     {/* Phone Number */}
-                    <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 bg-green-50 rounded-lg p-3 border border-primary/10">
+                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-4 w-4 text-white" />
+                      </div>
                       <div>
-                        <p className="font-semibold text-black mb-0.5 text-sm">Phone</p>
+                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Phone</p>
                         <a 
                           href={`tel:${PHONE_NUMBER}`}
-                          className="text-muted-foreground hover:text-black transition-colors text-sm"
+                          className="text-gray-600 hover:text-primary transition-colors text-sm"
                         >
                           {PHONE_NUMBER}
                         </a>
@@ -2019,13 +2046,15 @@ export default function Home() {
                     </div>
 
                     {/* Email */}
-                    <div className="flex items-start gap-3">
-                      <Mail className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 bg-green-50 rounded-lg p-3 border border-primary/10">
+                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0">
+                        <Mail className="h-4 w-4 text-white" />
+                      </div>
                       <div>
-                        <p className="font-semibold text-black mb-0.5 text-sm">Email</p>
+                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Email</p>
                         <a 
                           href="mailto:houseofchampions2020@gmail.com"
-                          className="text-muted-foreground hover:text-black transition-colors text-sm"
+                          className="text-gray-600 hover:text-primary transition-colors text-sm"
                         >
                           houseofchampions2020@gmail.com
                         </a>
@@ -2033,15 +2062,17 @@ export default function Home() {
                     </div>
 
                     {/* Address */}
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 bg-green-50 rounded-lg p-3 border border-primary/10">
+                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <MapPin className="h-4 w-4 text-white" />
+                      </div>
                       <div>
-                        <p className="font-semibold text-black mb-0.5 text-sm">Address</p>
+                        <p className="font-semibold text-gray-900 mb-0.5 text-sm">Address</p>
                         <a 
                           href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-black transition-colors text-sm"
+                          className="text-gray-600 hover:text-primary transition-colors text-sm"
                         >
                           Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
                         </a>
@@ -2049,10 +2080,12 @@ export default function Home() {
                     </div>
 
                     {/* Social Media */}
-                    <div className="flex items-start gap-3">
-                      <Users className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 bg-green-50 rounded-lg p-3 border border-primary/10">
+                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0">
+                        <Users className="h-4 w-4 text-white" />
+                      </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-black mb-2 text-sm">Follow Us</p>
+                        <p className="font-semibold text-gray-900 mb-2 text-sm">Follow Us</p>
                         <div className="flex flex-wrap gap-2">
                           <a 
                             href="https://www.instagram.com/house_of_champions_studio/" 
@@ -2087,7 +2120,7 @@ export default function Home() {
 
                     {/* Google Map */}
                     <div className="flex-1 flex flex-col min-h-0">
-                      <div className="rounded-lg overflow-hidden border border-gray-200 h-full">
+                      <div className="rounded-lg overflow-hidden border-2 border-primary/20 h-full shadow-lg">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
                           width="100%"
