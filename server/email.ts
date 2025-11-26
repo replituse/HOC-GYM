@@ -99,18 +99,14 @@ export async function sendContactEmail(data: ContactFormData) {
 
   const mailOptions = {
     from: `"HOC Fitness" <${process.env.GMAIL_USER}>`,
-    to: process.env.GMAIL_USER,
+    to: "replituse32@gmail.com",
     subject: `New Contact Form: ${data.name} - ${purposeLabels[data.purpose]}`,
     html: htmlContent,
     text: `
-New Contact Form Submission - HOC Fitness
-
-Name: ${data.name}
-Email: ${data.email}
-Contact Number: ${data.contactNumber}
-Purpose: ${purposeLabels[data.purpose]}
-
-This is an automated message from your HOC Fitness website contact form.
+Name:- ${data.name}
+Email:- ${data.email}
+Phone:- ${data.contactNumber}
+Service:- ${purposeLabels[data.purpose]}
     `.trim(),
   };
 

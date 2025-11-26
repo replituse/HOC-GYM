@@ -12,9 +12,8 @@ const contactFormSchema = z.object({
     .email("Please enter a valid email address")
     .max(100, "Email must be less than 100 characters"),
   contactNumber: z.string()
-    .min(10, "Contact number must be at least 10 digits")
-    .max(15, "Contact number must be less than 15 digits")
-    .regex(/^[0-9+\-\s()]+$/, "Please enter a valid phone number"),
+    .length(10, "Phone number must be exactly 10 digits")
+    .regex(/^[0-9]+$/, "Phone number must contain only numbers"),
   purpose: z.enum([
     "weight-loss",
     "body-toning", 
@@ -122,18 +121,14 @@ async function sendContactEmail(data: ContactFormData) {
 
   const mailOptions = {
     from: process.env.GMAIL_USER,
-    to: process.env.GMAIL_USER,
-    subject: "New Contact Form Submission - HOC Fitness",
+    to: "replituse32@gmail.com",
+    subject: `New Contact Form: ${data.name} - ${purposeLabels[data.purpose]}`,
     html: htmlContent,
     text: `
-New Contact Form Submission - HOC Fitness
-
-Name: ${data.name}
-Email: ${data.email}
-Contact Number: ${data.contactNumber}
-Purpose: ${purposeLabels[data.purpose]}
-
-This is an automated message from your HOC Fitness website contact form.
+Name:- ${data.name}
+Email:- ${data.email}
+Phone:- ${data.contactNumber}
+Service:- ${purposeLabels[data.purpose]}
     `.trim(),
   };
 

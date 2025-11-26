@@ -10,9 +10,8 @@ export const contactFormSchema = z.object({
     .email("Please enter a valid email address")
     .max(100, "Email must be less than 100 characters"),
   contactNumber: z.string()
-    .min(10, "Contact number must be at least 10 digits")
-    .max(15, "Contact number must be less than 15 digits")
-    .regex(/^[0-9+\-\s()]+$/, "Please enter a valid phone number"),
+    .length(10, "Phone number must be exactly 10 digits")
+    .regex(/^[0-9]+$/, "Phone number must contain only numbers"),
   purpose: z.enum([
     "weight-loss",
     "body-toning", 

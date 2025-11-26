@@ -29,6 +29,7 @@ import {
   Target,
   Star,
   CheckCircle2,
+  Check,
   MessageCircle,
   Phone,
   Mail,
@@ -869,7 +870,7 @@ export default function Home() {
               
               .scroll-container {
                 display: flex;
-                animation: scroll-horizontal 20s linear infinite;
+                animation: scroll-horizontal 10s linear infinite;
               }
               
               .scroll-container:hover {
@@ -895,11 +896,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4] bg-black flex items-center justify-center">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4]">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                         data-testid={item.testId}
                       />
                     </div>
@@ -920,11 +921,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4] bg-black flex items-center justify-center">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4]">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
@@ -1882,7 +1883,27 @@ export default function Home() {
                             <FormItem>
                               <FormLabel className="text-sm font-medium text-black">Phone Number</FormLabel>
                               <FormControl>
-                                <Input placeholder="Your phone number" {...field} data-testid="input-contact" className="bg-white" />
+                                <div className="relative">
+                                  <Input 
+                                    placeholder="Enter 10 digit number" 
+                                    {...field} 
+                                    data-testid="input-contact" 
+                                    className="bg-white pr-10"
+                                    maxLength={10}
+                                    inputMode="numeric"
+                                    onChange={(e) => {
+                                      const value = e.target.value.replace(/\D/g, '');
+                                      field.onChange(value);
+                                    }}
+                                  />
+                                  {field.value && field.value.length === 10 && /^[0-9]+$/.test(field.value) && (
+                                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                      <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                                        <Check className="w-3 h-3 text-black" />
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
                               </FormControl>
                               <FormMessage />
                             </FormItem>
