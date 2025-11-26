@@ -12,7 +12,7 @@ A professional single-page fitness training website for women's online fitness p
 - **Backend**: Express.js, Node.js (local dev), Netlify Functions (production)
 - **Email**: Nodemailer with Gmail SMTP
 - **Deployment**: Netlify-ready with serverless functions
-- **Styling**: Custom vibrant green (hsl(100, 85%, 50%)), black, and white color scheme matching HOC Fitness gym branding
+- **Styling**: Clean white and green color scheme - white backgrounds with bright fitness green (#00C853) accents for a modern, premium aesthetic
 
 ## Email Configuration
 The contact form sends emails using Gmail SMTP via Nodemailer. Required environment variables:
@@ -105,6 +105,21 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Email format updated to: "Name:-, Email:-, Phone:-, Service:-"
   - Transformation carousel speed increased (10s animation, faster scrolling)
   - Transformation images now use object-cover to fill cards completely (no empty space)
+- **White and Green Color Theme Update** (November 26, 2025):
+  - Implemented clean white and green color scheme throughout the site
+  - Updated CSS variables in index.css for consistent white (#FFFFFF) and green (#00C853) theme
+  - Changed all section backgrounds from black to white or light green tints (bg-primary/5)
+  - Updated text colors: headings use text-primary (green), body text uses text-gray-700/900
+  - Updated all buttons: green background with white text, or white with green border
+  - Social link buttons now use green borders instead of white
+  - FAQ cards updated with white backgrounds and green accents
+  - Testimonials section uses light green background (bg-primary/5)
+  - Contact section uses white background with green accents
+  - Final CTA section uses solid green background with white text and button
+  - Mobile navigation updated with dark text on white background
+  - Pricing cards use green borders and green accent colors
+  - Trainers section uses white background with green borders on images
+  - All sections have subtle green border separators (border-primary/10)
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.

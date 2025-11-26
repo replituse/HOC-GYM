@@ -325,33 +325,33 @@ export default function Home() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-black/40 backdrop-blur-md border-l border-white/20">
+            <SheetContent side="right" className="w-[300px] bg-white/95 backdrop-blur-md border-l border-primary/20">
               <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-                <X className="h-6 w-6 text-white" />
+                <X className="h-6 w-6 text-gray-900" />
                 <span className="sr-only">Close</span>
               </SheetClose>
               <nav className="flex flex-col gap-6 mt-8">
                 <button 
                   onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   ABOUT US
                 </button>
                 <button 
                   onClick={() => { document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   COMMUNITY
                 </button>
                 <button 
                   onClick={() => { document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   TRANSFORMATIONS
                 </button>
                 <button 
                   onClick={() => { document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   SERVICES
                 </button>
@@ -363,25 +363,25 @@ export default function Home() {
                 </button> */}
                 <button 
                   onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   PACKAGES
                 </button>
                 <button 
                   onClick={() => { document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   TRAINERS
                 </button>
                 <button 
                   onClick={() => { document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   TESTIMONIALS
                 </button>
                 <button 
                   onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
+                  className="text-lg font-medium text-gray-900 hover:text-primary transition-colors text-left"
                 >
                   CONTACT
                 </button>
@@ -576,7 +576,7 @@ export default function Home() {
 
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="about">
+        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="about">
           <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
               <motion.h2 
@@ -590,7 +590,7 @@ export default function Home() {
                 About House of Champions
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -613,10 +613,10 @@ export default function Home() {
                   className="space-y-4"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-story">Our Story</h3>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid="text-our-story">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid="text-our-story">
                     House of Champions was founded with a singular vision: to make professional fitness training accessible to everyone. We believe that every individual deserves access to expert guidance, personalized programs, and a supportive community that celebrates their fitness journey.
                   </p>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                     What started as a passion project has grown into a thriving online fitness community, helping thousands transform their lives through dedicated training, proper nutrition, and unwavering support.
                   </p>
                 </motion.div>
@@ -630,7 +630,7 @@ export default function Home() {
                   className="space-y-4"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Our Vision</h3>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
                     We envision a world where fitness is not just a goal, but a lifestyle embraced by people of all ages and backgrounds. Our mission is to break down barriers to fitness training by offering flexible, online programs that fit into your busy schedule.
                   </p>
                   <div className="space-y-3 pt-2">
@@ -638,19 +638,19 @@ export default function Home() {
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-white/90 text-sm md:text-base">Expert-led training programs for everyone</p>
+                      <p className="text-gray-700 text-sm md:text-base">Expert-led training programs for everyone</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-white/90 text-sm md:text-base">Flexible online classes that work with your schedule</p>
+                      <p className="text-gray-700 text-sm md:text-base">Flexible online classes that work with your schedule</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-white/90 text-sm md:text-base">Supportive community of like-minded champions</p>
+                      <p className="text-gray-700 text-sm md:text-base">Supportive community of like-minded champions</p>
                     </div>
                   </div>
                 </motion.div>
@@ -694,7 +694,7 @@ export default function Home() {
                 {/* Meet Our Founder */}
                 <div className="w-full text-left space-y-3">
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">Meet Our Founder</h3>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                     With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
                   </p>
                   <p className="text-white font-semibold text-sm md:text-base italic">
@@ -737,8 +737,8 @@ export default function Home() {
 
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
-        <section className="py-12 md:py-16 bg-black relative overflow-hidden" id="instagram-videos">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,204,22,0.08),transparent_70%)]" />
+        <section className="py-12 md:py-16 bg-white relative overflow-hidden border-t border-primary/10" id="instagram-videos">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,83,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10">
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
@@ -746,7 +746,7 @@ export default function Home() {
                   Workout with HOC Community
                 </span>
               </h2>
-              <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto font-bold">
+              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-bold">
                 Experience the energy, dedication, and transformation happening daily
               </p>
             </div>
@@ -771,7 +771,7 @@ export default function Home() {
                   variants={fadeInUp}
                   className={`group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16] ${video.hideOnDesktop ? 'lg:hidden' : ''}`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <video
                     src={video.src}
                     autoPlay
@@ -793,7 +793,7 @@ export default function Home() {
                 href="https://www.instagram.com/house_of_champions_studio/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-white rounded-full px-5 py-2.5"
+                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-primary rounded-full px-5 py-2.5"
                 data-testid="link-instagram-profile"
               >
                 <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -803,7 +803,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-white text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                <span className="text-gray-800 text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                   house_of_champions_studio
                 </span>
               </a>
@@ -812,7 +812,7 @@ export default function Home() {
                 href="https://www.facebook.com/house_of_champions_studio/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-white rounded-full px-5 py-2.5"
+                className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-primary rounded-full px-5 py-2.5"
                 data-testid="link-facebook-profile"
               >
                 <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -822,7 +822,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-white text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
+                <span className="text-gray-800 text-base md:text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                   house_of_champions_studio
                 </span>
               </a>
@@ -833,7 +833,7 @@ export default function Home() {
 
       {/* Transformation Gallery - Auto-scrolling Slider */}
       <AnimatedSection variant="slideInRight">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
+        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="transformations">
           <div className="w-full relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
@@ -847,7 +847,7 @@ export default function Home() {
                 Witness the Transformation
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -938,7 +938,7 @@ export default function Home() {
 
       {/* Our Services - Redesigned */}
       <AnimatedSection variant="slideUp">
-        <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
+        <section id="program" className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
@@ -952,7 +952,7 @@ export default function Home() {
                 Our Services
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1124,7 +1124,7 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden pt-6 pb-12 md:pb-16 lg:pb-20" id="pricing">
+        <section className="min-h-screen bg-primary/5 flex items-center justify-center relative overflow-hidden pt-6 pb-12 md:pb-16 lg:pb-20 border-t border-primary/10" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10 lg:mb-12">
             <motion.h2 
@@ -1137,7 +1137,7 @@ export default function Home() {
               Transform Your Life Today
             </motion.h2>
             <motion.p 
-              className="text-sm md:text-base lg:text-lg text-white mx-auto font-bold px-4 md:whitespace-nowrap"
+              className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1218,7 +1218,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex"
               >
-                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] transition-all duration-300 bg-white border-4 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/60'} hover:border-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden`}>
+                <Card className={`group flex flex-col w-full ${pkg.featured ? 'p-7 md:p-8' : 'p-5 md:p-6'} min-h-[600px] transition-all duration-300 bg-white border-2 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/20' : 'border-primary/40'} hover:border-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden`}>
                   {pkg.featured && (
                     <>
                       <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
@@ -1227,7 +1227,7 @@ export default function Home() {
                   )}
                   <CardContent className="p-0 space-y-3 md:space-y-4 relative flex flex-col h-full">
                     {pkg.badge && (
-                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold w-fit">
+                      <div className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-full text-xs font-bold w-fit">
                         <Star className="h-3 w-3 fill-white" />
                         {pkg.badge}
                       </div>
@@ -1251,16 +1251,16 @@ export default function Home() {
                     <ul className="grid grid-cols-1 gap-2 flex-1">
                       {pkg.features.map((feature, j) => (
                         <li key={j} className="flex items-start gap-2 group/item">
-                          <div className="h-4 w-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="h-4 w-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                             <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-xs md:text-sm text-black/80 leading-tight font-medium">{feature}</span>
+                          <span className="text-xs md:text-sm text-gray-700 leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button 
                       onClick={openWhatsApp} 
-                      className={`w-full rounded-full ${pkg.featured ? 'py-5 md:py-6' : 'py-4 md:py-5'} text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white mt-auto`}
+                      className={`w-full rounded-full ${pkg.featured ? 'py-5 md:py-6' : 'py-4 md:py-5'} text-sm font-bold transition-all duration-300 bg-primary hover:bg-primary/90 text-white mt-auto`}
                       data-testid={`button-select-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       Start {pkg.name.split(' ')[0]} Plan
@@ -1343,10 +1343,10 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="group p-5 transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden">
+                <Card className="group p-5 transition-all duration-500 bg-white border-2 border-primary/40 hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 relative overflow-hidden">
                   <CardContent className="p-0 space-y-3 relative">
                     {pkg.badge && (
-                      <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                      <div className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-full text-xs font-bold">
                         <Star className="h-3 w-3 fill-white" />
                         {pkg.badge}
                       </div>
@@ -1372,16 +1372,16 @@ export default function Home() {
                     <ul className="grid grid-cols-1 gap-2">
                       {pkg.features.map((feature, j) => (
                         <li key={j} className="flex items-start gap-2 group/item">
-                          <div className="h-4 w-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="h-4 w-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                             <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-sm text-black/80 leading-tight font-medium">{feature}</span>
+                          <span className="text-sm text-gray-700 leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button 
                       onClick={openWhatsApp} 
-                      className="w-full rounded-full py-5 text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
+                      className="w-full rounded-full py-5 text-sm font-bold transition-all duration-300 bg-primary hover:bg-primary/90 text-white"
                       data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
                     >
                       Start {pkg.name} Plan
@@ -1397,7 +1397,7 @@ export default function Home() {
 
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="bg-black flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12" id="trainers">
+        <section className="bg-white flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12 border-t border-primary/10" id="trainers">
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
               <motion.h2 
@@ -1410,7 +1410,7 @@ export default function Home() {
                 Meet Your Trainers
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white mx-auto font-bold px-4 md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-bold px-4 md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1449,7 +1449,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex flex-col"
                 >
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-md border-4 border-primary mb-4 group">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-md border-2 border-primary mb-4 group">
                     <img 
                       src={trainer.image} 
                       alt={trainer.name} 
@@ -1457,13 +1457,13 @@ export default function Home() {
                     />
                   </div>
                   <div className="text-center space-y-2">
-                    <h3 className="font-heading text-xl md:text-2xl font-bold text-white">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-gray-900">
                       {trainer.name}
                     </h3>
                     <p className="text-primary text-sm md:text-base font-bold">
                       {trainer.role}
                     </p>
-                    <p className="text-white text-sm leading-relaxed line-clamp-2">
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
                       {trainer.bio}
                     </p>
                   </div>
@@ -1476,7 +1476,7 @@ export default function Home() {
 
       {/* Why Choose Train With Winston Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="why-choose">
+        <section className="py-12 md:py-16 lg:py-20 bg-primary/5 relative overflow-hidden border-t border-primary/10" id="why-choose">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
@@ -1490,7 +1490,7 @@ export default function Home() {
                 Why Choose Train With Winston
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-gray-700 max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1624,10 +1624,10 @@ export default function Home() {
                               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/30 flex items-center justify-center floating-icon">
                                 <item.icon className="h-8 w-8 md:h-10 md:w-10 text-primary" />
                               </div>
-                              <p className="text-white text-base md:text-lg font-semibold text-center">
+                              <p className="text-gray-800 text-base md:text-lg font-semibold text-center">
                                 {item.title}
                               </p>
-                              <p className="text-white/80 text-sm text-center">
+                              <p className="text-gray-600 text-sm text-center">
                                 Your transformation starts here
                               </p>
                             </div>
@@ -1645,7 +1645,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <AnimatedSection variant="slideUp">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="faq">
+        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="faq">
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
@@ -1693,13 +1693,13 @@ export default function Home() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <Card 
-                      className="bg-white/5 backdrop-blur-sm border-primary/20 hover-elevate transition-all duration-300 cursor-pointer" 
+                      className="bg-white border border-primary/20 hover-elevate transition-all duration-300 cursor-pointer shadow-sm" 
                       data-testid={faq.testId}
                       onClick={() => setOpenFaqIndex(isOpen ? null : i)}
                     >
                       <CardContent className="p-5 md:p-6">
                         <div className="flex items-center justify-between gap-3">
-                          <h3 className="font-heading text-base md:text-lg font-bold text-white" data-testid={`question-${faq.testId}`}>
+                          <h3 className="font-heading text-base md:text-lg font-bold text-gray-900" data-testid={`question-${faq.testId}`}>
                             {faq.question}
                           </h3>
                           <motion.div
@@ -1731,7 +1731,7 @@ export default function Home() {
                           transition={{ duration: 0.3 }}
                           style={{ overflow: "hidden" }}
                         >
-                          <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
+                          <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
                             {faq.answer}
                           </p>
                         </motion.div>
@@ -1747,7 +1747,7 @@ export default function Home() {
 
       {/* Customer Testimonials Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-testimonials">
+        <section className="py-12 md:py-16 lg:py-20 bg-primary/5 relative overflow-hidden border-t border-primary/10" data-testid="section-testimonials">
           <div className="max-w-full">
             <div className="text-center mb-12 md:mb-16 px-4">
               <motion.h2 
@@ -1761,7 +1761,7 @@ export default function Home() {
                 What Our Members Say
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1824,13 +1824,13 @@ export default function Home() {
 
       {/* Contact Section - Black Background with White Cards */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-black" id="contact">
+        <section className="py-12 md:py-16 lg:py-20 bg-white border-t border-primary/10" id="contact">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10">
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary">
                 Get In Touch
               </h2>
-              <p className="text-sm md:text-base lg:text-lg text-white mx-auto font-medium">
+              <p className="text-sm md:text-base lg:text-lg text-gray-700 mx-auto font-medium">
                 We'd love to hear from you. Reach out to us today!
               </p>
             </div>
@@ -2110,7 +2110,7 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-black relative overflow-hidden" id="final-cta">
+        <section className="py-16 md:py-20 lg:py-24 bg-primary relative overflow-hidden" id="final-cta">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
           <div className="container px-4 md:px-6 relative max-w-4xl mx-auto text-center">
             <motion.div
@@ -2128,7 +2128,7 @@ export default function Home() {
                 <Button 
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   size="default"
-                  className="rounded-full px-12 py-6 text-lg font-bold bg-primary hover:bg-primary/90 transition-all shadow-2xl shadow-primary/30 hover:scale-105"
+                  className="rounded-full px-12 py-6 text-lg font-bold bg-white text-primary hover:bg-white/90 transition-all shadow-2xl shadow-black/20 hover:scale-105"
                   data-testid="button-join-now-final"
                 >
                   Join Now
@@ -2136,7 +2136,7 @@ export default function Home() {
                 
                 <button
                   onClick={openWhatsApp}
-                  className="text-white/90 hover:text-primary transition-colors text-base md:text-lg font-medium flex items-center gap-2"
+                  className="text-white/90 hover:text-white transition-colors text-base md:text-lg font-medium flex items-center gap-2"
                   data-testid="link-whatsapp-final-cta"
                 >
                   <SiWhatsapp className="h-6 w-6" />
