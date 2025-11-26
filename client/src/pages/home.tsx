@@ -16,6 +16,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useInView } from "@/hooks/use-in-view";
 import { fadeInUp, fadeIn, scaleIn, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { AnimatedSection } from "@/components/animated-section";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   Heart, 
   Smile, 
@@ -467,6 +468,7 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
+            <ThemeToggle />
             <Button 
               onClick={openWhatsApp} 
               size="default" 
@@ -712,7 +714,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="mt-12"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-8" data-testid="heading-gallery">OUR HOC GALLERY</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900" data-testid="heading-gallery">OUR HOC <span className="text-primary">GALLERY</span></h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[gymPhoto1, gymPhoto2, gymPhoto3, gymPhoto4].map((img, idx) => (
                   <motion.div 
@@ -741,10 +743,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,83,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10">
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-                <span className="text-primary">
-                  Workout with HOC Community
-                </span>
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
+                Workout with HOC <span className="text-primary">Community</span>
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-bold">
                 Experience the energy, dedication, and transformation happening daily
@@ -1655,7 +1655,9 @@ export default function Home() {
 
       {/* FAQ Section */}
       <AnimatedSection variant="slideUp">
-        <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden border-t border-primary/10" id="faq">
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="faq">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
@@ -1703,21 +1705,27 @@ export default function Home() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <Card 
-                      className="bg-white border border-primary/20 hover-elevate transition-all duration-300 cursor-pointer shadow-sm" 
+                      className="bg-gradient-to-br from-green-100/80 via-emerald-50/90 to-green-50 border-2 border-primary/20 hover-elevate transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:border-primary/40 backdrop-blur-sm" 
                       data-testid={faq.testId}
                       onClick={() => setOpenFaqIndex(isOpen ? null : i)}
                     >
                       <CardContent className="p-5 md:p-6">
                         <div className="flex items-center justify-between gap-3">
-                          <h3 className="font-heading text-base md:text-lg font-bold text-gray-900" data-testid={`question-${faq.testId}`}>
-                            {faq.question}
-                          </h3>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-md">
+                              <MessageSquare className="h-4 w-4 text-white" />
+                            </div>
+                            <h3 className="font-heading text-base md:text-lg font-bold text-gray-900" data-testid={`question-${faq.testId}`}>
+                              {faq.question}
+                            </h3>
+                          </div>
                           <motion.div
                             animate={{ rotate: isOpen ? 180 : 0 }}
                             transition={{ duration: 0.3 }}
+                            className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"
                           >
                             <svg
-                              className="w-5 h-5 text-primary flex-shrink-0"
+                              className="w-4 h-4 text-primary"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -1736,14 +1744,16 @@ export default function Home() {
                           animate={{
                             height: isOpen ? "auto" : 0,
                             opacity: isOpen ? 1 : 0,
-                            marginTop: isOpen ? 12 : 0
+                            marginTop: isOpen ? 16 : 0
                           }}
                           transition={{ duration: 0.3 }}
                           style={{ overflow: "hidden" }}
                         >
-                          <p className="text-gray-700 text-sm md:text-base leading-relaxed" data-testid={`answer-${faq.testId}`}>
-                            {faq.answer}
-                          </p>
+                          <div className="pl-11 border-l-2 border-primary/30 ml-4">
+                            <p className="text-gray-700 text-sm md:text-base leading-relaxed pl-4" data-testid={`answer-${faq.testId}`}>
+                              {faq.answer}
+                            </p>
+                          </div>
                         </motion.div>
                       </CardContent>
                     </Card>
