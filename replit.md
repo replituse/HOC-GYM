@@ -90,6 +90,13 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Updated Transformation gallery: reduced image sizes while maintaining card heights (cards: 450/500/550px, images: max 380/420/460px with padding)
   - Enhanced package cards hover effects with normal shadow lift and translate animations (removed hover-elevate utility)
   - All changes maintain responsive design across breakpoints
+- **Transformation & Flip Card Enhancements** (November 26, 2025):
+  - Fixed Transformation section image alignment: using aspect-[3/4] ratio with object-contain to show full images without cropping
+  - All transformation cards now have same width, height, and perfect alignment with consistent borders
+  - Enhanced "Why Choose Train With Winston" flip cards with gym image backgrounds on back faces
+  - Flip card backs feature: gym equipment stock images, gradient overlay for legibility, floating icon animation, title and subtitle text
+  - Added 5 different gym stock images for variety across the 5 flip cards
+  - Maintained smooth 3D flip animation on hover with responsive design
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
