@@ -253,7 +253,19 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactMenuOpen, setContactMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  // Show scroll-to-top button only after scrolling past 2 viewport heights
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight * 2;
+      setShowScrollTop(window.scrollY > scrollThreshold);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -896,11 +908,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white h-[380px] md:h-[420px] lg:h-[460px] flex items-center justify-center p-1">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-contain"
+                        className="max-w-full max-h-full object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -921,11 +933,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white h-[380px] md:h-[420px] lg:h-[460px] flex items-center justify-center p-1">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-contain"
+                        className="max-w-full max-h-full object-contain"
                       />
                     </div>
                   </div>
@@ -2399,15 +2411,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Scroll to Top Button - Bottom Left */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 left-6 md:left-8 z-50 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:border-primary transition-all duration-300"
-        aria-label="Scroll to top"
-        data-testid="button-scroll-to-top"
-      >
-        <ArrowUp className="h-5 w-5 text-primary" />
-      </button>
+      {/* Scroll to Top Button - Bottom Left - Only visible after scrolling past 2nd page */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 left-6 md:left-8 z-50 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:border-primary transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
+          aria-label="Scroll to top"
+          data-testid="button-scroll-to-top"
+        >
+          <ArrowUp className="h-5 w-5 text-primary" />
+        </button>
+      )}
     </div>
   );
 }
