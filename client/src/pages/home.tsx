@@ -908,11 +908,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white">
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5] flex items-center justify-center">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-auto object-contain"
+                        className="w-full h-full object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -933,11 +933,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white">
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5] flex items-center justify-center">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-auto object-contain"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
