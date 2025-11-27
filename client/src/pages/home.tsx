@@ -119,32 +119,32 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
 
   return (
     <div className="relative">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden rounded-xl">
         <div 
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {testimonials.map((testimonial, index) => (
             <div key={index} className="w-full flex-shrink-0 px-2">
-              <Card className="bg-white/5 backdrop-blur-sm border-primary/20 p-6 h-auto">
-                <CardContent className="p-0 space-y-4">
-                  <div className="flex items-start gap-4">
+              <Card className="bg-white border border-gray-200 shadow-lg p-4 sm:p-6 h-auto">
+                <CardContent className="p-0 space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-primary"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary flex-shrink-0"
                     />
-                    <div className="flex-1">
-                      <h3 className="font-bold text-white text-lg">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-foreground text-base sm:text-lg truncate">
                         {testimonial.name}
                       </h3>
-                      <p className="text-primary text-sm font-semibold">
+                      <p className="text-primary text-xs sm:text-sm font-semibold">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm leading-relaxed">
-                    {testimonial.review}
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
+                    "{testimonial.review}"
                   </p>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -158,18 +158,19 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
         </div>
       </div>
       
-      {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-6">
+      {/* Dots Indicator - More visible on mobile */}
+      <div className="flex justify-center items-center gap-2 mt-6">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-all duration-300 ${
               index === currentIndex 
-                ? 'w-8 bg-primary' 
-                : 'w-2 bg-white/30 hover:bg-white/50'
+                ? 'w-8 h-3 bg-primary' 
+                : 'w-3 h-3 bg-primary/30 hover:bg-primary/50'
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
+            data-testid={`button-testimonial-dot-${index}`}
           />
         ))}
       </div>
@@ -177,12 +178,11 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
   );
 }
 
-// Stats configuration
+// Stats configuration - 3 counters only
 const STATS_DATA = [
   { value: 2000, label: "Clients Transformed", suffix: "+" },
   { value: 18, label: "Certified Coaches", suffix: "" },
   { value: 32000, label: "Training Hours", suffix: "+" },
-  { value: 3, label: "Branches", suffix: "+" },
 ];
 
 // Animated counter hook
@@ -225,7 +225,7 @@ function useCountUp(target: number, isInView: boolean, duration = 2000) {
   return count;
 }
 
-// StatCard component
+// StatCard component - Responsive layout
 function StatCard({ value, label, suffix, index }: { value: number; label: string; suffix: string; index: number }) {
   const { ref, isInView } = useInView({ threshold: 0.3 });
   const count = useCountUp(value, isInView);
@@ -237,12 +237,12 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="text-center p-2 md:p-4"
+      className="text-center p-2 sm:p-3 md:p-4 lg:p-6 flex-1 min-w-0"
     >
-      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-xs md:text-sm text-foreground font-medium leading-tight">{label}</div>
+      <div className="text-[10px] sm:text-xs md:text-sm text-foreground font-medium leading-tight">{label}</div>
     </motion.div>
   );
 }
@@ -669,15 +669,15 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* Impact Statistics */}
+                {/* Impact Statistics - 3 items in single row */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="rounded-xl bg-white/5 border border-primary/20 p-4 md:p-6"
+                  className="rounded-xl bg-white border border-primary/20 p-3 sm:p-4 md:p-6 shadow-sm"
                 >
-                  <div className="grid grid-cols-4 gap-2 md:gap-4">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2 md:gap-4 items-center">
                     {STATS_DATA.map((stat, index) => (
                       <StatCard key={stat.label} {...stat} index={index} />
                     ))}
@@ -2359,8 +2359,22 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
               <p>Copyright © 2025 House of Champions Fitness. All Rights Reserved</p>
               <div className="flex gap-6">
-                <button className="hover:text-primary transition-colors">Privacy Policy</button>
-                <button className="hover:text-primary transition-colors">Terms of Service</button>
+                <a 
+                  href="/"
+                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  className="hover:text-primary transition-colors"
+                  data-testid="link-privacy-policy"
+                >
+                  Privacy Policy
+                </a>
+                <a 
+                  href="/"
+                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  className="hover:text-primary transition-colors"
+                  data-testid="link-terms-of-service"
+                >
+                  Terms of Service
+                </a>
               </div>
             </div>
           </div>
