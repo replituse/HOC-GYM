@@ -22,12 +22,12 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
 **Note**: User opted not to use SendGrid integration and will use Gmail SMTP with app passwords instead.
 
 ## WhatsApp Integration
-- WhatsApp number: +91 8600126395
+- WhatsApp number: +91 8374627462
 - Opens WhatsApp with pre-filled message for consultations
 
 ## Contact Information
-- Email: abhijeet18012001@gmail.com
-- Phone: +91 8600126395
+- Email: hoc@gmail.com
+- Phone: +91 8374627462
 - Location: Bengaluru, Karnataka
 
 ## Recent Changes
@@ -120,6 +120,12 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Pricing cards use green borders and green accent colors
   - Trainers section uses white background with green borders on images
   - All sections have subtle green border separators (border-primary/10)
+- **UI Updates** (November 27, 2025):
+  - Removed dark mode toggle completely - website stays in white + green theme only
+  - Added scroll-to-top button on bottom-left (white bg, green border/icon, rounded shape, hover effects)
+  - Added "3+ Branches" statistic - now showing 4 stats in single line layout
+  - Updated contact details: Phone +91 8374627462, Email hoc@gmail.com
+  - Fixed transformation images to show full body (object-contain instead of object-cover)
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
