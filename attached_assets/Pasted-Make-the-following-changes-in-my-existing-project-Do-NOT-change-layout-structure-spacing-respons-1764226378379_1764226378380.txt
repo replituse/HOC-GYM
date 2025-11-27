@@ -1,0 +1,103 @@
+Make the following changes in my existing project.
+Do NOT change layout, structure, spacing, responsiveness, animations, or card design.
+Only apply the specific updates listed below.
+
+1) Remove Dark Mode Completely
+
+Remove dark mode toggle functionality from the project.
+
+Remove the dark mode button/icon (shown in the 1st uploaded image).
+
+Remove all dark-mode-related CSS, JS, and theme switching code.
+
+Website should always stay in white + green theme only.
+
+2) Add Up Arrow Button (Scroll to Top)
+
+Add a clean, modern up-arrow button on the bottom-left side.
+
+Style must match the white–green theme:
+
+White background
+
+Green border
+
+Green arrow icon
+
+Rounded shape
+
+Add hover effects:
+
+Slight scale-up
+
+Soft green glow or border intensify
+
+Button should smoothly scroll the page to the top.
+
+3) About Section — Add “3+ Branches” & Single-Line Layout
+
+Using the uploaded 2nd image reference, update the stats card:
+
+Required changes:
+
+Add a new statistic: 3+ Branches
+
+All items should appear in one single line, same style as “Training Hours”.
+
+Card must stay the same size and style — just adjust spacing.
+
+Ensure all four items are aligned:
+
+2,000+ Clients Transformed
+
+18 Certified Coaches
+
+32,000+ Training Hours
+
+3+ Branches
+
+Add live count animation for all four stats (count-up effect).
+
+Keep premium white–green styling.
+
+4) Footer Update
+
+Replace existing contact details:
+
+Replace this:
++91 8600126395
+abhijeet18012001@gmail.com
+
+With this:
++91 8374627462
+hoc@gmail.com
+
+Keep the same layout and design.
+
+5) Transformation Section — Fix Image Cropping
+
+Using the 3rd uploaded image reference, update the transformation cards:
+
+Required changes:
+
+Ensure all images fit fully inside the card, not cropped.
+
+Maintain card design exactly as it is; do NOT change card shape, colors, border, or layout.
+
+Adjust image CSS only:
+
+Use object-fit: contain OR
+
+Adjust height to ensure full body visibility.
+
+All images must appear clean, centered, and perfectly visible.
+
+Important Notes
+
+Do NOT change any other design, layout, or sections.
+
+Do NOT change text, fonts, animations, or structure.
+
+Only fix the issues listed above.
+
+Maintain the white and green modern theme throughout.

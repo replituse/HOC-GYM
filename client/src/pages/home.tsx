@@ -16,7 +16,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useInView } from "@/hooks/use-in-view";
 import { fadeInUp, fadeIn, scaleIn, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { AnimatedSection } from "@/components/animated-section";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ArrowUp } from "lucide-react";
 import { 
   Heart, 
   Smile, 
@@ -98,8 +98,8 @@ import gymBackImage3 from "@assets/stock_images/dumbbells_fitness_gy_1561c2c3.jp
 import gymBackImage4 from "@assets/stock_images/dumbbells_fitness_gy_35149c86.jpg";
 import gymBackImage5 from "@assets/stock_images/dumbbells_fitness_gy_0d51d04b.jpg";
 
-const WHATSAPP_NUMBER = "918600126395";
-const PHONE_NUMBER = "+91 8600126395";
+const WHATSAPP_NUMBER = "918374627462";
+const PHONE_NUMBER = "+91 8374627462";
 const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
 
 interface TestimonialMobileCarouselProps {
@@ -182,6 +182,7 @@ const STATS_DATA = [
   { value: 2000, label: "Clients Transformed", suffix: "+" },
   { value: 18, label: "Certified Coaches", suffix: "" },
   { value: 32000, label: "Training Hours", suffix: "+" },
+  { value: 3, label: "Branches", suffix: "+" },
 ];
 
 // Animated counter hook
@@ -241,7 +242,7 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-xs md:text-sm text-foreground dark:text-white/80 font-medium leading-tight">{label}</div>
+      <div className="text-xs md:text-sm text-foreground font-medium leading-tight">{label}</div>
     </motion.div>
   );
 }
@@ -468,7 +469,6 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <ThemeToggle />
             <Button 
               onClick={openWhatsApp} 
               size="default" 
@@ -665,7 +665,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="rounded-xl bg-white/5 border border-primary/20 p-4 md:p-6"
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                  <div className="grid grid-cols-4 gap-2 md:gap-4">
                     {STATS_DATA.map((stat, index) => (
                       <StatCard key={stat.label} {...stat} index={index} />
                     ))}
@@ -896,11 +896,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -921,11 +921,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary aspect-[3/4]">
+                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
@@ -2329,13 +2329,13 @@ export default function Home() {
                     className="text-muted-foreground hover:text-primary transition-colors" 
                     data-testid="button-phone"
                   >
-                    +91 8600126395
+                    +91 8374627462
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
-                    abhijeet18012001@gmail.com
+                  <a href="mailto:hoc@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+                    hoc@gmail.com
                   </a>
                 </li>
               </ul>
@@ -2360,7 +2360,7 @@ export default function Home() {
         <div className="relative">
           {/* Contact Options - Appear Above Icon */}
           {contactMenuOpen && (
-            <div className="absolute bottom-20 right-0 w-56 bg-white dark:bg-card rounded-2xl shadow-2xl border border-border overflow-hidden mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200">
+            <div className="absolute bottom-20 right-0 w-56 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200">
               <button
                 onClick={() => {
                   openWhatsApp();
@@ -2398,6 +2398,16 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      {/* Scroll to Top Button - Bottom Left */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 left-6 md:left-8 z-50 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:border-primary transition-all duration-300"
+        aria-label="Scroll to top"
+        data-testid="button-scroll-to-top"
+      >
+        <ArrowUp className="h-5 w-5 text-primary" />
+      </button>
     </div>
   );
 }
