@@ -908,11 +908,11 @@ export default function Home() {
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white h-[380px] md:h-[420px] lg:h-[460px] flex items-center justify-center p-1">
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="max-w-full max-h-full object-contain"
+                        className="w-full h-auto object-contain"
                         data-testid={item.testId}
                       />
                     </div>
@@ -933,11 +933,11 @@ export default function Home() {
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
-                    <div className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white h-[380px] md:h-[420px] lg:h-[460px] flex items-center justify-center p-1">
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white">
                       <img 
                         src={item.img} 
                         alt={item.alt} 
-                        className="max-w-full max-h-full object-contain"
+                        className="w-full h-auto object-contain"
                       />
                     </div>
                   </div>
@@ -2415,11 +2415,11 @@ export default function Home() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 left-6 md:left-8 z-50 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:border-primary transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
+          className="fixed bottom-8 left-6 md:left-8 z-50 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:bg-primary hover:border-primary transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 group"
           aria-label="Scroll to top"
           data-testid="button-scroll-to-top"
         >
-          <ArrowUp className="h-5 w-5 text-primary" />
+          <ArrowUp className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
         </button>
       )}
     </div>
