@@ -241,7 +241,7 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-xs md:text-sm text-white/80 font-medium leading-tight">{label}</div>
+      <div className="text-xs md:text-sm text-foreground dark:text-white/80 font-medium leading-tight">{label}</div>
     </motion.div>
   );
 }
@@ -699,7 +699,7 @@ export default function Home() {
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                     With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
                   </p>
-                  <p className="text-white font-semibold text-sm md:text-base italic">
+                  <p className="text-primary font-semibold text-sm md:text-base italic">
                     "Your transformation is our mission. Every rep, every session, every victory - we celebrate it all with you."
                   </p>
                 </div>
